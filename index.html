@@ -1,1 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>最適プラス｜一人ひとりに、最適な答えと新しい可能性を。</title>
+
+<meta name="description" content="最適プラスは、AIツール、進路、仕事、暮らしなど、さまざまな選択肢を整理し、一人ひとりに合った答えと新しい可能性を見つけるための総合ナビゲーションサイトです。">
+
+<meta name="theme-color" content="#f7fbff">
+
+<link rel="canonical" href="https://saiteki-plus.github.io/">
+
+<style>
+:root {
+  --blue: #2867a8;
+  --navy: #183b61;
+  --orange: #ed9b43;
+  --text: #26384c;
+  --muted: #718096;
+  --bg: #f7faff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "LINE Seed JP",
+    "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN",
+    sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  background: rgba(255,255,255,.94);
+  border-bottom: 1px solid #e8eef5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 1160px;
+  margin: auto;
+  padding: 15px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: var(--navy);
+}
+
+.brand span {
+  color: var(--orange);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 105px 20px 100px;
+  background:
+    radial-gradient(circle at 15% 20%,
+      rgba(125,190,235,.22), transparent 35%),
+    radial-gradient(circle at 85% 75%,
+      rgba(255,196,125,.22), transparent 32%),
+    linear-gradient(135deg,#ffffff,#edf6ff);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(76,145,205,.14);
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 390px;
+  height: 390px;
+  top: -200px;
+  left: -120px;
+}
+
+.hero::after {
+  width: 470px;
+  height: 470px;
+  bottom: -300px;
+  right: -100px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: auto;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .22em;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(32px,5vw,55px);
+  line-height: 1.45;
+  margin: 0 0 24px;
+  color: var(--navy);
+  letter-spacing: .03em;
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.hero p {
+  color: #60748a;
+  font-size: 16px;
+  margin: 0 auto 34px;
+  max-width: 650px;
+}
+
+.main-button {
+  display: inline-block;
+  padding: 14px 36px;
+  background: linear-gradient(120deg,#347cba,#245b96);
+  color: white;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(40,103,168,.2);
+  transition: .25s;
+}
+
+.main-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(40,103,168,.28);
+}
+
+.section {
+  max-width: 1160px;
+  margin: auto;
+  padding: 85px 24px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading .en {
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+
+.section-heading h2 {
+  font-size: 30px;
+  color: var(--navy);
+  margin: 8px 0;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 25px;
+}
+
+.nav-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid #e7edf4;
+  box-shadow: 0 8px 28px rgba(40,70,100,.045);
+  transition: .25s;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+}
+
+.nav-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(40,70,100,.1);
+  border-color: #c9dced;
+}
+
+.card-category {
+  font-size: 11px;
+  color: var(--blue);
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.nav-card h3 {
+  font-size: 23px;
+  color: var(--navy);
+  margin: 12px 0;
+}
+
+.nav-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+.card-link {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: auto;
+}
+
+.card-link span {
+  color: var(--orange);
+  margin-left: 5px;
+}
+
+.future {
+  background: linear-gradient(135deg,#ffffff,#f0f6fc);
+  border: 1px dashed #cbd8e5;
+  box-shadow: none;
+}
+
+.future .card-category {
+  color: #a0aebe;
+}
+
+.future .card-link {
+  color: #96a5b5;
+}
+
+.concept {
+  background: linear-gradient(120deg,#edf6ff,#fff8ed);
+  padding: 75px 20px;
+  text-align: center;
+}
+
+.concept-inner {
+  max-width: 800px;
+  margin: auto;
+}
+
+.concept h2 {
+  color: var(--navy);
+  font-size: 28px;
+  margin: 0 0 22px;
+}
+
+.concept p {
+  color: #61758a;
+  font-size: 15px;
+}
+
+.concept strong {
+  color: var(--blue);
+}
+
+footer {
+  background: #183b61;
+  color: white;
+  padding: 42px 20px;
+  text-align: center;
+}
+
+.footer-brand {
+  font-size: 23px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.footer-brand span {
+  color: #f3ae61;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 20px 0;
+  font-size: 12px;
+  color: #d5e2ef;
+}
+
+footer small {
+  color: #b5c7d9;
+  font-size: 11px;
+}
+
+@media(max-width:700px) {
+  .header-inner {
+    padding: 13px 18px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 78px 20px 75px;
+  }
+
+  .hero h1 {
+    font-size: 33px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 65px 18px;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .nav-card {
+    padding: 26px;
+    min-height: 230px;
+  }
+
+  .concept h2 {
+    font-size: 23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="brand">
+      最適<span>プラス</span>
+    </a>
+
+    <nav>
+      <a href="#about">ブランドについて</a>
+      <a href="#categories">分野から探す</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="about">
+  <div class="hero-content">
+    <div class="eyebrow">FIND YOUR BEST POSSIBILITY</div>
+
+    <h1>
+      一人ひとりに、<br>
+      <span>最適な答え</span>と<br>
+      新しい可能性を。
+    </h1>
+
+    <p>
+      選択肢が多すぎて迷ってしまうときも、
+      自分に合った答えが見つかるように。
+      最適プラスは、さまざまな分野の情報や選択肢を整理し、
+      あなたの新しい一歩をサポートします。
+    </p>
+
+    <a href="#categories" class="main-button">
+      自分に合う選択肢を探す
+    </a>
+  </div>
+</section>
+
+<section class="section" id="categories">
+
+  <div class="section-heading">
+    <div class="en">EXPLORE YOUR OPTIONS</div>
+    <h2>分野から探す</h2>
+    <p>気になる分野から、あなたに合った選択肢を見つけましょう。</p>
+  </div>
+
+  <div class="card-grid">
+
+    <a class="nav-card"
+       href="https://saiteki-plus.github.io/AI-Tool-Navigator/">
+
+      <div class="card-category">AI & TECHNOLOGY</div>
+      <h3>AIツール診断</h3>
+      <p>
+        目的や使い方に合わせて、
+        自分に合ったAIツールを見つけるための診断ナビ。
+      </p>
+      <div class="card-link">
+        診断を始める <span>→</span>
+      </div>
+    </a>
+
+    <a class="nav-card"
+       href="https://saiteki-plus.github.io/Semiconductor-Industry-Career-Navigator/">
+
+      <div class="card-category">CAREER & SEMICONDUCTOR</div>
+      <h3>半導体業界・進路診断</h3>
+      <p>
+        半導体業界の仕事や企業、進路について、
+        自分に合った方向性を探すための診断ナビ。
+      </p>
+      <div class="card-link">
+        診断を始める <span>→</span>
+      </div>
+    </a>
+
+    <div class="nav-card future">
+      <div class="card-category">LIFESTYLE</div>
+      <h3>暮らし・ライフスタイル</h3>
+      <p>
+        料理、住まい、日常生活など、
+        暮らしをより豊かにする選択肢。
+      </p>
+      <div class="card-link">今後公開予定</div>
+    </div>
+
+    <div class="nav-card future">
+      <div class="card-category">LIFE & RELATIONSHIPS</div>
+      <h3>恋愛・結婚・人間関係</h3>
+      <p>
+        出会いや結婚、人生の大切な選択を
+        サポートするナビゲーション。
+      </p>
+      <div class="card-link">今後公開予定</div>
+    </div>
+
+    <div class="nav-card future">
+      <div class="card-category">LEARNING & GROWTH</div>
+      <h3>学び・資格・スキル</h3>
+      <p>
+        学習方法や資格、スキルアップなど、
+        自分の可能性を広げる選択肢。
+      </p>
+      <div class="card-link">今後公開予定</div>
+    </div>
+
+    <div class="nav-card future">
+      <div class="card-category">WORK & BUSINESS</div>
+      <h3>仕事・キャリア</h3>
+      <p>
+        働き方や転職、副業など、
+        自分らしい仕事の可能性を探すナビ。
+      </p>
+      <div class="card-link">今後公開予定</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="concept">
+  <div class="concept-inner">
+    <h2>あなたの選択に、もう一つの可能性を。</h2>
+    <p>
+      情報を整理し、選択肢を比べ、自分に合った答えを見つける。<br>
+      <strong>最適プラス</strong>は、納得できる選択と
+      その先にある新しい可能性を応援します。
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-brand">最適<span>プラス</span></div>
+
+  <div class="footer-links">
+    <a href="#about">ブランドについて</a>
+    <a href="#categories">分野から探す</a>
+  </div>
+
+  <small>
+    © 2026 最適プラス All Rights Reserved.
+  </small>
+</footer>
+
+</body>
+</html>
