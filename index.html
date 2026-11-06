@@ -377,6 +377,24 @@ footer small {
     font-size: 23px;
   }
 }
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 20px 0;
+}
+
+.footer-links a {
+  color: #245b91;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
 </style>
 </head>
 
@@ -523,6 +541,11 @@ footer small {
   </div>
 
   <small>
+    <div class="footer-links">
+  <a href="about.html">運営者情報</a>
+  <a href="privacy.html">プライバシーポリシー</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
     © 2026 最適プラス All Rights Reserved.
   </small>
 </footer>
