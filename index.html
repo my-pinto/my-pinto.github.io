@@ -615,39 +615,70 @@
       writing-mode: horizontal-tb !important;
     }
 
-    /* BRAND MESSAGE */
+/* BRAND MESSAGE */
 
-    .brand-message {
-      padding: 62px 0 65px;
-      text-align: center;
-      background: #FFFFFF;
-    }
+.brand-message {
+  padding: 62px 0 65px;
+  text-align: center;
+  background: #FFFFFF;
+  font-family: "LINE Seed JP", sans-serif;
+}
 
-    .brand-message h2 {
-      font-size: clamp(23px, 4vw, 35px);
-      line-height: 1.8;
-    }
+.brand-message .container {
+  max-width: 800px;
+}
 
-    .brand-message h2 span {
-      background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--violet),
-        var(--magenta),
-        var(--red)
-      );
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+.brand-message h2 {
+  margin: 0;
+  font-size: clamp(23px, 4vw, 34px);
+  line-height: 1.6;
+  letter-spacing: 0.015em;
+  font-weight: 800;
+  color: #000000;
+}
 
-    .brand-message p {
-      max-width: 650px;
-      margin: 15px auto 0;
-      color: #666;
-      font-size: 13px;
-      line-height: 2.1;
-    }
+.brand-message h2 .gradient-text {
+  background: linear-gradient(
+    90deg,
+    #0000FF,
+    #8A2BE2,
+    #FF00FF
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.brand-message p {
+  max-width: 680px;
+  margin: 20px auto 0;
+  color: #444444;
+  font-size: 13px;
+  line-height: 2.1;
+  letter-spacing: 0.015em;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 650px) {
+
+  .brand-message {
+    padding: 48px 0;
+  }
+
+  .brand-message h2 {
+    font-size: 22px;
+    line-height: 1.65;
+  }
+
+  .brand-message p {
+    margin-top: 16px;
+    font-size: 11px;
+    line-height: 2;
+    letter-spacing: 0;
+  }
+
+}
 
     /* FOOTER */
 
