@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -315,41 +316,48 @@
       margin-bottom: 36px;
     }
 
+    /* HEROと統一した緑の左右ライン */
+
     .section-label {
-      display: inline-block;
-      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: max-content;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      white-space: nowrap;
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: 0.12em;
+      line-height: 1.5;
       color: #000000;
     }
 
-    /* 中央発光・両端フェードライン */
-
-    .section-glow-line {
-      width: 180px;
-      max-width: 55%;
-      height: 2px;
-      margin: 12px auto 20px;
-      border-radius: 50%;
-
+    .section-label::before,
+    .section-label::after {
+      content: "";
+      display: block;
+      flex: 0 1 48px;
+      width: 48px;
+      height: 1px;
       background: linear-gradient(
         90deg,
-        rgba(0,0,255,0) 0%,
-        rgba(0,0,255,0.35) 20%,
-        rgba(70,45,255,0.75) 38%,
-        rgba(138,43,226,1) 46%,
-        rgba(255,255,255,1) 50%,
-        rgba(255,0,255,1) 54%,
-        rgba(138,43,226,0.85) 62%,
-        rgba(0,0,255,0.35) 80%,
-        rgba(0,0,255,0) 100%
+        rgba(0,250,154,0.2),
+        #00FA9A,
+        #5AFF19
       );
+    }
 
-      box-shadow:
-        0 0 4px rgba(138,43,226,0.35),
-        0 0 9px rgba(255,0,255,0.18),
-        0 0 16px rgba(0,0,255,0.10);
+    .section-label::after {
+      transform: rotate(180deg);
+    }
+
+    /* HEROと同じ8色のアニメーション */
+
+    .section-heading .focus-dots {
+      margin: 19px auto 25px;
     }
 
     h2 {
@@ -747,14 +755,25 @@
         margin-bottom: 25px;
       }
 
+      /* スマートフォンでも冒頭と同じ緑ライン */
+
       .section-label {
-        font-size: 11px;
+        gap: 8px;
+        font-size: clamp(9px, 2.8vw, 11px);
+        letter-spacing: 0.10em;
       }
 
-      .section-glow-line {
-        width: 145px;
-        height: 2px;
-        margin: 10px auto 17px;
+      .section-label::before,
+      .section-label::after {
+        flex-basis: 30px;
+        width: 30px;
+        min-width: 20px;
+      }
+
+      /* 8色アニメーションのスマートフォン用間隔 */
+
+      .section-heading .focus-dots {
+        margin: 17px auto 20px;
       }
 
       .section-heading h2 {
@@ -971,7 +990,16 @@
             FIND YOUR BEST MATCH
           </div>
 
-          <div class="section-glow-line" aria-hidden="true"></div>
+          <div class="focus-dots" aria-hidden="true">
+            <span style="--dot-color:#00FFFF;--delay:0s"></span>
+            <span style="--dot-color:#FFFF00;--delay:.2s"></span>
+            <span style="--dot-color:#FF00FF;--delay:.4s"></span>
+            <span style="--dot-color:#8A2BE2;--delay:.6s"></span>
+            <span style="--dot-color:#00FA9A;--delay:.8s"></span>
+            <span style="--dot-color:#0000FF;--delay:1s"></span>
+            <span style="--dot-color:#FF962D;--delay:1.2s"></span>
+            <span style="--dot-color:#FF0000;--delay:1.4s"></span>
+          </div>
 
           <h2>
             あなたにぴったりは、どれ？
