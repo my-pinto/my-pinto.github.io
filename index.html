@@ -579,12 +579,18 @@
     }
 
     .card-action-label {
+  display: inline-block;
   color: #111;
+  writing-mode: horizontal-tb !important;
   white-space: nowrap;
-  writing-mode: horizontal-tb;
   word-break: keep-all;
   overflow-wrap: normal;
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 0;
+  text-align: left;
+  position: static;
+  transform: none;
 }
 
     .coming-soon {
