@@ -852,11 +852,20 @@
       }
 
       .coming-soon {
-        top: 9px;
-        right: 8px;
-        font-size: 7px;
-        padding: 2px 5px;
-      }
+  top: 9px;
+  right: 8px;
+  display: inline-block;
+  width: auto;
+  max-width: calc(100% - 16px);
+  white-space: nowrap;
+  writing-mode: horizontal-tb;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  font-size: 7px;
+  line-height: 1.4;
+  padding: 2px 6px;
+  border-radius: 20px;
+}
 
       .brand-message {
         padding: 48px 0;
