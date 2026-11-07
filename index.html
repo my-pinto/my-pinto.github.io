@@ -67,9 +67,7 @@
       margin: 0 auto;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
+    /* HEADER */
 
     header {
       position: sticky;
@@ -108,27 +106,25 @@
     }
 
     .logo-mark::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 38px;
-  height: 38px;
-  left: -12.5px;
-  top: -12.5px;
-  border-radius: 50%;
-
-  background: radial-gradient(
-    circle,
-    rgba(90,255,25,0.48) 0%,
-    rgba(90,255,25,0.32) 30%,
-    rgba(140,255,90,0.20) 55%,
-    rgba(180,255,190,0.08) 72%,
-    rgba(180,255,190,0) 100%
-  );
-
-  filter: blur(6px);
-  pointer-events: none;
-}
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 38px;
+      height: 38px;
+      left: -12.5px;
+      top: -12.5px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(90,255,25,0.48) 0%,
+        rgba(90,255,25,0.32) 30%,
+        rgba(140,255,90,0.20) 55%,
+        rgba(180,255,190,0.08) 72%,
+        rgba(180,255,190,0) 100%
+      );
+      filter: blur(6px);
+      pointer-events: none;
+    }
 
     .header-link {
       font-size: 12px;
@@ -140,9 +136,7 @@
       color: var(--blue);
     }
 
-    /* =========================
-       FOCUS DOTS
-    ========================= */
+    /* FOCUS DOTS */
 
     .focus-dots {
       display: flex;
@@ -175,13 +169,7 @@
         transform: scale(0.92);
       }
 
-      45% {
-        filter: blur(0);
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      70% {
+      45%, 70% {
         filter: blur(0);
         opacity: 1;
         transform: scale(1);
@@ -194,9 +182,7 @@
       }
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero {
       position: relative;
@@ -296,16 +282,16 @@
     }
 
     .hero-highlight {
-  background: linear-gradient(
-    90deg,
-    #0000FF 0%,
-    #8A2BE2 50%,
-    #FF00FF 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
+      background: linear-gradient(
+        90deg,
+        #0000FF 0%,
+        #8A2BE2 50%,
+        #FF00FF 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
     .hero-description {
       max-width: 680px;
@@ -315,9 +301,7 @@
       color: #444;
     }
 
-    /* =========================
-       CATEGORY SECTION
-    ========================= */
+    /* CATEGORY SECTION */
 
     .categories {
       position: relative;
@@ -329,7 +313,7 @@
 
     .section-heading {
       text-align: center;
-      margin-bottom: 31px;
+      margin-bottom: 36px;
     }
 
     .section-label {
@@ -365,54 +349,84 @@
 
     .section-description {
       max-width: 660px;
-      margin: 12px auto 0;
+      margin: 14px auto 0;
       color: #555;
       font-size: 13px;
       line-height: 2;
     }
 
     .section-prompt {
-      margin: 18px auto 0;
+      margin: 19px auto 0;
       font-size: 12px;
       font-weight: 800;
       color: #333;
     }
 
-    /* =========================
-       CATEGORY CARDS
-    ========================= */
+    /* CATEGORY CARDS */
 
     .card-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 15px;
+      gap: 19px;
     }
 
     .category-card {
+      --card-color: #00FFFF;
+
       position: relative;
       display: flex;
       flex-direction: column;
       min-width: 0;
-      min-height: 190px;
-      padding: 19px 19px 16px;
+      min-height: 205px;
+      padding: 20px 19px 16px;
       background: #FFFFFF;
       border: 1px solid #E8E8E8;
-      border-radius: 15px;
+      border-radius: 16px;
       overflow: hidden;
+      isolation: isolate;
+
       transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
     }
+
+    /* カード上部のカラーライン */
 
     .category-card::before {
       content: "";
       position: absolute;
+      z-index: -1;
       top: 0;
       left: 0;
       width: 100%;
-      height: 3px;
-      background: var(--card-color);
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        var(--card-color),
+        rgba(255,255,255,0.95),
+        var(--card-color)
+      );
+      background-size: 200% 100%;
+      transition: background-position .5s ease;
+    }
+
+    /* カード外周の光彩 */
+
+    .category-card::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        ellipse at 50% 0%,
+        var(--card-color),
+        transparent 72%
+      );
+      opacity: 0;
+      transition: opacity .3s ease;
+      pointer-events: none;
     }
 
     .category-card.active {
@@ -420,9 +434,19 @@
     }
 
     .category-card.active:hover {
-      transform: translateY(-5px);
-      border-color: #D5D5D5;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+      transform: translateY(-7px) scale(1.015);
+      border-color: var(--card-color);
+      box-shadow:
+        0 15px 32px rgba(0,0,0,0.09),
+        0 0 18px color-mix(in srgb, var(--card-color) 23%, transparent);
+    }
+
+    .category-card.active:hover::after {
+      opacity: 0.09;
+    }
+
+    .category-card.active:hover::before {
+      background-position: 100% 0;
     }
 
     .category-card.active:focus-visible {
@@ -439,7 +463,7 @@
 
     .card-focus {
       justify-content: flex-start;
-      margin: 11px 0 9px;
+      margin: 12px 0 10px;
       gap: 0;
     }
 
@@ -463,8 +487,33 @@
       color: #626262;
       font-size: 11px;
       line-height: 1.75;
-      margin: 6px 0 13px;
+      margin: 6px 0 10px;
     }
+
+    /* 診断メリット */
+
+    .card-benefit {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 5px;
+      margin: 1px 0 9px;
+      padding: 4px 9px;
+      border-radius: 30px;
+      background: color-mix(in srgb, var(--card-color) 12%, white);
+      color: #222;
+      font-size: 9px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .card-benefit::before {
+      content: "✓";
+      font-size: 10px;
+      color: #333;
+    }
+
+    /* カードアクション */
 
     .card-action {
       display: flex;
@@ -472,30 +521,32 @@
       justify-content: space-between;
       gap: 8px;
       margin-top: auto;
-      padding-top: 10px;
+      padding-top: 11px;
       border-top: 1px solid #EEEEEE;
       font-size: 11px;
       font-weight: 800;
     }
 
-    .card-action span {
+    .card-action span:last-child {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 25px;
-      height: 25px;
-      flex: 0 0 25px;
+      width: 29px;
+      height: 29px;
+      flex: 0 0 29px;
       border-radius: 50%;
       background: #F4F4F4;
-      font-size: 14px;
+      font-size: 16px;
       transition:
-        transform .2s,
-        background .2s;
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
     }
 
-    .category-card.active:hover .card-action span {
-      transform: translateX(4px);
+    .category-card.active:hover .card-action span:last-child {
+      transform: translateX(5px);
       background: var(--card-color);
+      color: #000;
     }
 
     .card-action-label {
@@ -523,9 +574,7 @@
       color: #888;
     }
 
-    /* =========================
-       BRAND MESSAGE
-    ========================= */
+    /* BRAND MESSAGE */
 
     .brand-message {
       padding: 62px 0 65px;
@@ -559,9 +608,7 @@
       line-height: 2.1;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
+    /* FOOTER */
 
     footer {
       padding: 28px 0 20px;
@@ -601,9 +648,7 @@
       text-align: center;
     }
 
-    /* =========================
-       TABLET
-    ========================= */
+    /* TABLET */
 
     @media (max-width: 800px) {
       .card-grid {
@@ -611,9 +656,7 @@
       }
     }
 
-    /* =========================
-       SMARTPHONE
-    ========================= */
+    /* SMARTPHONE */
 
     @media (max-width: 650px) {
 
@@ -683,7 +726,7 @@
       }
 
       .section-heading {
-        margin-bottom: 23px;
+        margin-bottom: 25px;
       }
 
       h2 {
@@ -697,16 +740,16 @@
 
       .section-prompt {
         font-size: 11px;
-        margin-top: 13px;
+        margin-top: 14px;
       }
 
       .card-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        gap: 11px;
       }
 
       .category-card {
-        min-height: 174px;
+        min-height: 190px;
         padding: 14px 12px 12px;
         border-radius: 12px;
       }
@@ -734,7 +777,12 @@
       .category-card p {
         font-size: 10px;
         line-height: 1.65;
-        margin: 5px 0 9px;
+        margin: 5px 0 8px;
+      }
+
+      .card-benefit {
+        font-size: 8px;
+        padding: 4px 7px;
       }
 
       .card-action {
@@ -742,10 +790,11 @@
         padding-top: 8px;
       }
 
-      .card-action span {
-        width: 22px;
-        height: 22px;
-        flex-basis: 22px;
+      .card-action span:last-child {
+        width: 23px;
+        height: 23px;
+        flex-basis: 23px;
+        font-size: 13px;
       }
 
       .coming-soon {
@@ -787,9 +836,7 @@
       }
     }
 
-    /* =========================
-       REDUCED MOTION
-    ========================= */
+    /* REDUCED MOTION */
 
     @media (prefers-reduced-motion: reduce) {
       *,
@@ -840,7 +887,6 @@
     </div>
   </header>
 
-
   <main>
 
     <!-- HERO -->
@@ -881,7 +927,6 @@
 
     </section>
 
-
     <!-- CATEGORY CARDS -->
 
     <section class="categories" id="categories">
@@ -891,26 +936,25 @@
         <div class="section-heading">
 
           <div class="section-label">
-            答えの、その先へ。
+            FIND YOUR BEST MATCH
           </div>
 
           <h2>
-            その悩み、答えに変える。
+            あなたにぴったりは、どれ？
           </h2>
 
           <p class="section-description">
-            精緻な診断と高密度な情報から、あなたに最適な答えを具体的に絞り込めます。
+            たくさんの選択肢から、自分に合うものを見つける。<br>
+            診断と厳選情報で、あなたの「これだ！」をサポートします。
           </p>
 
           <p class="section-prompt">
-            まずは、気になる分野をタップしてください。
+            まずは興味のある分野を選んでみましょう。
           </p>
 
         </div>
 
-
         <div class="card-grid">
-
 
           <!-- 01 AI -->
 
@@ -932,8 +976,12 @@
             <h3>AI・デジタル</h3>
 
             <p>
-              20問で、あなたに合うAIツールBEST3を診断。
+              自分に合うAIツールを見つけて、毎日をもっと便利に。
             </p>
+
+            <div class="card-benefit">
+              20問であなたに合うAIツールBEST3
+            </div>
 
             <div class="card-action">
               <span class="card-action-label">自分に合うAIを診断する</span>
@@ -941,7 +989,6 @@
             </div>
 
           </a>
-
 
           <!-- 02 CAREER -->
 
@@ -963,8 +1010,12 @@
             <h3>進路・キャリア</h3>
 
             <p>
-              20問で、半導体業界の仕事・職種との相性を診断。
+              自分の強みや適性から、可能性のある仕事を探そう。
             </p>
+
+            <div class="card-benefit">
+              20問で半導体業界の職種適性を診断
+            </div>
 
             <div class="card-action">
               <span class="card-action-label">自分に合う進路を診断する</span>
@@ -972,7 +1023,6 @@
             </div>
 
           </a>
-
 
           <!-- 03 LIFESTYLE -->
 
@@ -1003,7 +1053,6 @@
 
           </div>
 
-
           <!-- 04 RELATIONSHIP -->
 
           <div
@@ -1032,7 +1081,6 @@
             </div>
 
           </div>
-
 
           <!-- 05 LEARNING -->
 
@@ -1063,7 +1111,6 @@
 
           </div>
 
-
           <!-- 06 WORK -->
 
           <div
@@ -1093,13 +1140,11 @@
 
           </div>
 
-
         </div>
 
       </div>
 
     </section>
-
 
     <!-- BRAND MESSAGE -->
 
@@ -1123,7 +1168,6 @@
     </section>
 
   </main>
-
 
   <!-- FOOTER -->
 
