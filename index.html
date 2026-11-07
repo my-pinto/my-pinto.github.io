@@ -579,8 +579,13 @@
     }
 
     .card-action-label {
-      color: #111;
-    }
+  color: #111;
+  white-space: nowrap;
+  writing-mode: horizontal-tb;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  flex-shrink: 0;
+}
 
     .coming-soon {
       position: absolute;
