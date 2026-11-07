@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -302,9 +301,10 @@
     }
 
     /* CATEGORY SECTION */
+
     #categories {
-  scroll-margin-top: 45px;
-}
+      scroll-margin-top: 45px;
+    }
 
     .categories {
       position: relative;
@@ -318,8 +318,6 @@
       text-align: center;
       margin-bottom: 36px;
     }
-
-    /* HEROと統一した緑の左右ライン */
 
     .section-label {
       display: flex;
@@ -356,8 +354,6 @@
     .section-label::after {
       transform: rotate(180deg);
     }
-
-    /* HEROと同じ8色のアニメーション */
 
     .section-heading .focus-dots {
       margin: 19px auto 25px;
@@ -420,8 +416,6 @@
         border-color .3s ease;
     }
 
-    /* カード上部のカラーライン */
-
     .category-card::before {
       content: "";
       position: absolute;
@@ -439,8 +433,6 @@
       background-size: 200% 100%;
       transition: background-position .5s ease;
     }
-
-    /* カード外周の光彩 */
 
     .category-card::after {
       content: "";
@@ -549,6 +541,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px;
+      min-width: 0;
       margin-top: auto;
       padding-top: 11px;
       border-top: 1px solid #EEEEEE;
@@ -556,7 +549,9 @@
       font-weight: 800;
     }
 
-    .card-action span:last-child {
+    /* AI・進路カードの矢印だけに適用 */
+
+    .category-card.active .card-action > span[aria-hidden="true"] {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -572,26 +567,25 @@
         color .25s ease;
     }
 
-    .category-card.active:hover .card-action span:last-child {
-      transform: translateX(5px);
+    .category-card.active:hover .card-action > span[aria-hidden="true"] {
+      transform: translateX(3px);
       background: var(--card-color);
       color: #000;
     }
 
+    /* アクション文字 */
+
     .card-action-label {
-  display: inline-block;
-  color: #111;
-  writing-mode: horizontal-tb !important;
-  white-space: nowrap;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  flex: 0 0 auto;
-  width: auto;
-  min-width: 0;
-  text-align: left;
-  position: static;
-  transform: none;
-}
+      display: inline-block;
+      min-width: 0;
+      flex: 1 1 auto;
+      color: #111;
+      writing-mode: horizontal-tb !important;
+      white-space: nowrap;
+      word-break: keep-all;
+      overflow-wrap: normal;
+      text-align: left;
+    }
 
     .coming-soon {
       position: absolute;
@@ -612,6 +606,13 @@
 
     .inactive .card-action {
       color: #888;
+    }
+
+    .inactive .card-action-label {
+      flex: 0 1 auto;
+      min-width: 0;
+      white-space: nowrap;
+      writing-mode: horizontal-tb !important;
     }
 
     /* BRAND MESSAGE */
@@ -769,8 +770,6 @@
         margin-bottom: 25px;
       }
 
-      /* スマートフォンでも冒頭と同じ緑ライン */
-
       .section-label {
         gap: 8px;
         font-size: clamp(9px, 2.8vw, 11px);
@@ -783,8 +782,6 @@
         width: 30px;
         min-width: 20px;
       }
-
-      /* 8色アニメーションのスマートフォン用間隔 */
 
       .section-heading .focus-dots {
         margin: 17px auto 20px;
@@ -853,30 +850,49 @@
       .card-action {
         font-size: 9px;
         padding-top: 8px;
+        gap: 5px;
       }
 
-      .card-action span:last-child {
+      /* スマートフォンの矢印 */
+
+      .category-card.active .card-action > span[aria-hidden="true"] {
         width: 23px;
         height: 23px;
         flex-basis: 23px;
         font-size: 13px;
       }
 
+      /* スマートフォンのアクション文字 */
+
+      .category-card.active .card-action-label {
+        font-size: clamp(7px, 2.1vw, 9px);
+        flex: 1 1 auto;
+        min-width: 0;
+        white-space: nowrap;
+      }
+
+      .inactive .card-action-label {
+        font-size: 9px;
+        flex: 0 1 auto;
+        min-width: 0;
+        white-space: nowrap;
+      }
+
       .coming-soon {
-  top: 9px;
-  right: 8px;
-  display: inline-block;
-  width: auto;
-  max-width: calc(100% - 16px);
-  white-space: nowrap;
-  writing-mode: horizontal-tb;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  font-size: 7px;
-  line-height: 1.4;
-  padding: 2px 6px;
-  border-radius: 20px;
-}
+        top: 9px;
+        right: 8px;
+        display: inline-block;
+        width: auto;
+        max-width: calc(100% - 16px);
+        white-space: nowrap;
+        writing-mode: horizontal-tb;
+        word-break: keep-all;
+        overflow-wrap: normal;
+        font-size: 7px;
+        line-height: 1.4;
+        padding: 2px 6px;
+        border-radius: 20px;
+      }
 
       .brand-message {
         padding: 48px 0;
