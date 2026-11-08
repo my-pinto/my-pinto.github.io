@@ -377,44 +377,50 @@
       gap: 19px;
     }
 
-    .category-card {
-      --card-color: #00FFFF;
+/* CATEGORY CARD */
 
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      min-height: 205px;
-      padding: 20px 19px 16px;
-      background: #FFFFFF;
-      border: 1px solid #E8E8E8;
-      border-radius: 16px;
-      overflow: hidden;
-      isolation: isolate;
+.category-card {
+  --card-color: #00FFFF;
 
-      transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        border-color .3s ease;
-    }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 205px;
+  padding: 20px 19px 16px;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
 
-    .category-card::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(
-        90deg,
-        var(--card-color),
-        rgba(255,255,255,0.95),
-        var(--card-color)
-      );
-      background-size: 200% 100%;
-      transition: background-position .5s ease;
-    }
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+/* TOP COLOR ACCENT */
+
+.category-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    var(--card-color),
+    rgba(255,255,255,0.95),
+    var(--card-color)
+  );
+
+  background-size: 200% 100%;
+  transition: background-position .5s ease;
+}
 
     .category-card::after {
       content: "";
