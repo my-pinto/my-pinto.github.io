@@ -219,25 +219,25 @@
       letter-spacing: 0.12em;
       line-height: 1.5;
     }
+    
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+  display: block;
+  flex: 0 1 48px;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #B7F7D9,
+    #5AFF19
+  );
+}
 
-    .eyebrow::before,
-    .eyebrow::after {
-      content: "";
-      display: block;
-      flex: 0 1 48px;
-      width: 48px;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        rgba(0,250,154,0.2),
-        #00FA9A,
-        #5AFF19
-      );
-    }
-
-    .eyebrow::after {
-      transform: rotate(180deg);
-    }
+.eyebrow::after {
+  transform: rotate(180deg);
+}
 
     .hero .focus-dots {
       margin: 19px auto 25px;
