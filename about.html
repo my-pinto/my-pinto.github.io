@@ -1,380 +1,597 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>運営者情報｜MyPinto</title>
+  <title>運営者情報｜MyPinto</title>
+  <meta name="description" content="MyPintoの運営理念、サービス内容、情報提供方針、広告・アフィリエイトについてご紹介します。">
+  <link rel="canonical" href="https://my-pinto.github.io/about.html">
 
-<meta name="description" content="MyPintoの運営理念、運営方針、情報提供に関する考え方をご紹介します。">
+  <meta name="theme-color" content="#FFFFFF">
 
-<link rel="canonical" href="https://my-pinto.github.io/about.html">
+  <style>
+    :root {
+      --green: #5AFF19;
+      --green-soft: #F5FFF0;
+      --green-pale: #F8FAF7;
+      --black: #171717;
+      --text: #333333;
+      --muted: #777777;
+      --line: #E8EAE6;
+      --white: #FFFFFF;
+    }
 
-<style>
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: "Noto Sans JP",
-    "Hiragino Kaku Gothic ProN", sans-serif;
-  color: #26384c;
-  background: #f7faff;
-  line-height: 1.9;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text);
+      font-family:
+        "LINE Seed JP",
+        "Noto Sans JP",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
+    }
 
-header {
-  background: white;
-  border-bottom: 1px solid #e8eef5;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.header-inner {
-  max-width: 1000px;
-  margin: auto;
-  padding: 18px 22px;
-}
+    .site-header {
+      width: 100%;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: #FFFFFF;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: 800;
-  color: #183b61;
-}
+    .header-inner {
+      width: min(1080px, calc(100% - 48px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.hero {
-  padding: 65px 20px;
-  text-align: center;
-  background: linear-gradient(120deg,#eaf4ff,#fff8ed);
-}
+    .brand {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+      color: var(--black);
+    }
 
-.hero small {
-  color: #d58b39;
-  font-weight: 800;
-  letter-spacing: .2em;
-}
+    .header-label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
 
-.hero h1 {
-  color: #183b61;
-  font-size: 34px;
-  margin: 10px 0;
-}
+    .page-hero {
+      padding: 76px 24px 68px;
+      background: var(--green-pale);
+      border-bottom: 1px solid var(--line);
+    }
 
-.hero p {
-  color: #718096;
-  font-size: 14px;
-}
+    .page-hero-inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
 
-main {
-  max-width: 850px;
-  margin: 55px auto;
-  padding: 0 22px;
-}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 17px;
+      color: #626B5D;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
 
-.content {
-  background: white;
-  padding: 35px;
-  margin-bottom: 22px;
-  border-radius: 16px;
-  border: 1px solid #e8eef5;
-  box-shadow: 0 5px 20px rgba(40,70,100,.04);
-}
+    .eyebrow::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--green);
+    }
 
-h2 {
-  color: #183b61;
-  font-size: 21px;
-  border-left: 4px solid #ed9b43;
-  padding-left: 13px;
-  margin-top: 0;
-}
+    h1 {
+      margin: 0;
+      color: var(--black);
+      font-size: clamp(30px, 5vw, 43px);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.45;
+    }
 
-p {
-  font-size: 14px;
-}
+    .hero-description {
+      margin: 17px 0 0;
+      color: #666666;
+      font-size: 14px;
+      line-height: 1.9;
+    }
 
-.brand-message {
-  text-align: center;
-  padding: 25px 15px;
-  background: linear-gradient(120deg,#edf6ff,#fff8ed);
-  border-radius: 14px;
-  color: #183b61;
-  font-size: 19px;
-  font-weight: 700;
-}
+    .main-content {
+      width: min(880px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 58px 0 90px;
+    }
 
-.info-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-}
+    .brand-message {
+      margin-bottom: 64px;
+      padding: 30px 32px;
+      background: var(--green-soft);
+      border-left: 3px solid var(--green);
+    }
 
-.info-table th,
-.info-table td {
-  text-align: left;
-  padding: 15px 10px;
-  border-bottom: 1px solid #e9eef4;
-}
+    .brand-message p {
+      margin: 0;
+      color: var(--black);
+      font-size: clamp(18px, 3vw, 23px);
+      font-weight: 700;
+      line-height: 1.7;
+      letter-spacing: 0.015em;
+    }
 
-.info-table th {
-  width: 32%;
-  color: #526b83;
-  font-weight: 600;
-}
+    .brand-message span {
+      display: block;
+      margin-top: 10px;
+      color: #777777;
+      font-size: 11px;
+      letter-spacing: 0.13em;
+    }
 
-.back {
-  text-align: center;
-  margin: 45px 0;
-}
+    .content-section {
+      margin-bottom: 54px;
+    }
 
-.back a {
-  display: inline-block;
-  background: #2867a8;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 700;
-}
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 0 0 22px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--line);
+      color: var(--black);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
 
-footer {
-  background: #183b61;
-  color: white;
-  text-align: center;
-  padding: 35px 15px;
-}
+    .section-number {
+      color: #83B86C;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 22px;
-  font-size: 12px;
-  margin: 15px 0;
-  color: #d5e2ef;
-}
+    .content-section p {
+      margin: 0 0 16px;
+      font-size: 14px;
+      line-height: 2.05;
+    }
 
-footer small {
-  font-size: 11px;
-  color: #b5c7d9;
-}
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
 
-@media(max-width:600px) {
-  .hero h1 {
-    font-size: 27px;
-  }
+    .service-list li {
+      position: relative;
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      padding: 15px 18px 15px 39px;
+      background: var(--green-pale);
+      border: 1px solid #EDF0EA;
+      border-radius: 5px;
+      color: #333333;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.7;
+    }
 
-  .content {
-    padding: 25px 20px;
-  }
+    .service-list li::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
 
-  .info-table th,
-  .info-table td {
-    display: block;
-    width: 100%;
-    padding: 8px 5px;
-  }
+    .policy-note {
+      margin-top: 18px;
+      padding: 20px 22px;
+      background: #FAFAF9;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      color: #666666;
+      font-size: 13px;
+      line-height: 1.9;
+    }
 
-  .info-table th {
-    padding-top: 16px;
-  }
-}
-</style>
+    .operator-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .operator-table th,
+    .operator-table td {
+      padding: 17px 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.8;
+    }
+
+    .operator-table th {
+      width: 28%;
+      background: var(--green-pale);
+      color: #444444;
+      font-weight: 600;
+    }
+
+    .operator-table td {
+      color: #333333;
+      overflow-wrap: anywhere;
+    }
+
+    .operator-table a {
+      color: #333333;
+      text-decoration: underline;
+      text-decoration-color: #9BCB85;
+      text-underline-offset: 4px;
+    }
+
+    .operator-table a:hover {
+      text-decoration-color: #333333;
+    }
+
+    .back-link-wrap {
+      margin-top: 68px;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 210px;
+      padding: 13px 24px;
+      border: 1px solid #DADDD7;
+      border-radius: 3px;
+      color: #333333;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: var(--green-soft);
+      border-color: #B8DDA8;
+    }
+
+    .back-link::before {
+      content: "←";
+      margin-right: 10px;
+      font-size: 15px;
+    }
+
+    .site-footer {
+      padding: 35px 24px 25px;
+      background: #FAFAF9;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 15px;
+      color: var(--black);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .footer-nav a {
+      color: #666666;
+      font-size: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #333333;
+    }
+
+    .copyright {
+      margin: 0;
+      color: #999999;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        height: 65px;
+      }
+
+      .header-inner {
+        width: calc(100% - 36px);
+      }
+
+      .brand {
+        font-size: 23px;
+      }
+
+      .page-hero {
+        padding: 55px 20px 48px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .main-content {
+        width: calc(100% - 40px);
+        padding: 42px 0 65px;
+      }
+
+      .brand-message {
+        margin-bottom: 48px;
+        padding: 23px 20px;
+      }
+
+      .content-section {
+        margin-bottom: 43px;
+      }
+
+      .section-heading {
+        gap: 11px;
+        font-size: 19px;
+      }
+
+      .content-section p {
+        font-size: 13px;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .service-list li {
+        min-height: 56px;
+      }
+
+      .operator-table {
+        font-size: 12px;
+      }
+
+      .operator-table th,
+      .operator-table td {
+        padding: 14px 11px;
+      }
+
+      .operator-table th {
+        width: 31%;
+      }
+
+      .footer-nav {
+        gap: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="header-inner">
-    <a href="/" class="logo">
-      MyPinto
-    </a>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">MyPinto</a>
+      <span class="header-label">ABOUT US</span>
+    </div>
+  </header>
 
-<section class="hero">
-  <small>ABOUT US</small>
-  <h1>運営者情報</h1>
-  <p>MyPintoについて</p>
-</section>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div class="eyebrow">ABOUT / MyPinto</div>
+        <h1>運営者情報</h1>
+        <p class="hero-description">
+          MyPintoの理念やサービス、情報提供に関する方針をご紹介します。
+        </p>
+      </div>
+    </section>
 
-<main>
+    <div class="main-content">
 
-  <div class="brand-message">
-    一人ひとりに、最適な答えと新しい可能性を。
-  </div>
+      <div class="brand-message">
+        <p>一人ひとりに、最適な答えと新しい可能性を。</p>
+        <span>FIND YOUR BEST MATCH</span>
+      </div>
 
-  <section class="content">
-    <h2>MyPintoについて</h2>
+      <section class="content-section">
+        <h2 class="section-heading">
+          <span class="section-number">01</span>
+          MyPintoについて
+        </h2>
 
-    <p>
-      MyPintoは、日常生活から仕事、学び、
-      テクノロジー、人生のさまざまな場面における
-      選択をサポートする総合ナビゲーションサイトです。
-    </p>
+        <p>
+          MyPintoは、日常生活や仕事、学び、テクノロジーなど、さまざまな分野における選択をサポートする情報・診断サイトです。
+        </p>
 
-    <p>
-      現代は、インターネットやAIの普及によって、
-      誰でも多くの情報や選択肢にアクセスできる時代です。
-      一方で、情報が多すぎることで、
-      自分に合ったものを見つけることが
-      難しくなっている場面もあります。
-    </p>
+        <p>
+          世の中には多くのサービスや選択肢があり、情報が増えるほど「自分には何が合っているのか」「どれを選べばよいのか」が分かりにくくなることがあります。
+        </p>
 
-    <p>
-      私たちは、そうした情報や選択肢を整理し、
-      比較・診断・検討を通じて、
-      一人ひとりが納得できる選択をするための
-      情報と機会を提供することを目指しています。
-    </p>
-  </section>
+        <p>
+          MyPintoでは、情報や選択肢を整理し、それぞれの特徴や違いを分かりやすく伝えることで、自分に合った答えを見つけるためのきっかけを提供します。
+        </p>
+      </section>
 
-  <section class="content">
-    <h2>運営理念</h2>
+      <section class="content-section">
+        <h2 class="section-heading">
+          <span class="section-number">02</span>
+          運営理念
+        </h2>
 
-    <p>
-      私たちが大切にしているのは、
-      単に多くの情報を紹介することではありません。
-    </p>
+        <p>
+          私たちが大切にしているのは、単に情報を並べることではありません。
+        </p>
 
-    <p>
-      利用する方の目的や状況に目を向け、
-      選択肢の違いや特徴をわかりやすく整理し、
-      自分に合った答えを見つけるための
-      判断材料を提供することです。
-    </p>
+        <p>
+          一人ひとりの目的や状況に目を向け、選択肢ごとの特徴や違いを整理し、自分に合うものを考えるための判断材料を届けることです。
+        </p>
 
-    <p>
-      そして、一つの選択が新しい可能性につながるよう、
-      幅広い分野のナビゲーションサービスを
-      展開していきます。
-    </p>
-  </section>
+        <p>
+          診断や比較、分かりやすい情報提供を通じて、迷いや不安を整理し、納得できる選択と新しい可能性につながるサービスを目指しています。
+        </p>
+      </section>
 
-  <section class="content">
-    <h2>主なサービス</h2>
+      <section class="content-section">
+        <h2 class="section-heading">
+          <span class="section-number">03</span>
+          主なサービス
+        </h2>
 
-    <p>
-      MyPintoでは、さまざまな分野に特化した
-      診断・比較・情報提供サービスを運営しています。
-    </p>
+        <p>
+          MyPintoでは、さまざまな分野の情報を整理し、目的や関心に応じた診断・比較コンテンツを企画・運営しています。
+        </p>
 
-    <p>
-      ・AIツール診断<br>
-      ・半導体業界・進路診断<br>
-      ・暮らし・ライフスタイル<br>
-      ・仕事・キャリア<br>
-      ・学び・資格・スキル<br>
-      ・その他、生活や人生に関する各種ナビゲーション
-    </p>
+        <ul class="service-list">
+          <li>AIツール・サービスの診断</li>
+          <li>半導体業界・進路に関する情報</li>
+          <li>暮らし・ライフスタイル</li>
+          <li>仕事・キャリア</li>
+          <li>学び・資格・スキル</li>
+          <li>その他の診断・比較ナビゲーション</li>
+        </ul>
+      </section>
 
-    <p>
-      各サービスは、利用者が目的に応じた
-      選択肢を検討できるように設計しています。
-    </p>
-  </section>
+      <section class="content-section">
+        <h2 class="section-heading">
+          <span class="section-number">04</span>
+          情報提供・運営方針
+        </h2>
 
-  <section class="content">
-    <h2>情報提供・運営方針</h2>
+        <p>
+          MyPintoでは、情報の正確性や分かりやすさを大切にし、可能な限り公式サイトや信頼できる情報源を参考にコンテンツを作成します。
+        </p>
 
-    <p>
-      掲載する情報は、可能な限り公式情報や
-      信頼できる情報源を確認し、
-      わかりやすく提供することを心がけています。
-    </p>
+        <p>
+          サービスの内容や料金、提供条件などは変更される場合があります。ご利用やお申し込みの際は、必ず各サービスの公式サイトで最新情報をご確認ください。
+        </p>
 
-    <p>
-      サービス内容や料金、提供条件などは
-      変更される場合があります。
-      ご利用の際は、各サービスの公式サイトでも
-      最新情報をご確認ください。
-    </p>
+        <div class="policy-note">
+          当サイトの診断結果や比較情報は、選択を検討するための参考情報です。特定の結果や効果を保証するものではありません。
+        </div>
+      </section>
 
-    <p>
-      また、診断結果や比較情報は、
-      選択を検討するための参考情報です。
-      特定の結果や将来の成果を保証するものではありません。
-    </p>
-  </section>
+      <section class="content-section">
+        <h2 class="section-heading">
+          <span class="section-number">05</span>
+          広告・アフィリエイトについて
+        </h2>
 
-  <section class="content">
-    <h2>広告・アフィリエイトについて</h2>
+        <p>
+          MyPintoでは、サービスや商品を紹介する際に、アフィリエイトプログラムなどの広告を利用する場合があります。
+        </p>
 
-    <p>
-      当サイトでは、サービスや商品を紹介する際に、
-      アフィリエイトプログラム等を利用する場合があります。
-    </p>
+        <p>
+          紹介リンクを通じてサービスの申し込みや商品購入が行われた場合、当サイトが報酬を受け取ることがあります。
+        </p>
 
-    <p>
-      紹介リンクを通じて商品やサービスが購入・契約された場合、
-      当サイトが広告主から紹介報酬を受け取ることがあります。
-    </p>
+        <p>
+          広告を掲載する場合は、広告・PRであることが分かるよう適切な表示に努めます。
+        </p>
+      </section>
 
-    <p>
-      広告・PRを含むコンテンツについては、
-      利用者にわかるよう適切な表示に努めます。
-    </p>
-  </section>
+      <section class="content-section">
+        <h2 class="section-heading">
+          <span class="section-number">06</span>
+          運営者情報
+        </h2>
 
-  <section class="content">
-    <h2>運営者情報</h2>
+        <table class="operator-table">
+          <tbody>
+            <tr>
+              <th>サイト名</th>
+              <td>MyPinto</td>
+            </tr>
+            <tr>
+              <th>運営者</th>
+              <td>MyPinto運営者</td>
+            </tr>
+            <tr>
+              <th>サイトURL</th>
+              <td>
+                <a href="https://my-pinto.github.io/">
+                  https://my-pinto.github.io/
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th>事業内容</th>
+              <td>診断・比較・情報提供サービスの企画・運営</td>
+            </tr>
+            <tr>
+              <th>お問い合わせ</th>
+              <td><a href="contact.html">お問い合わせページ</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-    <table class="info-table">
-      <tr>
-        <th>サイト名</th>
-        <td>MyPinto</td>
-      </tr>
-      <tr>
-        <th>運営者</th>
-        <td>MyPinto運営者</td>
-      </tr>
-      <tr>
-        <th>サイトURL</th>
-        <td>
-          https://my-pinto.github.io/
-        </td>
-      </tr>
-      <tr>
-        <th>事業内容</th>
-        <td>
-          診断・比較・情報提供サービスの企画・運営
-        </td>
-      </tr>
-      <tr>
-        <th>お問い合わせ</th>
-        <td>
-          <a href="contact.html">お問い合わせページ</a>
-        </td>
-      </tr>
-    </table>
-  </section>
+      <div class="back-link-wrap">
+        <a class="back-link" href="/">トップページへ戻る</a>
+      </div>
 
-  <div class="back">
-    <a href="/">トップページへ戻る</a>
-  </div>
+    </div>
+  </main>
 
-</main>
+  <footer class="site-footer">
+    <div class="footer-brand">MyPinto</div>
 
-<footer>
-  <div class="logo" style="color:white">
-    MyPinto
-  </div>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="/">トップページ</a>
+      <a href="about.html">運営者情報</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
 
-  <div class="footer-links">
-    <a href="/">トップページ</a>
-    <a href="about.html">運営者情報</a>
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="contact.html">お問い合わせ</a>
-  </div>
-
-  <small>
-    © 2026 MyPinto All Rights Reserved.
-  </small>
-</footer>
+    <p class="copyright">© 2026 MyPinto All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
