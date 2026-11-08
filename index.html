@@ -309,25 +309,25 @@
       line-height: 1.5;
       color: #000000;
     }
+    
+.section-label::before,
+.section-label::after {
+  content: "";
+  display: block;
+  flex: 0 1 48px;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #B7F7D9,
+    #5AFF19
+  );
+}
 
-    .section-label::before,
-    .section-label::after {
-      content: "";
-      display: block;
-      flex: 0 1 48px;
-      width: 48px;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        rgba(0,250,154,0.2),
-        #00FA9A,
-        #5AFF19
-      );
-    }
-
-    .section-label::after {
-      transform: rotate(180deg);
-    }
+.section-label::after {
+  transform: rotate(180deg);
+}
 
     .section-heading .focus-dots {
       margin: 19px auto 25px;
