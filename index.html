@@ -438,30 +438,57 @@
       pointer-events: none;
     }
 
-    .category-card.active {
-      cursor: pointer;
-    }
+/* ACTIVE CATEGORY CARD */
 
-    .category-card.active:hover {
-      transform: translateY(-7px) scale(1.015);
-      border-color: var(--card-color);
-      box-shadow:
-        0 15px 32px rgba(0,0,0,0.09),
-        0 0 18px color-mix(in srgb, var(--card-color) 23%, transparent);
-    }
+.category-card.active {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    .category-card.active:hover::after {
-      opacity: 0.09;
-    }
+/* PC HOVER */
 
-    .category-card.active:hover::before {
-      background-position: 100% 0;
-    }
+@media (hover: hover) and (pointer: fine) {
+  .category-card.active:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: var(--card-color);
 
-    .category-card.active:focus-visible {
-      outline: 3px solid var(--blue);
-      outline-offset: 3px;
-    }
+    box-shadow:
+      0 12px 26px rgba(0,0,0,0.07),
+      0 0 14px color-mix(
+        in srgb,
+        var(--card-color) 18%,
+        transparent
+      );
+  }
+
+  .category-card.active:hover::after {
+    opacity: 0.07;
+  }
+
+  .category-card.active:hover::before {
+    background-position: 100% 0;
+  }
+}
+
+/* SMARTPHONE TAP */
+
+@media (hover: none) and (pointer: coarse) {
+  .category-card.active:active {
+    transform: scale(0.985);
+    border-color: var(--card-color);
+  }
+
+  .category-card.active:active::after {
+    opacity: 0.07;
+  }
+}
+
+/* KEYBOARD FOCUS */
+
+.category-card.active:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
 
     .card-number {
       font-size: 9px;
