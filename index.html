@@ -522,79 +522,90 @@ h2 {
   outline-offset: 3px;
 }
 
-    .card-number {
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      color: #777;
-    }
+/* CARD NUMBER */
 
-    .card-focus {
-      justify-content: flex-start;
-      margin: 12px 0 10px;
-      gap: 0;
-    }
+.card-number {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  color: #888888;
+}
 
-    .card-focus span {
-      flex: 0 0 21px;
-      width: 21px;
-      min-width: 21px;
-      height: 21px;
-      min-height: 21px;
-      box-shadow: 0 0 9px var(--dot-color);
-    }
+/* CARD FOCUS DOTS */
 
-    .category-card h3 {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.5;
-      font-weight: 800;
-    }
+.card-focus {
+  justify-content: flex-start;
+  margin: 12px 0 11px;
+  gap: 0;
+}
 
-    .category-card p {
-      color: #626262;
-      font-size: 11px;
-      line-height: 1.75;
-      margin: 6px 0 10px;
-    }
+.card-focus span {
+  flex: 0 0 21px;
+  width: 21px;
+  min-width: 21px;
+  height: 21px;
+  min-height: 21px;
+  box-shadow: 0 0 8px var(--dot-color);
+}
 
-    /* 診断メリット */
+/* CARD TITLE */
 
-    .card-benefit {
-      display: inline-flex;
-      align-items: center;
-      align-self: flex-start;
-      gap: 5px;
-      margin: 1px 0 9px;
-      padding: 4px 9px;
-      border-radius: 30px;
-      background: color-mix(in srgb, var(--card-color) 12%, white);
-      color: #222;
-      font-size: 9px;
-      font-weight: 800;
-      line-height: 1.5;
-    }
+.category-card h3 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #111111;
+}
 
-    .card-benefit::before {
-      content: "✓";
-      font-size: 10px;
-      color: #333;
-    }
+/* CARD DESCRIPTION */
 
-    /* カードアクション */
+.category-card p {
+  color: #626262;
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 6px 0 10px;
+}
 
-    .card-action {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      min-width: 0;
-      margin-top: auto;
-      padding-top: 11px;
-      border-top: 1px solid #EEEEEE;
-      font-size: 11px;
-      font-weight: 800;
-    }
+/* DIAGNOSIS BENEFIT */
+
+.card-benefit {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 5px;
+  margin: 1px 0 9px;
+  padding: 4px 9px;
+  border-radius: 30px;
+  background: color-mix(in srgb, var(--card-color) 12%, white);
+  color: #222222;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.card-benefit::before {
+  content: "✓";
+  font-size: 10px;
+  color: #333333;
+}
+
+/* CARD ACTION */
+
+.card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #EEEEEE;
+  font-size: 11px;
+  font-weight: 800;
+  color: #222222;
+}
 
     /* AI・進路カードの矢印だけに適用 */
 
