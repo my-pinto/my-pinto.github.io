@@ -1,339 +1,543 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>プライバシーポリシー｜最適プラス</title>
-<meta name="description" content="最適プラスにおける個人情報の取り扱い、Cookie、アクセス解析、広告配信などに関する方針をご案内します。">
-<link rel="canonical" href="https://saiteki-plus.github.io/privacy.html">
+  <title>プライバシーポリシー｜MyPinto</title>
+  <meta name="description" content="MyPintoにおける個人情報の取り扱い、Cookie、アクセス解析、広告配信などに関する方針をご案内します。">
+  <link rel="canonical" href="https://my-pinto.github.io/privacy.html">
+  <meta name="theme-color" content="#FFFFFF">
 
-<style>
-* { box-sizing: border-box; }
+  <style>
+    :root {
+      --green: #5AFF19;
+      --green-soft: #F5FFF0;
+      --green-pale: #F8FAF7;
+      --black: #171717;
+      --text: #333333;
+      --muted: #777777;
+      --line: #E8EAE6;
+      --white: #FFFFFF;
+    }
 
-body {
-  margin: 0;
-  font-family: "Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
-  color: #26384c;
-  background: #f7faff;
-  line-height: 1.9;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-header {
-  background: white;
-  border-bottom: 1px solid #e8eef5;
-}
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text);
+      font-family:
+        "LINE Seed JP",
+        "Noto Sans JP",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
+    }
 
-.header-inner {
-  max-width: 1000px;
-  margin: auto;
-  padding: 18px 22px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: 800;
-  color: #183b61;
-}
+    .site-header {
+      width: 100%;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
 
-.logo span { color: #ed9b43; }
+    .header-inner {
+      width: min(1080px, calc(100% - 48px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.hero {
-  padding: 65px 20px;
-  text-align: center;
-  background: linear-gradient(120deg,#eaf4ff,#fff8ed);
-}
+    .brand {
+      color: var(--black);
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+    }
 
-.hero small {
-  color: #d58b39;
-  font-weight: 800;
-  letter-spacing: .2em;
-}
+    .header-label {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
 
-.hero h1 {
-  color: #183b61;
-  font-size: 32px;
-  margin: 10px 0;
-}
+    .page-hero {
+      padding: 76px 24px 68px;
+      background: var(--green-pale);
+      border-bottom: 1px solid var(--line);
+    }
 
-.hero p {
-  color: #718096;
-  font-size: 14px;
-}
+    .page-hero-inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
 
-main {
-  max-width: 850px;
-  margin: 55px auto;
-  padding: 0 22px;
-}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 17px;
+      color: #626B5D;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
 
-.content {
-  background: white;
-  padding: 30px 35px;
-  margin-bottom: 20px;
-  border-radius: 16px;
-  border: 1px solid #e8eef5;
-  box-shadow: 0 5px 20px rgba(40,70,100,.04);
-}
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--green);
+    }
 
-h2 {
-  color: #183b61;
-  font-size: 20px;
-  border-left: 4px solid #ed9b43;
-  padding-left: 13px;
-  margin-top: 0;
-}
+    h1 {
+      margin: 0;
+      color: var(--black);
+      font-size: clamp(30px, 5vw, 43px);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.45;
+    }
 
-p, li {
-  font-size: 14px;
-}
+    .hero-description {
+      margin: 17px 0 0;
+      color: #666666;
+      font-size: 14px;
+      line-height: 1.9;
+    }
 
-ul {
-  padding-left: 22px;
-}
+    main {
+      width: min(880px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 58px 0 90px;
+    }
 
-.back {
-  text-align: center;
-  margin: 45px 0;
-}
+    .policy-intro {
+      margin-bottom: 42px;
+      padding: 25px 28px;
+      background: var(--green-soft);
+      border-left: 3px solid var(--green);
+      color: #444444;
+      font-size: 14px;
+      line-height: 2;
+    }
 
-.back a {
-  display: inline-block;
-  background: #2867a8;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 700;
-}
+    .content-section {
+      margin-bottom: 38px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
 
-footer {
-  background: #183b61;
-  color: white;
-  text-align: center;
-  padding: 35px 15px;
-}
+    .content-section:last-of-type {
+      border-bottom: none;
+    }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 22px;
-  font-size: 12px;
-  margin: 15px 0;
-  color: #d5e2ef;
-}
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 13px;
+      margin: 0 0 17px;
+      color: var(--black);
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
 
-footer small {
-  font-size: 11px;
-  color: #b5c7d9;
-}
+    .section-number {
+      flex-shrink: 0;
+      color: #83B86C;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
 
-@media(max-width:600px) {
-  .hero h1 { font-size: 26px; }
-  .content { padding: 25px 20px; }
-}
-</style>
+    .content-section p,
+    .content-section li {
+      color: var(--text);
+      font-size: 14px;
+      line-height: 2.05;
+    }
+
+    .content-section p {
+      margin: 0 0 15px;
+    }
+
+    .content-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .content-section ul {
+      margin: 12px 0 0;
+      padding-left: 24px;
+    }
+
+    .content-section li {
+      padding-left: 3px;
+      margin-bottom: 5px;
+    }
+
+    .content-section a {
+      color: #3D6B32;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: #A8D695;
+      text-underline-offset: 4px;
+    }
+
+    .content-section a:hover {
+      text-decoration-color: #3D6B32;
+    }
+
+    .back-link-wrap {
+      margin-top: 52px;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 210px;
+      padding: 13px 24px;
+      border: 1px solid #DADDD7;
+      border-radius: 3px;
+      color: #333333;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: var(--green-soft);
+      border-color: #B8DDA8;
+    }
+
+    .back-link::before {
+      content: "←";
+      margin-right: 10px;
+      font-size: 15px;
+    }
+
+    .site-footer {
+      padding: 35px 24px 25px;
+      background: #FAFAF9;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 15px;
+      color: var(--black);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .footer-nav a {
+      color: #666666;
+      font-size: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #333333;
+    }
+
+    .copyright {
+      margin: 0;
+      color: #999999;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        height: 65px;
+      }
+
+      .header-inner {
+        width: calc(100% - 36px);
+      }
+
+      .brand {
+        font-size: 23px;
+      }
+
+      .page-hero {
+        padding: 55px 20px 48px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      main {
+        width: calc(100% - 40px);
+        padding: 42px 0 65px;
+      }
+
+      .policy-intro {
+        padding: 21px 19px;
+        font-size: 13px;
+      }
+
+      .content-section {
+        margin-bottom: 31px;
+        padding-bottom: 27px;
+      }
+
+      .section-heading {
+        gap: 10px;
+        font-size: 17px;
+      }
+
+      .content-section p,
+      .content-section li {
+        font-size: 13px;
+      }
+
+      .footer-nav {
+        gap: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="header-inner">
-    <a href="/" class="logo">最適<span>プラス</span></a>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">MyPinto</a>
+      <span class="header-label">PRIVACY POLICY</span>
+    </div>
+  </header>
 
-<section class="hero">
-  <small>PRIVACY POLICY</small>
-  <h1>プライバシーポリシー</h1>
-  <p>個人情報の取り扱いについて</p>
-</section>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div class="eyebrow">PRIVACY / MyPinto</div>
+        <h1>プライバシーポリシー</h1>
+        <p class="hero-description">
+          個人情報の取り扱いについて
+        </p>
+      </div>
+    </section>
 
-<main>
+    <div class="policy-intro">
+      MyPintoは、利用者の個人情報を大切に取り扱い、安心して当サイトをご利用いただけるよう、個人情報の保護と適切な情報管理に努めます。
+    </div>
 
-<section class="content">
-<h2>1. 基本方針</h2>
-<p>
-最適プラス（以下「当サイト」）は、利用者の個人情報の重要性を認識し、
-個人情報の保護に関する法令その他の関連規範を遵守するとともに、
-個人情報の適切な取り扱いに努めます。
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">01</span>
+        基本方針
+      </h2>
+      <p>
+        MyPinto（以下「当サイト」）は、利用者の個人情報の重要性を認識し、個人情報の保護に関する法令その他の関連規範を遵守するとともに、個人情報の適切な取り扱いに努めます。
+      </p>
+    </section>
 
-<section class="content">
-<h2>2. 個人情報の取得について</h2>
-<p>
-当サイトでは、お問い合わせなどの際に、
-氏名、メールアドレス、お問い合わせ内容などの情報を
-利用者ご本人の意思によりご提供いただく場合があります。
-</p>
-<p>
-取得した情報は、利用目的の範囲内で適切に取り扱います。
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">02</span>
+        個人情報の取得について
+      </h2>
+      <p>
+        当サイトでは、お問い合わせなどの際に、氏名、メールアドレス、お問い合わせ内容などの情報を、利用者ご本人の意思によりご提供いただく場合があります。
+      </p>
+      <p>
+        取得した情報は、利用目的の範囲内で適切に取り扱います。
+      </p>
+    </section>
 
-<section class="content">
-<h2>3. 個人情報の利用目的</h2>
-<p>取得した情報は、以下の目的で利用します。</p>
-<ul>
-<li>お問い合わせへの回答および必要な連絡</li>
-<li>サービスの提供・運営・改善</li>
-<li>利用状況の分析および品質向上</li>
-<li>重要なお知らせや必要な情報の案内</li>
-<li>不正利用や不適切な利用への対応</li>
-</ul>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">03</span>
+        個人情報の利用目的
+      </h2>
+      <p>取得した情報は、以下の目的で利用します。</p>
+      <ul>
+        <li>お問い合わせへの回答および必要な連絡</li>
+        <li>サービスの提供・運営・改善</li>
+        <li>利用状況の分析および品質向上</li>
+        <li>重要なお知らせや必要な情報の案内</li>
+        <li>不正利用や不適切な利用への対応</li>
+      </ul>
+    </section>
 
-<section class="content">
-<h2>4. 個人情報の第三者提供</h2>
-<p>
-当サイトは、次の場合を除き、取得した個人情報を
-本人の同意なく第三者に提供しません。
-</p>
-<ul>
-<li>法令に基づく場合</li>
-<li>人の生命、身体または財産の保護に必要な場合</li>
-<li>公的機関等への協力が必要な場合</li>
-<li>その他、法令で認められる場合</li>
-</ul>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">04</span>
+        個人情報の第三者提供
+      </h2>
+      <p>
+        当サイトは、次の場合を除き、取得した個人情報を本人の同意なく第三者に提供しません。
+      </p>
+      <ul>
+        <li>法令に基づく場合</li>
+        <li>人の生命、身体または財産の保護に必要な場合</li>
+        <li>公的機関等への協力が必要な場合</li>
+        <li>その他、法令で認められる場合</li>
+      </ul>
+    </section>
 
-<section class="content">
-<h2>5. Cookie（クッキー）について</h2>
-<p>
-当サイトでは、利便性の向上や利用状況の把握、
-広告配信などの目的でCookieを使用する場合があります。
-</p>
-<p>
-Cookieによって取得される情報には、
-通常、氏名や住所、メールアドレスなど、
-個人を直接特定する情報は含まれません。
-</p>
-<p>
-利用者はブラウザの設定によりCookieを無効にできます。
-ただし、一部の機能が正常に利用できなくなる場合があります。
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">05</span>
+        Cookie（クッキー）について
+      </h2>
+      <p>
+        当サイトでは、利便性の向上や利用状況の把握、広告配信などの目的でCookieを使用する場合があります。
+      </p>
+      <p>
+        Cookieによって取得される情報には、通常、氏名や住所、メールアドレスなど、個人を直接特定する情報は含まれません。
+      </p>
+      <p>
+        利用者はブラウザの設定によりCookieを無効にできます。ただし、一部の機能が正常に利用できなくなる場合があります。
+      </p>
+    </section>
 
-<section class="content">
-<h2>6. アクセス解析について</h2>
-<p>
-当サイトでは、サイトの利用状況を把握し、
-コンテンツやサービスの改善に役立てるため、
-アクセス解析ツールを利用する場合があります。
-</p>
-<p>
-アクセス解析ツールでは、Cookieなどを利用して
-利用状況に関する情報が収集される場合があります。
-これらの情報は、各サービス提供事業者の
-プライバシーポリシーに基づいて管理されます。
-</p>
-<p>
-具体的な利用ツールについては、
-実際に導入しているサービスに応じて適切に表示します。
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">06</span>
+        アクセス解析について
+      </h2>
+      <p>
+        当サイトでは、サイトの利用状況を把握し、コンテンツやサービスの改善に役立てるため、アクセス解析ツールを利用する場合があります。
+      </p>
+      <p>
+        アクセス解析ツールでは、Cookieなどを利用して利用状況に関する情報が収集される場合があります。これらの情報は、各サービス提供事業者のプライバシーポリシーに基づいて管理されます。
+      </p>
+      <p>
+        具体的な利用ツールについては、実際に導入しているサービスに応じて適切に表示します。
+      </p>
+    </section>
 
-<section class="content">
-<h2>7. 広告・アフィリエイトについて</h2>
-<p>
-当サイトでは、第三者が提供する広告サービスや
-アフィリエイトプログラムを利用する場合があります。
-</p>
-<p>
-利用者が広告リンクを経由して商品・サービスを購入または契約した場合、
-当サイトが紹介報酬を受け取ることがあります。
-</p>
-<p>
-広告配信事業者は、利用者の興味・関心に応じた広告を
-表示するため、Cookieなどを利用する場合があります。
-</p>
-<p>
-広告の内容、商品・サービスの詳細、契約条件などについては、
-各提供事業者の公式サイトをご確認ください。
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">07</span>
+        広告・アフィリエイトについて
+      </h2>
+      <p>
+        当サイトでは、第三者が提供する広告サービスやアフィリエイトプログラムを利用する場合があります。
+      </p>
+      <p>
+        利用者が広告リンクを経由して商品・サービスを購入または契約した場合、当サイトが紹介報酬を受け取ることがあります。
+      </p>
+      <p>
+        広告配信事業者は、利用者の興味・関心に応じた広告を表示するため、Cookieなどを利用する場合があります。
+      </p>
+      <p>
+        広告の内容、商品・サービスの詳細、契約条件などについては、各提供事業者の公式サイトをご確認ください。
+      </p>
+    </section>
 
-<section class="content">
-<h2>8. 外部サイトへのリンク</h2>
-<p>
-当サイトには、外部のウェブサイトやサービスへの
-リンクが含まれる場合があります。
-</p>
-<p>
-リンク先のサイトにおける個人情報の取り扱いについては、
-各サイトのプライバシーポリシーをご確認ください。
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">08</span>
+        外部サイトへのリンク
+      </h2>
+      <p>
+        当サイトには、外部のウェブサイトやサービスへのリンクが含まれる場合があります。
+      </p>
+      <p>
+        リンク先のサイトにおける個人情報の取り扱いについては、各サイトのプライバシーポリシーをご確認ください。
+      </p>
+    </section>
 
-<section class="content">
-<h2>9. 個人情報の安全管理</h2>
-<p>
-当サイトは、取得した個人情報について、
-漏えい、紛失、改ざん、不正アクセスなどを防止するため、
-適切な安全管理に努めます。
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">09</span>
+        個人情報の安全管理
+      </h2>
+      <p>
+        当サイトは、取得した個人情報について、漏えい、紛失、改ざん、不正アクセスなどを防止するため、適切な安全管理に努めます。
+      </p>
+    </section>
 
-<section class="content">
-<h2>10. 個人情報の開示・訂正・削除等</h2>
-<p>
-利用者ご本人から、当サイトが保有する個人情報について
-開示、訂正、追加、削除、利用停止等のご希望があった場合は、
-ご本人であることを確認したうえで、
-法令に従い適切に対応します。
-</p>
-<p>
-ご希望の際は、お問い合わせページからご連絡ください。
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">10</span>
+        個人情報の開示・訂正・削除等
+      </h2>
+      <p>
+        利用者ご本人から、当サイトが保有する個人情報について開示、訂正、追加、削除、利用停止等のご希望があった場合は、ご本人であることを確認したうえで、法令に従い適切に対応します。
+      </p>
+      <p>
+        ご希望の際は、お問い合わせページからご連絡ください。
+      </p>
+    </section>
 
-<section class="content">
-<h2>11. プライバシーポリシーの変更</h2>
-<p>
-当サイトは、法令の改正やサービス内容の変更などに応じて、
-本ポリシーを変更する場合があります。
-変更後の内容は当サイトに掲載した時点から適用します。
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">11</span>
+        プライバシーポリシーの変更
+      </h2>
+      <p>
+        当サイトは、法令の改正やサービス内容の変更などに応じて、本ポリシーを変更する場合があります。変更後の内容は当サイトに掲載した時点から適用します。
+      </p>
+    </section>
 
-<section class="content">
-<h2>12. お問い合わせ窓口</h2>
-<p>
-本ポリシーに関するお問い合わせは、
-以下のページよりご連絡ください。
-</p>
-<p>
-<a href="contact.html" style="color:#2867a8;font-weight:bold;">
-お問い合わせページはこちら
-</a>
-</p>
-</section>
+    <section class="content-section">
+      <h2 class="section-heading">
+        <span class="section-number">12</span>
+        お問い合わせ窓口
+      </h2>
+      <p>
+        本ポリシーに関するお問い合わせは、以下のページよりご連絡ください。
+      </p>
+      <p>
+        <a href="contact.html">お問い合わせページはこちら</a>
+      </p>
+    </section>
 
-<div class="back">
-<a href="/">トップページへ戻る</a>
-</div>
+    <div class="back-link-wrap">
+      <a class="back-link" href="/">
+        トップページへ戻る
+      </a>
+    </div>
 
-</main>
+  </main>
 
-<footer>
-  <div class="logo" style="color:white">最適<span>プラス</span></div>
+  <footer class="site-footer">
+    <div class="footer-brand">MyPinto</div>
 
-  <div class="footer-links">
-    <a href="/">トップページ</a>
-    <a href="about.html">運営者情報</a>
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="contact.html">お問い合わせ</a>
-  </div>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="/">トップページ</a>
+      <a href="about.html">運営者情報</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
 
-  <small>© 2026 最適プラス All Rights Reserved.</small>
-</footer>
+    <p class="copyright">
+      © 2026 MyPinto All Rights Reserved.
+    </p>
+  </footer>
 
 </body>
 </html>
