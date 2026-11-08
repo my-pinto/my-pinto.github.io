@@ -3,198 +3,416 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="最適プラスへのお問い合わせページです。ご質問、ご意見、ご要望、掲載情報の修正依頼、広告・提携に関するお問い合わせを受け付けています。">
-  <meta name="theme-color" content="#ffffff">
-  <title>お問い合わせ｜最適プラス</title>
+
+  <title>お問い合わせ｜MyPinto</title>
+  <meta name="description" content="MyPintoへのお問い合わせページです。ご質問、ご意見、ご要望、掲載情報の修正依頼、広告・提携に関するお問い合わせを受け付けています。">
+  <link rel="canonical" href="https://my-pinto.github.io/contact.html">
+  <meta name="theme-color" content="#FFFFFF">
+
   <style>
+    :root {
+      --green: #5AFF19;
+      --green-soft: #F5FFF0;
+      --green-pale: #F8FAF7;
+      --black: #171717;
+      --text: #333333;
+      --muted: #777777;
+      --line: #E8EAE6;
+      --white: #FFFFFF;
+    }
+
     * {
       box-sizing: border-box;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont,
-        "Noto Sans JP", "Hiragino Kaku Gothic ProN",
-        "Yu Gothic", sans-serif;
-      color: #243247;
-      background: #f5f8fc;
-      line-height: 1.8;
+      background: var(--white);
+      color: var(--text);
+      font-family:
+        "LINE Seed JP",
+        "Noto Sans JP",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
     }
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e7edf5;
-    }
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      padding: 18px 24px;
-    }
-    .logo {
-      color: #173b65;
-      font-size: 23px;
-      font-weight: 800;
+
+    a {
+      color: inherit;
       text-decoration: none;
+    }
+
+    .site-header {
+      width: 100%;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .header-inner {
+      width: min(1080px, calc(100% - 48px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      color: var(--black);
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+    }
+
+    .header-label {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .page-hero {
+      padding: 76px 24px 68px;
+      background: var(--green-pale);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-hero-inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 17px;
+      color: #626B5D;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--green);
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--black);
+      font-size: clamp(30px, 5vw, 43px);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.45;
+    }
+
+    .hero-description {
+      margin: 17px 0 0;
+      color: #666666;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    main {
+      width: min(760px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 58px 0 90px;
+    }
+
+    .content-card {
+      padding: 38px 40px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+    }
+
+    .content-card h2 {
+      margin: 0 0 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--black);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .description p {
+      margin: 0 0 17px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 2.05;
+    }
+
+    .description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .notice {
+      margin: 28px 0;
+      padding: 20px 22px;
+      background: var(--green-pale);
+      border-left: 3px solid var(--green);
+    }
+
+    .notice p {
+      margin: 0 0 7px;
+      color: #626B5D;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 360px;
+      min-height: 56px;
+      margin: 32px auto 12px;
+      padding: 15px 24px;
+      background: var(--black);
+      border: 1px solid var(--black);
+      border-radius: 3px;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .form-button:hover {
+      background: #3A3A3A;
+      border-color: #3A3A3A;
+    }
+
+    .form-button span {
+      margin-left: 9px;
+      color: var(--green);
+      font-size: 17px;
+    }
+
+    .form-caption {
+      margin: 0;
+      color: #888888;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .back-link-wrap {
+      margin-top: 42px;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 210px;
+      padding: 13px 24px;
+      border: 1px solid #DADDD7;
+      border-radius: 3px;
+      color: #333333;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: var(--green-soft);
+      border-color: #B8DDA8;
+    }
+
+    .back-link::before {
+      content: "←";
+      margin-right: 10px;
+      font-size: 15px;
+    }
+
+    .site-footer {
+      padding: 35px 24px 25px;
+      background: #FAFAF9;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 15px;
+      color: var(--black);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .footer-nav a {
+      color: #666666;
+      font-size: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #333333;
+    }
+
+    .copyright {
+      margin: 0;
+      color: #999999;
+      font-size: 11px;
       letter-spacing: 0.04em;
     }
-    .logo span {
-      color: #ed8b35;
-    }
-    .hero {
-      padding: 65px 20px 45px;
-      text-align: center;
-      background: linear-gradient(135deg, #edf5ff, #fff8ef);
-    }
-    .hero h1 {
-      margin: 0 0 12px;
-      color: #173b65;
-      font-size: 32px;
-    }
-    .hero p {
-      margin: 0;
-      color: #64748b;
-    }
-    main {
-      max-width: 850px;
-      margin: 45px auto 70px;
-      padding: 0 20px;
-    }
-    .content-card {
-      padding: 35px;
-      background: #ffffff;
-      border: 1px solid #e7edf5;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(30, 60, 100, 0.05);
-    }
-    h2 {
-      margin: 0 0 18px;
-      color: #173b65;
-      font-size: 21px;
-    }
-    .description {
-      margin-bottom: 28px;
-    }
-    .notice {
-      margin: 25px 0;
-      padding: 18px 20px;
-      background: #f5f8fc;
-      border-radius: 12px;
-      color: #526276;
-      font-size: 14px;
-    }
-    .form-button {
-      display: block;
-      max-width: 360px;
-      margin: 30px auto 10px;
-      padding: 16px 24px;
-      color: #ffffff;
-      background: #173b65;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 700;
-      transition: opacity 0.2s;
-    }
-    .form-button:hover {
-      opacity: 0.85;
-    }
-    .back {
-  text-align: center;
-  margin: 35px 0 10px;
-}
 
-.back a {
-  display: inline-block;
-  padding: 12px 28px;
-  background: #173b65;
-  color: #ffffff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.2s;
-}
-
-.back a:hover {
-  background: #245b91;
-}
-
-    footer {
-      padding: 28px 20px;
-      background: #173b65;
-      color: #ffffff;
-      text-align: center;
-      font-size: 13px;
-    }
-    footer a {
-      margin: 0 10px;
-      color: #ffffff;
-      text-decoration: none;
-    }
     @media (max-width: 600px) {
-      .hero {
-        padding: 48px 18px 35px;
+      .site-header {
+        height: 65px;
       }
-      .hero h1 {
-        font-size: 27px;
+
+      .header-inner {
+        width: calc(100% - 36px);
       }
+
+      .brand {
+        font-size: 23px;
+      }
+
+      .page-hero {
+        padding: 55px 20px 48px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      main {
+        width: calc(100% - 40px);
+        padding: 42px 0 65px;
+      }
+
       .content-card {
-        padding: 25px 20px;
+        padding: 27px 21px;
+      }
+
+      .content-card h2 {
+        font-size: 19px;
+      }
+
+      .description p {
+        font-size: 13px;
+      }
+
+      .notice {
+        padding: 17px 16px;
+      }
+
+      .footer-nav {
+        gap: 16px;
       }
     }
   </style>
 </head>
+
 <body>
-<header>
-  <div class="header-inner">
-    <a class="logo" href="index.html">
-      最適<span>プラス</span>
-    </a>
-  </div>
-</header>
-<section class="hero">
-  <h1>お問い合わせ</h1>
-  <p>ご質問・ご意見・ご要望はこちらから</p>
-</section>
-<main>
-  <section class="content-card">
-    <h2>最適プラスへのお問い合わせ</h2>
-    <div class="description">
-      最適プラスに関するご質問、ご意見、ご要望などがございましたら、こちらのフォームよりお問い合わせください。
-      <p>
-        当サイトに関するご質問、診断内容についてのご意見、掲載情報の修正依頼、広告・提携に関するお問い合わせなどを受け付けています。
-      </p>
-      <p>
-        以下のフォームに必要事項をご入力のうえ、送信してください。
-      </p>
-      <p>
-        内容を確認のうえ、必要に応じてご入力いただいたメールアドレス宛に返信いたします。
-      </p>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">MyPinto</a>
+      <span class="header-label">CONTACT</span>
     </div>
-    <div class="notice">
-      <p>※お問い合わせ内容によっては、回答までお時間をいただく場合があります。</p>
-      <p>※営業・宣伝目的のご連絡には返信できない場合があります。</p>
-    </div>
-    <a
-      class="form-button"
-      href="https://forms.gle/mMKK3cwoTS8CYS5M8"
-      target="_blank"
-      rel="noopener noreferrer">
-      お問い合わせフォームを開く →
-    </a>
-    <p style="text-align:center; font-size:13px; color:#718096;">
-      Googleフォームが別画面で開きます。
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div class="eyebrow">CONTACT / MyPinto</div>
+        <h1>お問い合わせ</h1>
+        <p class="hero-description">
+          ご質問・ご意見・ご要望はこちらから
+        </p>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2>MyPintoへのお問い合わせ</h2>
+
+      <div class="description">
+        <p>
+          MyPintoに関するご質問、ご意見、ご要望などがございましたら、こちらのフォームよりお問い合わせください。
+        </p>
+
+        <p>
+          当サイトに関するご質問、診断内容についてのご意見、掲載情報の修正依頼、広告・提携に関するお問い合わせなどを受け付けています。
+        </p>
+
+        <p>
+          以下のフォームに必要事項をご入力のうえ、送信してください。
+        </p>
+
+        <p>
+          内容を確認のうえ、必要に応じてご入力いただいたメールアドレス宛に返信いたします。
+        </p>
+      </div>
+
+      <div class="notice">
+        <p>※お問い合わせ内容によっては、回答までお時間をいただく場合があります。</p>
+        <p>※営業・宣伝目的のご連絡には返信できない場合があります。</p>
+      </div>
+
+      <a
+        class="form-button"
+        href="https://forms.gle/mMKK3cwoTS8CYS5M8"
+        target="_blank"
+        rel="noopener noreferrer">
+        お問い合わせフォームを開く
+        <span>→</span>
+      </a>
+
+      <p class="form-caption">
+        Googleフォームが別画面で開きます。
+      </p>
+
+      <div class="back-link-wrap">
+        <a class="back-link" href="/">
+          トップページへ戻る
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">MyPinto</div>
+
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="/">トップページ</a>
+      <a href="about.html">運営者情報</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+
+    <p class="copyright">
+      © 2026 MyPinto All Rights Reserved.
     </p>
-    <div class="back">
-  <a href="/">トップページへ戻る</a>
-</div>
-  </section>
-</main>
-<footer>
-  <p>
-    <a href="index.html">トップページ</a>
-    <a href="about.html">運営者情報</a>
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="contact.html">お問い合わせ</a>
-  </p>
-  <p>© 最適プラス All Rights Reserved.</p>
-</footer>
+  </footer>
+
 </body>
 </html>
