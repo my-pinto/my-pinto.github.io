@@ -787,35 +787,43 @@
         margin-bottom: 25px;
       }
 
-      .section-label {
-        gap: 8px;
-        font-size: clamp(9px, 2.8vw, 11px);
-        letter-spacing: 0.10em;
-      }
+/* SECTION LABEL */
 
-      .section-label::before,
-      .section-label::after {
-        flex-basis: 30px;
-        width: 30px;
-        min-width: 20px;
-      }
+.section-label {
+  gap: 8px;
+  font-size: clamp(9px, 2.8vw, 11px);
+  letter-spacing: 0.10em;
+}
 
-      .section-heading .focus-dots {
-        margin: 17px auto 20px;
-      }
+.section-label::before,
+.section-label::after {
+  flex-basis: 30px;
+  width: 30px;
+  min-width: 20px;
+}
 
-      .section-heading h2 {
-        font-size: clamp(19px, 5.2vw, 23px);
-        letter-spacing: -0.045em;
-        white-space: nowrap;
-      }
+/* SECTION FOCUS DOTS */
 
-      .section-description {
-        font-size: 10.5px;
-        line-height: 1.9;
-        letter-spacing: -0.035em;
-        white-space: nowrap;
-      }
+.section-heading .focus-dots {
+  margin: 15px auto 18px;
+}
+
+/* SECTION HEADING */
+
+.section-heading h2 {
+  font-size: clamp(19px, 5.2vw, 23px);
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+/* SECTION DESCRIPTION */
+
+.section-description {
+  font-size: 11px;
+  line-height: 1.9;
+  letter-spacing: -0.025em;
+  white-space: normal;
+}
 
       .section-prompt {
         font-size: 11px;
