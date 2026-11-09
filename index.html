@@ -702,10 +702,12 @@ h2 {
 
 .brand-message .container {
   max-width: 800px;
+  margin: 0 auto;
 }
 
 .brand-message h2 {
   margin: 0;
+  padding: 0 16px;
   font-size: clamp(24px, 4vw, 34px);
   line-height: 1.6;
   letter-spacing: 0.015em;
@@ -714,6 +716,10 @@ h2 {
 }
 
 .brand-message h2 .gradient-text {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+  text-wrap: balance;
   background: linear-gradient(
     90deg,
     #0000FF,
@@ -728,13 +734,13 @@ h2 {
 
 .brand-message p {
   max-width: 620px;
-  margin: 18px auto 0;
+  margin: 22px auto 0;
   padding: 0 16px;
   color: #444444;
-  font-size: 13px;
-  line-height: 2.1;
+  font-size: 14px;
+  line-height: 2;
   letter-spacing: 0.015em;
-  text-align: center;
+  text-align: left;
 }
 
 /* SMARTPHONE */
@@ -746,18 +752,25 @@ h2 {
   }
 
   .brand-message h2 {
-    font-size: 22px;
+    padding: 0 18px;
+    font-size: 21px;
     line-height: 1.65;
+    letter-spacing: 0.005em;
+  }
+
+  .brand-message h2 .gradient-text {
+    max-width: 350px;
+    text-wrap: balance;
   }
 
   .brand-message p {
-    max-width: 420px;
-    margin: 15px auto 0;
-    padding: 0 22px;
-    font-size: 12px;
-    line-height: 2.1;
-    letter-spacing: 0.01em;
-    text-align: center;
+    max-width: 480px;
+    margin: 21px auto 0;
+    padding: 0 25px;
+    font-size: 13px;
+    line-height: 2;
+    letter-spacing: 0.015em;
+    text-align: left;
   }
 
 }
