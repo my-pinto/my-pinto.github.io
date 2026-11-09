@@ -719,7 +719,6 @@ h2 {
   display: block;
   max-width: 720px;
   margin: 0 auto;
-  text-wrap: balance;
   background: linear-gradient(
     90deg,
     #0000FF,
@@ -730,6 +729,10 @@ h2 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+.brand-message .mobile-break {
+  display: none;
 }
 
 .brand-message p {
@@ -754,18 +757,21 @@ h2 {
   .brand-message h2 {
     padding: 0 18px;
     font-size: 21px;
-    line-height: 1.65;
+    line-height: 1.6;
     letter-spacing: 0.005em;
   }
 
   .brand-message h2 .gradient-text {
     max-width: 350px;
-    text-wrap: balance;
+  }
+
+  .brand-message .mobile-break {
+    display: inline;
   }
 
   .brand-message p {
     max-width: 480px;
-    margin: 21px auto 0;
+    margin: 20px auto 0;
     padding: 0 25px;
     font-size: 13px;
     line-height: 2;
@@ -1407,24 +1413,22 @@ footer {
   <div class="container">
 
     <h2>
-      一人ひとりに、<br>
-      <span class="gradient-text">自分に合う答えと新しい可能性を。</span>
+      一人ひとりに、
+      <span class="gradient-text">
+        自分に合う答えと<br class="mobile-break">新しい可能性を。
+      </span>
     </h2>
 
     <p>
-      MyPinto（マイピント）は、一人ひとりが自分に合った答えや選択肢を見つけ、新しい可能性に出会えることを目指す情報・診断サイトです。
+      MyPinto（マイピント）は、性格や適性の診断、自己分析、仕事やキャリアに関する情報を提供するサイトです。
     </p>
 
     <p>
-      性格や適性の診断、自己分析、さまざまな選択肢の比較・分析を通じて、自分の特徴や強みを整理し、自分に合った最適な答えを見つけるお手伝いをします。
+      性格診断やMBTIに関する情報、適性検査、就職活動に役立つ内容など、さまざまなテーマを取り上げています。
     </p>
 
     <p>
-      就職活動やキャリアについて考えるとき、自分の適性を知りたいとき、性格診断やMBTI、適性検査に関心があるときにも、役立つ情報をわかりやすくお届けします。
-    </p>
-
-    <p>
-      選択肢が多くて迷ったときも、自分自身を見つめ直したいときも。MyPintoは、診断と情報を通じて、一人ひとりに合った選択と新しい一歩をサポートします。
+      診断結果を参考に自分の特徴を整理したり、複数の選択肢を比較・分析したりできるよう、基礎知識や判断のポイントをわかりやすく紹介しています。
     </p>
 
   </div>
