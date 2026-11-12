@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="/favicon-512.png">
+  <meta name="google-site-verification" content="1B-ELIGLOp3Eul42iTiSyrpurEPXrkN448ia5Ef31Q8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>MyPinto｜自分に合う答えと新しい可能性を見つける</title>
+
+  <meta name="description" content="MyPinto（マイピント）は、自己分析やAIを活用した診断・情報整理を通じて、一人ひとりに最適な選択肢や答えを見つけるためのサイトです。仕事・学び・暮らしなど、幅広い分野の情報や可能性をわかりやすく紹介します。">
+
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="application-name" content="MyPinto">
+
+  <link rel="canonical" href="https://my-pinto.github.io/">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="MyPinto">
+  <meta property="og:title" content="MyPinto｜自分に合う答えと新しい可能性を。">
+  <meta property="og:description" content="選択肢を整理し、自分に合う答えを見つける。その先にある新しい可能性を、MyPintoと。">
+  <meta property="og:url" content="https://my-pinto.github.io/">
+
+  <style>
+
+/* ROOT */
+
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+
+  --cyan: #00FFFF;
+  --blue: #0000FF;
+  --orange: #FF962D;
+  --magenta: #FF00FF;
+  --violet: #8A2BE2;
+  --red: #FF0000;
+  --yellow: #FFFF00;
+  --navy: #000080;
+  --green: #008000;
+  --beige: #FEDCBD;
+  --lime: #00FF00;
+
+  --gray: #707070;
+  --border: #EAEAEA;
+
+  --text-main: #111111;
+  --text-sub: #555555;
+  --text-muted: #888888;
+}
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #FFFFFF;
+  color: var(--text-main);
+  font-family:
+    "LINE Seed JP",
+    "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN",
+    sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.025em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.header-inner {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  font-family: "LINE Seed JP", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #000000;
+}
+
+.brand-logo-image {
+  display: block;
+  width: 126px;
+  height: auto;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+
+.header-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333333;
+  transition: color 0.25s ease;
+}
+
+.header-link:hover {
+  color: var(--blue);
+}
+
+    /* FOCUS DOTS */
+
+    .focus-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 13px;
+      margin: 20px auto;
+    }
+
+    .focus-dots span {
+      display: block;
+      flex: 0 0 11px;
+      width: 11px;
+      min-width: 11px;
+      height: 11px;
+      min-height: 11px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background-color: var(--dot-color);
+      box-shadow: 0 0 3px rgba(0,0,0,0.12);
+      animation: focusAnimation 3.2s ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+    }
+    
+@keyframes focusAnimation {
+  0% {
+    filter: blur(2.5px);
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+
+  45%, 70% {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1.06);
+  }
+
+  100% {
+    filter: blur(2.5px);
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 62px 0 76px;
+  background: #FFFFFF;
+}
+
+.hero::before,
+.hero::after {
+  display: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: max-content;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      white-space: nowrap;
+      font-size: clamp(10px, 2.6vw, 12px);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      line-height: 1.5;
+    }
+    
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+  display: block;
+  flex: 0 1 48px;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #B7F7D9,
+    #5AFF19
+  );
+}
+
+.eyebrow::after {
+  transform: rotate(180deg);
+}
+
+/* HERO内のフォーカスドット */
+
+.hero .focus-dots {
+  margin: 19px auto 25px;
+}
+
+/* HEROメインコピー */
+
+.hero h1 {
+  font-size: clamp(32px, 5.8vw, 58px);
+  line-height: 1.48;
+  letter-spacing: 0.015em;
+  margin: 0 0 20px;
+  font-weight: 800;
+}
+
+/* メインコピーのグラデーション */
+
+.hero-highlight {
+  background: linear-gradient(
+    90deg,
+    #174BFF 0%,
+    #6840F5 48%,
+    #F02CCB 100%
+  );
+
+  background-size: 100% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* HERO説明文 */
+
+.hero-description {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 2.1;
+  color: #444;
+}
+
+/* CATEGORIES SECTION */
+
+#categories {
+  scroll-margin-top: 45px;
+}
+
+.categories {
+  position: relative;
+  padding: 50px 0 58px;
+  background: #FAFAFA;
+  border-top: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+/* SECTION HEADING */
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.section-label::before,
+.section-label::after {
+  content: "";
+  display: block;
+  flex: 0 1 48px;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #B7F7D9,
+    #5AFF19
+  );
+}
+
+.section-label::after {
+  transform: rotate(180deg);
+}
+
+/* SECTION FOCUS DOTS */
+
+.section-heading .focus-dots {
+  margin: 19px auto 23px;
+}
+
+/* SECTION TITLE */
+
+h2 {
+  font-size: clamp(23px, 3.8vw, 34px);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.015em;
+}
+
+.section-heading h2 {
+  white-space: nowrap;
+  letter-spacing: -0.035em;
+}
+
+/* SECTION DESCRIPTION */
+
+.section-description {
+  max-width: 660px;
+  margin: 13px auto 0;
+  color: #555555;
+  font-size: 13px;
+  line-height: 2;
+}
+
+/* SECTION PROMPT */
+
+.section-prompt {
+  margin: 17px auto 0;
+  font-size: 12px;
+  font-weight: 800;
+  color: #333333;
+}
+
+/* CATEGORY CARDS */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* CATEGORY CARD */
+
+.category-card {
+  --card-color: #00FFFF;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 205px;
+  padding: 20px 19px 16px;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+/* TOP COLOR ACCENT */
+
+.category-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    var(--card-color),
+    rgba(255,255,255,0.95),
+    var(--card-color)
+  );
+
+  background-size: 200% 100%;
+  transition: background-position .5s ease;
+}
+
+    .category-card::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        ellipse at 50% 0%,
+        var(--card-color),
+        transparent 72%
+      );
+      opacity: 0;
+      transition: opacity .3s ease;
+      pointer-events: none;
+    }
+
+/* ACTIVE CATEGORY CARD */
+
+.category-card.active {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* PC HOVER */
+
+@media (hover: hover) and (pointer: fine) {
+  .category-card.active:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: var(--card-color);
+
+    box-shadow:
+      0 12px 26px rgba(0,0,0,0.07),
+      0 0 14px color-mix(
+        in srgb,
+        var(--card-color) 18%,
+        transparent
+      );
+  }
+
+  .category-card.active:hover::after {
+    opacity: 0.07;
+  }
+
+  .category-card.active:hover::before {
+    background-position: 100% 0;
+  }
+}
+
+/* SMARTPHONE TAP */
+
+@media (hover: none) and (pointer: coarse) {
+  .category-card.active:active {
+    transform: scale(0.985);
+    border-color: var(--card-color);
+  }
+
+  .category-card.active:active::after {
+    opacity: 0.07;
+  }
+}
+
+/* KEYBOARD FOCUS */
+
+.category-card.active:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* CARD NUMBER */
+
+.card-number {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  color: #888888;
+}
+
+/* CARD FOCUS DOTS */
+
+.card-focus {
+  justify-content: flex-start;
+  margin: 12px 0 11px;
+  gap: 0;
+}
+
+.card-focus span {
+  flex: 0 0 21px;
+  width: 21px;
+  min-width: 21px;
+  height: 21px;
+  min-height: 21px;
+  box-shadow: 0 0 8px var(--dot-color);
+}
+
+/* CARD TITLE */
+
+.category-card h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #111111;
+}
+
+/* CARD DESCRIPTION */
+
+.category-card p {
+  overflow-wrap: anywhere;
+  color: #626262;
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 6px 0 10px;
+}
+
+/* DIAGNOSIS BENEFIT */
+
+.card-benefit {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 5px;
+  margin: 1px 0 9px;
+  padding: 4px 9px;
+  border-radius: 30px;
+  background: color-mix(in srgb, var(--card-color) 12%, white);
+  color: #222222;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.card-benefit::before {
+  content: "✓";
+  font-size: 10px;
+  color: #333333;
+}
+
+/* CARD ACTION */
+
+.card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #EEEEEE;
+  font-size: 11px;
+  font-weight: 800;
+  color: #222222;
+}
+
+    /* AI・進路カードの矢印だけに適用 */
+
+    .category-card.active .card-action > span[aria-hidden="true"] {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 29px;
+      height: 29px;
+      flex: 0 0 29px;
+      border-radius: 50%;
+      background: #F4F4F4;
+      font-size: 16px;
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .category-card.active:hover .card-action > span[aria-hidden="true"] {
+      transform: translateX(3px);
+      background: var(--card-color);
+      color: #000;
+    }
+
+    /* アクション文字 */
+
+    .card-action-label {
+      display: inline-block;
+      min-width: 0;
+      flex: 1 1 auto;
+      color: #111;
+      writing-mode: horizontal-tb !important;
+      white-space: nowrap;
+      word-break: keep-all;
+      overflow-wrap: normal;
+      text-align: left;
+    }
+
+/* COMING SOON */
+
+.coming-soon {
+  position: absolute;
+  top: 13px;
+  right: 12px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #27865E;
+  background: #E9FFF3;
+  border: 1px solid #C8F5DC;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+/* INACTIVE CATEGORY */
+
+.inactive {
+  opacity: 0.88;
+  cursor: default;
+}
+
+.inactive .card-action {
+  color: #888;
+}
+
+.inactive .card-action-label {
+  flex: 0 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  writing-mode: horizontal-tb !important;
+}
+
+/* BRAND MESSAGE */
+
+.brand-message {
+  padding: 58px 0 62px;
+  text-align: center;
+  background: #FFFFFF;
+  font-family: "LINE Seed JP", sans-serif;
+}
+
+.brand-message .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.brand-message h2 {
+  margin: 0;
+  padding: 0 16px;
+  font-size: clamp(24px, 4vw, 34px);
+  line-height: 1.6;
+  letter-spacing: 0.015em;
+  font-weight: 800;
+  color: #000000;
+}
+
+.brand-message h2 .gradient-text {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    #0000FF,
+    #8A2BE2,
+    #FF00FF
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.brand-message .mobile-break {
+  display: none;
+}
+
+.brand-message p {
+  max-width: 620px;
+  margin: 22px auto 0;
+  padding: 0 16px;
+  color: #444444;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.015em;
+  text-align: left;
+}
+
+/* BRAND MESSAGE TAGLINE */
+
+.brand-message .brand-message-tagline {
+  max-width: 100%;
+  margin: 36px auto 0;
+  padding: 0 16px;
+  color: #222222;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 0.025em;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .brand-message .brand-message-tagline {
+    margin-top: 30px;
+    padding: 0 18px;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+/* SMARTPHONE */
+
+@media (max-width: 650px) {
+
+  .brand-message {
+    padding: 43px 0 46px;
+  }
+
+  .brand-message h2 {
+    padding: 0 18px;
+    font-size: 21px;
+    line-height: 1.6;
+    letter-spacing: 0.005em;
+  }
+
+  .brand-message h2 .gradient-text {
+    max-width: 350px;
+  }
+
+  .brand-message .mobile-break {
+    display: inline;
+  }
+
+  .brand-message p {
+    max-width: 480px;
+    margin: 20px auto 0;
+    padding: 0 25px;
+    font-size: 13px;
+    line-height: 2;
+    letter-spacing: 0.015em;
+    text-align: left;
+  }
+
+}
+
+/* FOOTER */
+
+footer {
+  padding: 32px 0 22px;
+  border-top: 1px solid #EEEEEE;
+  background: #FFFFFF;
+  font-family: "LINE Seed JP", sans-serif;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.footer-brand-logo-image {
+  display: block;
+  width: 108px;
+  height: auto;
+  max-height: 42px;
+  object-fit: contain;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 11px;
+  color: #555555;
+}
+
+.footer-links a {
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: var(--blue);
+}
+
+.copyright {
+  margin-top: 22px;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: #999999;
+  text-align: center;
+}
+
+    /* TABLET */
+
+    @media (max-width: 800px) {
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* SMARTPHONE */
+
+    @media (max-width: 650px) {
+
+      .container {
+        width: 92%;
+      }
+
+      .header-inner {
+        min-height: 60px;
+      }
+
+      .logo {
+        font-family: "LINE Seed JP", sans-serif;
+        font-size: 23px;
+        font-weight: 700;
+        gap: 17px;
+      }
+
+      .header-link {
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 42px 0 48px;
+      }
+
+      .eyebrow {
+        gap: 8px;
+        font-size: clamp(9px, 2.8vw, 11px);
+        letter-spacing: 0.10em;
+      }
+
+      .eyebrow::before,
+      .eyebrow::after {
+        flex-basis: 30px;
+        width: 30px;
+        min-width: 20px;
+      }
+
+      .hero .focus-dots {
+        margin: 17px auto 20px;
+      }
+
+      .focus-dots {
+        gap: 10px;
+      }
+
+      .focus-dots span {
+        flex-basis: 10px;
+        width: 10px;
+        min-width: 10px;
+        height: 10px;
+        min-height: 10px;
+      }
+
+      h1 {
+        font-size: clamp(29px, 7.2vw, 42px);
+        line-height: 1.55;
+        margin-bottom: 18px;
+      }
+
+      .hero-description {
+        font-size: 12px;
+        line-height: 2;
+      }
+
+      .categories {
+        padding: 39px 0 43px;
+      }
+
+      .section-heading {
+        margin-bottom: 25px;
+      }
+
+/* SECTION LABEL */
+
+.section-label {
+  gap: 8px;
+  font-size: clamp(9px, 2.8vw, 11px);
+  letter-spacing: 0.10em;
+}
+
+.section-label::before,
+.section-label::after {
+  flex-basis: 30px;
+  width: 30px;
+  min-width: 20px;
+}
+
+/* SECTION FOCUS DOTS */
+
+.section-heading .focus-dots {
+  margin: 15px auto 18px;
+}
+
+/* SECTION HEADING */
+
+.section-heading h2 {
+  font-size: clamp(19px, 5.2vw, 23px);
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+/* SECTION DESCRIPTION */
+
+.section-description {
+  font-size: 10.5px;
+  line-height: 1.9;
+  letter-spacing: -0.045em;
+  white-space: normal;
+  max-width: 100%;
+  text-wrap: pretty;
+}
+
+      .section-prompt {
+        font-size: 11px;
+        margin-top: 14px;
+      }
+
+/* CATEGORY CARDS - SMARTPHONE */
+
+.card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.category-card {
+  min-height: 190px;
+  padding: 15px 12px 13px;
+  border-radius: 14px;
+}
+
+.card-number {
+  font-size: 8px;
+}
+
+.card-focus {
+  margin: 9px 0 8px;
+}
+
+.card-focus span {
+  flex-basis: 18px;
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  min-height: 18px;
+}
+
+.category-card h3 {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.category-card p {
+  font-size: 10px;
+  line-height: 1.75;
+  margin: 5px 0 8px;
+}
+
+      .card-benefit {
+        font-size: 8px;
+        padding: 4px 7px;
+      }
+
+      .card-action {
+        font-size: 9px;
+        padding-top: 8px;
+        gap: 5px;
+      }
+
+      /* スマートフォンの矢印 */
+
+      .category-card.active .card-action > span[aria-hidden="true"] {
+        width: 23px;
+        height: 23px;
+        flex-basis: 23px;
+        font-size: 13px;
+      }
+
+      /* スマートフォンのアクション文字 */
+
+      .category-card.active .card-action-label {
+        font-size: clamp(7px, 2.1vw, 9px);
+        flex: 1 1 auto;
+        min-width: 0;
+        white-space: nowrap;
+      }
+
+      .inactive .card-action-label {
+        font-size: 9px;
+        flex: 0 1 auto;
+        min-width: 0;
+        white-space: nowrap;
+      }
+
+      .coming-soon {
+        top: 9px;
+        right: 8px;
+        display: inline-block;
+        width: auto;
+        max-width: calc(100% - 16px);
+        white-space: nowrap;
+        writing-mode: horizontal-tb;
+        word-break: keep-all;
+        overflow-wrap: normal;
+        font-size: 7px;
+        line-height: 1.4;
+        padding: 2px 6px;
+        border-radius: 20px;
+      }
+
+      .brand-message {
+        padding: 48px 0;
+      }
+
+      .brand-message h2 {
+        font-size: 23px;
+      }
+
+      .brand-message p {
+        font-size: 11px;
+      }
+
+footer {
+  padding: 26px 0 19px;
+}
+
+.footer-inner {
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-logo {
+  font-size: 20px;
+}
+
+.brand-logo-image {
+  width: 112px;
+  max-height: 42px;
+}
+
+.footer-brand-logo-image {
+  width: 100px;
+  max-height: 38px;
+}
+
+.footer-links {
+  justify-content: center;
+  gap: 13px 18px;
+  font-size: 10px;
+}
+
+.copyright {
+  margin-top: 19px;
+  font-size: 9px;
+}
+
+    /* REDUCED MOTION */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .focus-dots span {
+        filter: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MyPinto",
+    "alternateName": "マイピント",
+    "url": "https://my-pinto.github.io/"
+  }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container header-inner">
+
+      <a href="/" class="logo" aria-label="MyPinto ホーム">
+        <img class="brand-logo-image" src="./MyPinto-official-logo.jpeg" alt="MyPinto" width="1536" height="576">
+      </a>
+
+      <a href="#categories" class="header-link">
+        自分に合う答えを見つける →
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container hero-content">
+
+        <div class="eyebrow">
+          FIND YOUR OWN ANSWER
+        </div>
+
+        <div class="focus-dots" aria-hidden="true">
+            <span style="--dot-color:#00FFFF;--delay:0s"></span>
+            <span style="--dot-color:#0000FF;--delay:.12s"></span>
+            <span style="--dot-color:#FF962D;--delay:.24s"></span>
+            <span style="--dot-color:#FF00FF;--delay:.36s"></span>
+            <span style="--dot-color:#8A2BE2;--delay:.48s"></span>
+            <span style="--dot-color:#FF0000;--delay:.60s"></span>
+            <span style="--dot-color:#000080;--delay:.72s"></span>
+            <span style="--dot-color:#008000;--delay:.84s"></span>
+            <span style="--dot-color:#FEDCBD;--delay:.96s"></span>
+            <span style="--dot-color:#FFFF00;--delay:1.08s"></span>
+            <span style="--dot-color:#00FF00;--delay:1.20s"></span>
+          </div>
+
+        <h1>
+          一人ひとりに、<br>
+          <span class="hero-highlight">自分に合う答え</span>と<br>
+          新しい可能性を。
+        </h1>
+
+        <p class="hero-description">
+          選択肢が多くて決められない。<br>
+          自分に何が合うのかわからない。<br>
+          MyPintoは、診断と情報で選択肢を整理し、<br>
+          あなたに合う答えと、新しい一歩へ導きます。
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- CATEGORY CARDS -->
+
+    <section class="categories" id="categories">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            FIND YOUR BEST MATCH
+          </div>
+
+          <div class="focus-dots" aria-hidden="true">
+            <span style="--dot-color:#00FFFF;--delay:0s"></span>
+            <span style="--dot-color:#0000FF;--delay:.12s"></span>
+            <span style="--dot-color:#FF962D;--delay:.24s"></span>
+            <span style="--dot-color:#FF00FF;--delay:.36s"></span>
+            <span style="--dot-color:#8A2BE2;--delay:.48s"></span>
+            <span style="--dot-color:#FF0000;--delay:.60s"></span>
+            <span style="--dot-color:#000080;--delay:.72s"></span>
+            <span style="--dot-color:#008000;--delay:.84s"></span>
+            <span style="--dot-color:#FEDCBD;--delay:.96s"></span>
+            <span style="--dot-color:#FFFF00;--delay:1.08s"></span>
+            <span style="--dot-color:#00FF00;--delay:1.20s"></span>
+          </div>
+
+          <h2>
+            あなたにぴったりは、どれ？
+          </h2>
+
+          <p class="section-description">
+            たくさんの選択肢から、自分に合うものを見つける。<br>
+            仕事・学び・健康・お金・人間関係など、幅広い分野から自分に合う選択肢を見つけるお手伝いをします。
+          </p>
+
+          <p class="section-prompt">
+            まずは興味のある分野を選んでみましょう。
+          </p>
+
+        </div>
+
+        <div class="card-grid">
+
+          <!-- 01 AI -->
+
+          <a
+            class="category-card active"
+            href="https://my-pinto.github.io/AI-Tool-Navigator/"
+            style="--card-color:#00FFFF"
+            aria-label="AI・デジタル。自分に合うAIツールを診断する"
+          >
+
+            <div class="card-number">
+              01 / TECHNOLOGY
+            </div>
+
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#00FFFF"></span>
+            </div>
+
+            <h3>AI・デジタル</h3>
+
+            <p>
+              自分に合うAIツールを見つけて、毎日をもっと便利に。
+            </p>
+
+            <div class="card-benefit">
+              20問であなたに合うAIツールBEST3
+            </div>
+
+            <div class="card-action">
+              <span class="card-action-label">自分に合うAIを診断する</span>
+              <span aria-hidden="true">→</span>
+            </div>
+
+          </a>
+
+          <!-- 02 CAREER -->
+
+          <a
+            class="category-card active"
+            href="https://my-pinto.github.io/Semiconductor-Industry-Career-Navigator/"
+            style="--card-color:#0000FF"
+            aria-label="進路・キャリア。半導体業界の進路診断を始める"
+          >
+
+            <div class="card-number">
+              02 / CAREER
+            </div>
+
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#0000FF"></span>
+            </div>
+
+            <h3>進路・キャリア</h3>
+
+            <p>
+              自分の強みや適性から、可能性のある仕事を探そう。
+            </p>
+
+            <div class="card-benefit">
+              20問で半導体業界の職種適性を診断
+            </div>
+
+            <div class="card-action">
+              <span class="card-action-label">自分に合う進路を診断する</span>
+              <span aria-hidden="true">→</span>
+            </div>
+
+          </a>
+
+          <!-- 03 HEALTH / DIET -->
+
+          <div
+            class="category-card inactive"
+            style="--card-color:#FF962D"
+            aria-label="健康・ダイエット系診断。公開準備中"
+          >
+            <span class="coming-soon">COMING SOON</span>
+            <div class="card-number">03 / HEALTH</div>
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#FF962D"></span>
+            </div>
+            <h3>健康・ダイエット</h3>
+            <p>自分に合った健康習慣や、毎日を整える方法を見つけよう。</p>
+            <div class="card-action">
+              <span class="card-action-label">公開準備中</span>
+            </div>
+          </div>
+
+          <!-- 04 LOVE / RELATIONSHIPS -->
+
+          <div
+            class="category-card inactive"
+            style="--card-color:#FF00FF"
+            aria-label="恋愛・婚活・人間関係系診断。公開準備中"
+          >
+            <span class="coming-soon">COMING SOON</span>
+            <div class="card-number">04 / RELATIONSHIPS</div>
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#FF00FF"></span>
+            </div>
+            <h3>恋愛・婚活・人間関係</h3>
+            <p>自分に合う関係や、出会い・コミュニケーションのヒントを探そう。</p>
+            <div class="card-action">
+              <span class="card-action-label">公開準備中</span>
+            </div>
+          </div>
+
+          <!-- 05 SIDE HUSTLE / SKILLS -->
+
+          <div
+            class="category-card inactive"
+            style="--card-color:#8A2BE2"
+            aria-label="副業・スキル適性診断。公開準備中"
+          >
+            <span class="coming-soon">COMING SOON</span>
+            <div class="card-number">05 / SIDE HUSTLE</div>
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#8A2BE2"></span>
+            </div>
+            <h3>副業・スキル適性診断</h3>
+            <p>自分の強みや興味から、相性の良い副業と伸ばすスキルを見つけよう。</p>
+            <div class="card-action">
+              <span class="card-action-label">公開準備中</span>
+            </div>
+          </div>
+
+          <!-- 06 QUALIFICATIONS -->
+
+          <div
+            class="category-card inactive"
+            style="--card-color:#FF0000"
+            aria-label="資格適性診断。公開準備中"
+          >
+            <span class="coming-soon">COMING SOON</span>
+            <div class="card-number">06 / QUALIFICATIONS</div>
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#FF0000"></span>
+            </div>
+            <h3>資格適性診断</h3>
+            <p>興味や目標に合う資格と、自分に合った学び方を見つけよう。</p>
+            <div class="card-action">
+              <span class="card-action-label">公開準備中</span>
+            </div>
+          </div>
+
+          <!-- 07 JOB FIT / CAREER CHANGE -->
+
+          <div
+            class="category-card inactive"
+            style="--card-color:#000080"
+            aria-label="適職・転職・仕事選び診断。公開準備中"
+          >
+            <span class="coming-soon">COMING SOON</span>
+            <div class="card-number">07 / JOB FIT</div>
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#000080"></span>
+            </div>
+            <h3>適職・転職・仕事選び</h3>
+            <p>価値観や得意なことから、自分に合う仕事や働き方を考えよう。</p>
+            <div class="card-action">
+              <span class="card-action-label">公開準備中</span>
+            </div>
+          </div>
+
+          <!-- 08 PERSONALITY / SELF ANALYSIS -->
+
+          <div
+            class="category-card inactive"
+            style="--card-color:#008000"
+            aria-label="性格・自己分析・タイプ・MBTI系診断。公開準備中"
+          >
+            <span class="coming-soon">COMING SOON</span>
+            <div class="card-number">08 / PERSONALITY</div>
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#008000"></span>
+            </div>
+            <h3>性格・自己分析・タイプ診断</h3>
+            <p>自分の考え方や行動の傾向を知り、強みや可能性を整理しよう。</p>
+            <div class="card-action">
+              <span class="card-action-label">公開準備中</span>
+            </div>
+          </div>
+
+          <!-- 09 BEAUTY / FASHION -->
+
+          <div
+            class="category-card inactive"
+            style="--card-color:#FEDCBD"
+            aria-label="美容・ファッション系診断。公開準備中"
+          >
+            <span class="coming-soon">COMING SOON</span>
+            <div class="card-number">09 / BEAUTY</div>
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#FEDCBD"></span>
+            </div>
+            <h3>美容・ファッション</h3>
+            <p>好みや目的に合う美容・ファッションの選択肢を見つけよう。</p>
+            <div class="card-action">
+              <span class="card-action-label">公開準備中</span>
+            </div>
+          </div>
+
+          <!-- 10 FINANCE / INVESTMENT -->
+
+          <div
+            class="category-card inactive"
+            style="--card-color:#FFFF00"
+            aria-label="金融・投資系診断。公開準備中"
+          >
+            <span class="coming-soon">COMING SOON</span>
+            <div class="card-number">10 / FINANCE</div>
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#FFFF00"></span>
+            </div>
+            <h3>金融・投資</h3>
+            <p>お金に関する関心や知識レベルに合わせて、学びの方向性を探そう。</p>
+            <div class="card-action">
+              <span class="card-action-label">公開準備中</span>
+            </div>
+          </div>
+
+          <!-- 11 PROGRAMMING / RESKILLING -->
+
+          <div
+            class="category-card inactive"
+            style="--card-color:#00FF00"
+            aria-label="プログラミング・リスキリング系診断。公開準備中"
+          >
+            <span class="coming-soon">COMING SOON</span>
+            <div class="card-number">11 / PROGRAMMING</div>
+            <div class="focus-dots card-focus" aria-hidden="true">
+              <span style="--dot-color:#00FF00"></span>
+            </div>
+            <h3>プログラミング・リスキリング</h3>
+            <p>目標や経験に合わせて、これから身につけたいデジタルスキルを探そう。</p>
+            <div class="card-action">
+              <span class="card-action-label">公開準備中</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+<!-- BRAND MESSAGE -->
+
+<section class="brand-message">
+  <div class="container">
+
+    <h2>
+      その答えの先に、
+      <span class="gradient-text">
+        新しい可能性を。
+      </span>
+    </h2>
+
+    <p>
+      MyPinto（マイピント）は、自分自身を知るための自己分析や、さまざまな情報・選択肢を整理するための診断・情報サイトです。
+    </p>
+
+    <p>
+      AIなどの新しいテクノロジーから、仕事・キャリア、学び、暮らしに関するテーマまで、一人ひとりの興味や目的に合った選択肢を見つけるための情報を提供します。
+    </p>
+
+    <p>
+      診断や情報を通じて、自分に合う答えを考え、その先にある新しい可能性を見つけるきっかけを届けます。
+    </p>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div class="footer-logo">
+          <img class="footer-brand-logo-image" src="./MyPinto-official-logo.jpeg" alt="MyPinto" width="1536" height="576">
+        </div>
+
+        <nav class="footer-links" aria-label="フッターメニュー">
+
+          <a href="about.html">
+            運営者情報
+          </a>
+
+          <a href="privacy.html">
+            プライバシーポリシー
+          </a>
+
+          <a href="contact.html">
+            お問い合わせ
+          </a>
+
+        </nav>
+
+      </div>
+
+      <div class="copyright">
+        © MyPinto All Rights Reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
