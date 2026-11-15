@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google所有権確認：変更しない -->
+<meta name="google-site-verification" content="1B-ELIGLOp3Eul42iTiSyrpurEPXrkN448ia5Ef31Q8">
+
+<!-- 基本情報 -->
+<title>半導体キャリア診断｜20問で進学・就職先を比較｜MyPinto</title>
+
+<meta name="description" content="20問で半導体業界への進路を診断。興味・適性・希望条件から、進学ルート、学校、企業、職種の候補を比較できます。">
+
+<meta name="application-name" content="MyPinto">
+<meta name="author" content="MyPinto">
+
+<!-- 正規URL -->
+<link rel="canonical" href="https://my-pinto.github.io/Semiconductor-Industry-Career-Navigator/">
+
+<!-- Google・SNS向けブランド情報 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MyPinto">
+<meta property="og:title" content="半導体キャリア診断｜20問で進学・就職先を比較｜MyPinto">
+<meta property="og:description" content="20問で半導体業界への進路を診断。興味・適性・希望条件から学校・企業・職種の候補を比較できます。">
+<meta property="og:url" content="https://my-pinto.github.io/Semiconductor-Industry-Career-Navigator/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="半導体キャリア診断｜MyPinto">
+<meta name="twitter:description" content="20問で半導体業界への進路を診断。学校・企業・職種の候補を比較できます。">
+
+<!-- Googleにサイトブランド名を伝える -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MyPinto",
+  "alternateName": "マイピント",
+  "url": "https://my-pinto.github.io/Semiconductor-Industry-Career-Navigator/"
+}
+</script>
+
+<style>
+:root{--navy:#12385b;--blue:#176b9c;--teal:#198c8c;--pale:#eef7fb;--text:#24313c;--muted:#61717d;--line:#d9e3e8;--bg:#f4f7f9;--white:#fff;--gold:#c28a24}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"LINE Seed JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+header{background:#fff;border-bottom:1px solid var(--line)}
+.header-inner,main{max-width:900px;margin:auto;padding-left:16px;padding-right:16px}
+.header-inner{padding-top:17px;padding-bottom:17px}
+.series{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:.07em}
+.site-title{font-size:22px;font-weight:850;color:var(--navy);margin-top:5px}
+main{padding-top:24px;padding-bottom:48px}
+.card{background:#fff;border-radius:18px;padding:26px 22px;box-shadow:0 8px 30px rgba(20,55,75,.06)}
+.hidden{display:none!important}
+.start-card{text-align:center;padding:34px 24px}
+.start-icon{font-size:38px;margin-bottom:12px}
+h1{font-size:27px;line-height:1.5;color:var(--navy);margin:0}
+.lead{max-width:650px;margin:15px auto;color:var(--muted);line-height:1.9}
+.notice{background:#f7fafb;border-radius:12px;padding:14px;margin:20px auto 0;max-width:700px;color:var(--muted);font-size:13px;line-height:1.8;text-align:left}
+.primary,.restart{width:100%;border:0;border-radius:12px;padding:17px;font-size:16px;font-weight:800;cursor:pointer;margin-top:22px}
+.primary{background:var(--navy);color:#fff}
+.restart{background:#fff;color:var(--blue);border:1px solid var(--blue)}
+.progress-area{margin-bottom:18px}
+.progress-text{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:8px}
+.progress-track{height:8px;background:#e5edf1;border-radius:20px;overflow:hidden}
+.progress{height:100%;background:var(--teal);width:0;transition:width .2s}
+.qgroup{font-size:12px;color:var(--blue);font-weight:800}
+.question{font-size:23px;line-height:1.55;color:var(--navy);margin:10px 0 20px}
+.options{display:grid;gap:10px}
+.option{width:100%;padding:16px;text-align:left;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--text);font-size:15px;line-height:1.55;font-weight:700;cursor:pointer}
+.option:hover{border-color:var(--blue);background:#f8fcfe}
+.back{margin-top:17px;border:0;background:none;color:var(--blue);font-size:14px;padding:10px 0;cursor:pointer}
+.result-head{background:linear-gradient(135deg,#12385b,#176b9c);color:#fff;border-radius:16px;padding:24px;margin-bottom:20px}
+.result-head .eyebrow{font-size:12px;letter-spacing:.08em;opacity:.85;font-weight:800}
+.result-head h2{font-size:26px;line-height:1.45;margin:9px 0}
+.result-head p{line-height:1.85;margin:0;color:#eaf4fa}
+.section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.section h3{font-size:19px;color:var(--navy);margin:0 0 12px}
+.section p{line-height:1.85;color:var(--muted);margin:8px 0}
+.score-list{display:grid;gap:10px}
+.score-row{display:grid;grid-template-columns:150px 1fr 45px;gap:10px;align-items:center;font-size:13px}
+.bar{height:10px;border-radius:20px;background:#e9eff2;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--teal);border-radius:20px}
+.rank-card{border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0;background:#fff}
+.rank-top{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.rank{background:#eaf3f8;color:var(--navy);font-size:13px;font-weight:900;border-radius:9px;padding:7px 10px;white-space:nowrap}
+.rank.best{background:#fff3d8;color:#80570e}
+.rank-card h4{font-size:17px;color:var(--navy);margin:0}
+.rank-card p{font-size:14px;line-height:1.8;color:var(--muted);margin:7px 0}
+.meta{font-size:12px;color:#687984;line-height:1.7}
+.rank-card a{display:inline-block;color:var(--blue);font-weight:700;font-size:13px;margin-top:8px;overflow-wrap:anywhere}
+.pill{display:inline-block;background:var(--pale);color:var(--blue);border-radius:30px;padding:5px 9px;font-size:11px;font-weight:800;margin:3px 4px 3px 0}
+.callout{background:#f0f8f8;border-radius:13px;padding:17px;margin-top:16px}
+.callout h3{color:var(--teal);font-size:17px;margin:0 0 8px}
+.callout p{line-height:1.85;margin:0}
+.action-list{padding-left:22px;color:var(--muted);line-height:1.9}
+.small{font-size:12px;color:#788892;line-height:1.75}
+footer{text-align:center;color:#80909a;font-size:12px;padding:22px}
+.footer-brand{
+font-size:17px;
+font-weight:800;
+letter-spacing:.08em;
+}
+
+.footer-name{
+margin-top:3px;
+font-size:11px;
+letter-spacing:.18em;
+opacity:.85;
+}
+
+.footer-copy{
+margin-top:12px;
+font-size:11px;
+opacity:.75;
+}
+@media(max-width:560px){.card{padding:22px 17px}.site-title{font-size:20px}.question{font-size:21px}.result-head h2{font-size:23px}.score-row{grid-template-columns:112px 1fr 36px;font-size:12px}.rank-card{padding:13px}}
+
+/* TOP5 適合度・ランキング強調 */
+#resultScreen{background:linear-gradient(180deg,#eef7ff 0,#f8fbff 45%,#eafaf6 100%);padding:10px;border-radius:24px}
+.result-head{background:linear-gradient(135deg,#0b2742,#1464a0 58%,#0b8f87)!important;color:#fff!important}
+.result-head h2,.result-head p{color:#fff!important}
+#schoolRanking,#companyRanking{display:grid;gap:13px}
+.rank-card{border-radius:16px!important;background:#fff;box-shadow:0 6px 20px rgba(20,55,75,.08);border:1px solid #dce6ec;padding:17px!important}
+.rank-card.top1{background:linear-gradient(135deg,#fff6d8,#fffdf6);border-color:#e7c65f}
+.rank-card.top2{background:linear-gradient(135deg,#eef2f6,#fff);border-color:#c7d0d8}
+.rank-card.top3{background:linear-gradient(135deg,#fff0e5,#fffaf7);border-color:#e5b48f}
+.fitline{display:flex;align-items:center;gap:10px;margin:12px 0}
+.fitnum{min-width:64px;font-size:27px;font-weight:950;color:#1464a0}
+.fittrack{flex:1;height:12px;border-radius:999px;background:#dce7ed;overflow:hidden}
+.fitbar{height:100%;border-radius:999px;background:linear-gradient(90deg,#14a6a0,#1464a0)}
+.top1 .fitbar{background:linear-gradient(90deg,#f4c542,#c98b00)} .top2 .fitbar{background:linear-gradient(90deg,#aab6c2,#667788)} .top3 .fitbar{background:linear-gradient(90deg,#e2a06b,#9a5a2b)}
+.rank-card:nth-child(n+6){background:#f8fbfd;padding:12px 15px!important}
+.rank-card:nth-child(n+6) .fitline{display:none}
+.rank-card:nth-child(n+6) .meta,.rank-card:nth-child(n+6) p{display:none}
+.rank-card:nth-child(n+6) h4{font-size:15px!important}
+.official-top{display:inline-block;margin-top:8px;padding:9px 12px;border-radius:10px;background:#0b2742;color:#fff!important;text-decoration:none!important;font-weight:900}
+/* =========================================
+   PREMIUM CAREER REPORT / BEST 1・2・3
+========================================= */
+
+.personal-report{
+  background:linear-gradient(135deg,#0b2742 0%,#1464a0 55%,#0b8f87 100%);
+  border-radius:20px;
+  padding:24px 20px;
+  color:#fff;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(11,39,66,.18);
+}
+
+.personal-report-label{
+  display:inline-block;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.08em;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:30px;
+  padding:6px 10px;
+}
+
+.personal-report h2{
+  margin:12px 0 8px;
+  font-size:26px;
+  line-height:1.45;
+  color:#fff;
+}
+
+.personal-report p{
+  margin:0;
+  line-height:1.8;
+  color:#eaf5fb;
+}
+
+.personal-best{
+  margin-top:18px;
+  background:rgba(255,255,255,.12);
+  border-radius:15px;
+  padding:15px;
+}
+
+.personal-best small{
+  display:block;
+  font-weight:800;
+  opacity:.85;
+  margin-bottom:4px;
+}
+
+.personal-best-name{
+  font-size:22px;
+  font-weight:950;
+}
+
+/* =========================
+   ランキングカード共通
+========================= */
+
+.rank-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.rank-card.top1{
+  padding:22px !important;
+  border:2px solid #d9aa29 !important;
+  background:
+    linear-gradient(135deg,#fff4c7 0%,#fffdf6 45%,#fff6da 100%) !important;
+  box-shadow:0 12px 35px rgba(194,138,36,.20) !important;
+}
+
+.rank-card.top2{
+  border:2px solid #b8c3cc !important;
+  background:linear-gradient(135deg,#eef2f5,#ffffff) !important;
+}
+
+.rank-card.top3{
+  border:2px solid #dca06f !important;
+  background:linear-gradient(135deg,#fff0e5,#fffaf7) !important;
+}
+
+/* =========================
+   BEST1 大型デザイン
+========================= */
+
+.best1-hero{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.best1-medal{
+  width:58px;
+  height:58px;
+  min-width:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:30px;
+  background:linear-gradient(135deg,#ffe998,#d99b14);
+  box-shadow:0 5px 15px rgba(194,138,36,.25);
+}
+
+.best1-title{
+  flex:1;
+}
+
+.best1-kicker{
+  font-size:12px;
+  font-weight:950;
+  color:#8a5b00;
+  letter-spacing:.05em;
+}
+
+.best1-name{
+  font-size:23px !important;
+  margin-top:3px !important;
+  color:#12385b !important;
+}
+
+.best1-fit-box{
+  background:rgba(255,255,255,.75);
+  border-radius:16px;
+  padding:16px;
+  margin:14px 0;
+  text-align:center;
+  border:1px solid rgba(217,170,41,.35);
+}
+
+.best1-fit-label{
+  font-size:12px;
+  font-weight:900;
+  color:#80570e;
+}
+
+.best1-fit-number{
+  font-size:48px;
+  line-height:1;
+  font-weight:950;
+  color:#c28a24;
+  margin:5px 0 10px;
+}
+
+.best1-fit-number span{
+  font-size:18px;
+}
+
+.best1-fit-track{
+  height:15px;
+  background:#e7ddbf;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.best1-fit-bar{
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg,#f4c542,#c98b00);
+}
+
+/* =========================
+   BEST2・BEST3
+========================= */
+
+.best-rank-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.best-medal{
+  font-size:28px;
+}
+
+.best-rank-title{
+  font-size:13px;
+  font-weight:950;
+  color:var(--navy);
+}
+
+.best-rank-sub{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+/* =========================
+   理由・一致ポイント
+========================= */
+
+.why-best{
+  margin-top:15px;
+  padding:15px;
+  border-radius:13px;
+  background:rgba(255,255,255,.70);
+}
+
+.why-best-title{
+  font-size:15px;
+  font-weight:950;
+  color:var(--navy);
+  margin-bottom:9px;
+}
+
+.match-points{
+  display:grid;
+  gap:7px;
+  margin-top:10px;
+}
+
+.match-point{
+  background:#eef7fb;
+  border-radius:9px;
+  padding:9px 11px;
+  font-size:13px;
+  font-weight:750;
+  color:#36505f;
+}
+
+.match-point b{
+  color:#0b8f87;
+  margin-right:6px;
+}
+
+.compare-box{
+  margin-top:13px;
+  border-radius:12px;
+  padding:14px;
+  background:#f5f8fa;
+  font-size:13px;
+  line-height:1.75;
+  color:#50616d;
+}
+
+.compare-box b{
+  color:var(--navy);
+}
+
+/* =========================
+   公式サイトボタン
+========================= */
+
+.official-top{
+  display:block !important;
+  width:100%;
+  text-align:center;
+  margin-top:16px !important;
+  padding:13px 15px !important;
+  border-radius:12px !important;
+  font-size:14px !important;
+  background:linear-gradient(135deg,#12385b,#176b9c) !important;
+  box-shadow:0 5px 15px rgba(18,56,91,.15);
+}
+
+/* =========================
+   モバイル
+========================= */
+
+@media(max-width:560px){
+
+  .personal-report h2{
+    font-size:22px;
+  }
+
+  .best1-name{
+    font-size:20px !important;
+  }
+
+  .best1-fit-number{
+    font-size:42px;
+  }
+
+  .best1-medal{
+    width:52px;
+    height:52px;
+    min-width:52px;
+    font-size:27px;
+  }
+
+  .rank-card.top1{
+    padding:18px !important;
+  }
+
+}
+/* トップ画面のメイン画像 */
+.hero-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 24px;
+  border-radius: 14px;
+}
+
+/* =========================================================
+   MyPinto 共通デザイン / Semiconductor Career
+   白・黒を基調に、半導体キャリア診断のアクセントはブルー
+   BEST1 金 / BEST2 銀 / BEST3 銅
+========================================================= */
+:root{
+  --mp-black:#111111;
+  --mp-white:#FFFFFF;
+  --mp-gray:#666666;
+  --mp-muted:#777777;
+  --mp-line:#E8E8E8;
+  --mp-soft:#FAFAFA;
+  --career-accent:#0000FF;
+  --career-accent-soft:#F2F5FF;
+  --rank-gold:#D4AF37;
+  --rank-silver:#AEB7C2;
+  --rank-bronze:#B8794A;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--mp-white);
+  color:var(--mp-black);
+  font-family:"LINE Seed JP","Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
+  font-weight:400;
+  letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+}
+header{
+  background:#FFFFFF!important;
+  border-bottom:1px solid var(--mp-line)!important;
+}
+.header-inner,main{max-width:980px}
+.header-inner{padding:18px 16px 16px}
+.brand-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand-name{
+  color:#111111!important;
+  text-decoration:none!important;
+  font-family:"LINE Seed JP","Noto Sans JP",sans-serif;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.035em;
+}
+.series{
+  color:#777777!important;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.12em;
+}
+.site-title{
+  margin-top:4px;
+  color:#111111!important;
+  font-family:"LINE Seed JP","Noto Sans JP",sans-serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.025em;
+}
+main{padding-top:28px;padding-bottom:54px}
+.card{
+  background:#FFFFFF!important;
+  border:1px solid var(--mp-line)!important;
+  border-radius:18px!important;
+  padding:30px 26px!important;
+  box-shadow:0 8px 28px rgba(0,0,0,.035)!important;
+}
+.start-card{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:34px 28px 36px!important;
+  border-top:3px solid var(--career-accent)!important;
+}
+.hero-banner{
+  display:block;
+  width:100%;
+  max-width:820px;
+  height:auto;
+  margin:0 auto 24px;
+  border-radius:13px;
+  object-fit:cover;
+}
+.start-icon{font-size:34px;margin:0 0 14px}
+h1,.question,.result-head h2,.section h3,.rank-card h4{
+  font-family:"LINE Seed JP","Noto Sans JP",sans-serif;
+  letter-spacing:-.025em;
+}
+h1{
+  margin:0;
+  color:#111111!important;
+  font-size:clamp(25px,4vw,34px);
+  line-height:1.48;
+  font-weight:800;
+}
+.lead{
+  max-width:720px;
+  margin:17px auto;
+  color:#555555!important;
+  font-size:14px;
+  line-height:1.95;
+}
+.notice{
+  max-width:760px;
+  margin:22px auto 0;
+  padding:16px;
+  background:#FAFAFA!important;
+  border:1px solid #EEEEEE;
+  border-radius:12px;
+  color:#555555!important;
+  font-size:12px;
+  line-height:1.9;
+  text-align:left;
+}
+.primary,.restart{
+  width:100%;
+  margin-top:24px;
+  padding:17px 20px;
+  border-radius:11px;
+  font-family:inherit;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+  transition:transform .18s ease,background .18s ease,border-color .18s ease,color .18s ease;
+}
+.primary{
+  color:#FFFFFF!important;
+  background:#111111!important;
+  border:1px solid #111111!important;
+}
+.primary:hover{
+  background:var(--career-accent)!important;
+  border-color:var(--career-accent)!important;
+  transform:translateY(-1px);
+}
+.restart{
+  color:#111111!important;
+  background:#FFFFFF!important;
+  border:1px solid #D8D8D8!important;
+}
+.restart:hover{color:var(--career-accent)!important;border-color:var(--career-accent)!important}
+.progress-area{margin-bottom:18px}
+.progress-text{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:9px;
+  color:#666666!important;
+  font-size:12px;
+  font-weight:700;
+}
+.progress-track{height:7px;background:#EEEEEE!important;border-radius:20px;overflow:hidden}
+.progress{height:100%;width:0;background:var(--career-accent)!important;transition:width .25s ease}
+.qgroup{
+  color:var(--career-accent)!important;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.question{
+  margin:12px 0 22px;
+  color:#111111!important;
+  font-size:clamp(20px,3vw,25px);
+  line-height:1.58;
+  font-weight:800;
+}
+.options{display:grid;gap:11px}
+.option{
+  width:100%;
+  padding:16px 18px;
+  border:1px solid #E5E5E5!important;
+  border-radius:12px!important;
+  background:#FFFFFF!important;
+  color:#111111!important;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:600;
+  line-height:1.65;
+  text-align:left;
+  cursor:pointer;
+  transition:border-color .18s ease,background .18s ease,transform .18s ease;
+}
+.option:hover{
+  border-color:var(--career-accent)!important;
+  background:var(--career-accent-soft)!important;
+  transform:translateY(-1px);
+}
+.option:focus-visible,.primary:focus-visible,.restart:focus-visible,.back:focus-visible{
+  outline:3px solid rgba(138,43,226,.24);
+  outline-offset:3px;
+}
+.back{
+  margin-top:18px;
+  padding:10px 0;
+  color:#555555!important;
+  background:none!important;
+  border:0;
+  font-family:inherit;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+}
+.back:hover{color:var(--career-accent)!important}
+#resultScreen{
+  padding:0!important;
+  background:#FFFFFF!important;
+  border-radius:0!important;
+}
+#resultScreen>.card{
+  padding:0!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+.result-head{
+  margin-bottom:22px;
+  padding:28px 26px!important;
+  border-radius:16px!important;
+  background:#111111!important;
+  color:#FFFFFF!important;
+}
+.result-head .eyebrow{
+  color:#FFFFFF!important;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.14em;
+  opacity:.75;
+}
+.result-head h2{
+  margin:10px 0;
+  color:#FFFFFF!important;
+  font-size:clamp(22px,3.5vw,29px);
+  font-weight:800;
+  line-height:1.48;
+}
+.result-head p{margin:0;color:#F2F2F2!important;font-size:14px;line-height:1.9}
+.section{margin-top:25px;padding-top:22px;border-top:1px solid #EAEAEA!important}
+.section h3{
+  margin:0 0 13px;
+  color:#111111!important;
+  font-size:18px;
+  font-weight:800;
+}
+.section p{margin:8px 0;color:#555555!important;font-size:13px;line-height:1.9}
+.score-list{display:grid;gap:13px}
+.score-row{
+  display:grid;
+  grid-template-columns:minmax(115px,170px) 1fr 42px;
+  gap:10px;
+  align-items:center;
+  color:#222222;
+  font-size:12px;
+}
+.bar{height:9px;background:#EEEEEE!important;border-radius:20px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--career-accent)!important;border-radius:20px}
+.rank-card{
+  margin:13px 0!important;
+  padding:17px!important;
+  border:1px solid #E8E8E8!important;
+  border-radius:14px!important;
+  background:#FFFFFF!important;
+  box-shadow:none!important;
+  position:relative;
+  overflow:hidden;
+}
+.rank-top{display:flex;gap:11px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.rank{
+  display:inline-block;
+  padding:7px 10px;
+  border-radius:8px;
+  background:#F3F3F3!important;
+  color:#333333!important;
+  font-size:12px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.rank.best{background:#F3F3F3!important;color:#333333!important}
+.rank-card h4{margin:0;color:#111111!important;font-size:16px;font-weight:800}
+.rank-card p{margin:8px 0;color:#555555!important;font-size:13px;line-height:1.85}
+.meta{color:#777777!important;font-size:11px;line-height:1.7}
+.rank-card a{display:inline-block;margin-top:9px;color:var(--career-accent)!important;font-size:12px;font-weight:800;overflow-wrap:anywhere}
+.pill{background:var(--career-accent-soft)!important;color:var(--career-accent)!important;border-radius:30px;padding:5px 9px;font-size:10px;font-weight:800}
+.callout{
+  margin-top:20px;
+  padding:19px;
+  background:#FAFAFA!important;
+  border:1px solid #E8E8E8;
+  border-radius:13px;
+}
+.callout h3{margin:0 0 8px;color:#111111!important;font-size:16px;font-weight:800}
+.callout p{margin:0;color:#444444!important;line-height:1.9}
+.action-list{padding-left:22px;color:#555555!important;font-size:13px;line-height:2}
+.small{color:#777777!important;font-size:11px;line-height:1.85}
+.fitline{display:flex;align-items:center;gap:10px;margin:12px 0}
+.fitnum{min-width:64px;color:#111111!important;font-size:24px;font-weight:900}
+.fittrack{flex:1;height:10px;background:#EEEEEE!important;border-radius:999px;overflow:hidden}
+.fitbar{height:100%;border-radius:999px;background:var(--career-accent)!important}
+.official-top{
+  display:inline-block;
+  margin-top:9px;
+  padding:9px 13px;
+  border-radius:9px;
+  background:#111111!important;
+  color:#FFFFFF!important;
+  text-decoration:none!important;
+  font-weight:800;
+}
+.best1-hero{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.best1-medal{
+  width:58px;height:58px;min-width:58px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  font-size:30px;
+  background:linear-gradient(135deg,#F7E7A6,#D4AF37)!important;
+  box-shadow:0 5px 15px rgba(212,175,55,.2);
+}
+.best1-title{flex:1}
+.best1-kicker{color:#8A6A12!important;font-size:12px;font-weight:950;letter-spacing:.05em}
+.best1-name{margin-top:3px!important;color:#111111!important;font-size:23px!important}
+.best1-fit-box{
+  margin:14px 0;
+  padding:16px;
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:15px;
+  background:#FFFCF2!important;
+  text-align:center;
+}
+.best1-fit-label{color:#80631A!important;font-size:12px;font-weight:900}
+.best1-fit-number{margin:5px 0 10px;color:#B18B1D!important;font-size:48px;line-height:1;font-weight:950}
+.best1-fit-number span{font-size:18px}
+.best1-fit-track{height:15px;background:#F1E8CA!important;border-radius:999px;overflow:hidden}
+.best1-fit-bar{height:100%;border-radius:999px;background:linear-gradient(90deg,#E8C95B,#B18B1D)!important}
+.best-rank-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.best-medal{font-size:28px}
+.best-rank-title{color:#333333!important;font-size:13px;font-weight:950}
+.best-rank-sub{margin-top:2px;color:#777777!important;font-size:12px}
+.why-best{
+  margin-top:15px;
+  padding:15px;
+  border:1px solid #EFE7D1;
+  border-radius:13px;
+  background:#FFFEFA!important;
+}
+.why-best-title{color:#66511A!important;font-size:13px;font-weight:900}
+.match-points{display:grid;gap:7px;margin-top:9px}
+.match-point{display:flex;gap:8px;color:#444444;font-size:12px;line-height:1.65}
+.match-point b{color:#9A7A20}
+.compare-box{
+  margin-top:12px;
+  padding:13px;
+  border:1px solid #EAEAEA;
+  border-radius:11px;
+  background:#FAFAFA!important;
+  color:#555555;
+  font-size:12px;
+  line-height:1.8;
+}
+/* BEST1・2・3は金・銀・銅。カード背景は白で統一 */
+.rank-card.top1{border:2px solid var(--rank-gold)!important;background:#FFFFFF!important}
+.rank-card.top2{border:2px solid var(--rank-silver)!important;background:#FFFFFF!important}
+.rank-card.top3{border:2px solid var(--rank-bronze)!important;background:#FFFFFF!important}
+.rank-card.top1 .rank{background:var(--rank-gold)!important;color:#FFFFFF!important}
+.rank-card.top2 .rank{background:var(--rank-silver)!important;color:#FFFFFF!important}
+.rank-card.top3 .rank{background:var(--rank-bronze)!important;color:#FFFFFF!important}
+.rank-card.top1 .fitnum{color:#9A7715!important}
+.rank-card.top2 .fitnum{color:#71808D!important}
+.rank-card.top3 .fitnum{color:#9A5D35!important}
+.rank-card.top1 .fitbar{background:var(--rank-gold)!important}
+.rank-card.top2 .fitbar{background:var(--rank-silver)!important}
+.rank-card.top3 .fitbar{background:var(--rank-bronze)!important}
+.rank-card:nth-child(n+6){background:#FAFAFA!important;padding:12px 15px!important}
+.rank-card:nth-child(n+6) .fitline{display:none}
+.rank-card:nth-child(n+6) .meta,.rank-card:nth-child(n+6) p{display:none}
+.rank-card:nth-child(n+6) h4{font-size:14px!important}
+.footer-brand{margin-bottom:4px;font-size:17px;font-weight:800;letter-spacing:-.03em}
+.footer-brand a{color:#111111;text-decoration:none}
+.footer-name{color:#888888;font-size:10px;letter-spacing:.12em}
+.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:14px}
+.footer-links a{color:#555555;text-decoration:none;font-size:11px;font-weight:600}
+.footer-links a:hover{color:var(--career-accent)}
+.footer-copy{margin-top:12px;color:#999999;font-size:10px}
+@media(max-width:600px){
+  .header-inner,main{padding-left:15px;padding-right:15px}
+  .header-inner{padding-top:15px;padding-bottom:14px}
+  .brand-name{font-size:19px}
+  .site-title{font-size:12px}
+  main{padding-top:19px;padding-bottom:38px}
+  .card{padding:23px 17px!important;border-radius:15px!important}
+  .start-card{padding:25px 17px 27px!important}
+  .hero-banner{margin-bottom:19px;border-radius:10px}
+  .lead{font-size:13px}
+  .question{font-size:20px}
+  .option{padding:15px;font-size:13px}
+  .result-head{padding:23px 19px!important;border-radius:13px!important}
+  .score-row{grid-template-columns:minmax(100px,1.1fr) 1fr 34px;gap:8px;font-size:10px}
+  .rank-card{padding:14px!important}
+  .fitnum{font-size:21px;min-width:56px}
+  .best1-medal{width:50px;height:50px;min-width:50px;font-size:25px}
+  .best1-name{font-size:20px!important}
+  .best1-fit-number{font-size:42px}
+  .footer-links{gap:10px 15px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+
+
+
+/* =========================================================
+   結果画面のブルー化
+   ・診断結果ヘッダー：ブルー系グラデーション＋白文字
+   ・学校／企業の公式サイトボタン：薄いブルー＋ブルー文字
+========================================================= */
+.result-head{
+  background:linear-gradient(135deg,#164B9A 0%,#2563EB 58%,#4A90E2 100%)!important;
+  color:#FFFFFF!important;
+  border:1px solid #D7E6FF!important;
+  box-shadow:0 8px 24px rgba(37,99,235,.14)!important;
+}
+.result-head .eyebrow,
+.result-head h2,
+.result-head p{
+  color:#FFFFFF!important;
+}
+.official-top,
+a.official-top,
+.rank-card a.official-top{
+  display:block!important;
+  width:100%!important;
+  padding:12px 15px!important;
+  border:1px solid #C7DCFF!important;
+  border-radius:11px!important;
+  background:#EAF2FF!important;
+  color:#174EA6!important;
+  text-align:center!important;
+  text-decoration:none!important;
+  font-weight:800!important;
+  box-shadow:0 2px 7px rgba(37,99,235,.06)!important;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease!important;
+}
+.official-top:hover,
+a.official-top:hover,
+.rank-card a.official-top:hover{
+  background:#DCEAFF!important;
+  border-color:#9FC3FF!important;
+  color:#123F88!important;
+  transform:translateY(-1px);
+}
+.official-top:focus-visible{
+  outline:3px solid rgba(37,99,235,.28)!important;
+  outline-offset:3px!important;
+}
+/* =================================
+   診断スタートボタン：上品なブルー
+================================= */
+
+button.primary {
+  background: linear-gradient(
+    135deg,
+    #356FC5 0%,
+    #2457A7 100%
+  ) !important;
+
+  color: #FFFFFF !important;
+  border: 1px solid #2457A7 !important;
+  border-radius: 14px !important;
+
+  font-family: "LINE Seed JP",
+    "Noto Sans JP",
+    sans-serif !important;
+
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+
+  box-shadow:
+    0 5px 14px rgba(36, 87, 167, 0.20),
+    inset 0 1px 0 rgba(255,255,255,0.22);
+
+  transition: all 0.25s ease;
+}
+
+button.primary:hover {
+  background: linear-gradient(
+    135deg,
+    #447FD2 0%,
+    #2D65B8 100%
+  ) !important;
+
+  box-shadow:
+    0 7px 18px rgba(36, 87, 167, 0.25);
+
+  transform: translateY(-1px);
+}
+
+button.primary:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 7px rgba(36, 87, 167, 0.18);
+}
+/* MyPinto 共通ヘッダー */
+header {
+  background: #FFFFFF;
+  color: #222820;
+  padding: 17px 20px;
+  border-bottom: 1px solid #EDF1EB;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #171717;
+  font-family: "LINE Seed JP", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.header-category {
+  color: #657064;
+  font-family: "LINE Seed JP", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 560px) {
+  header {
+    padding: 15px 16px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .header-category {
+    font-size: 12px;
+  }
+}
+
+/* MyPinto 共通フッター */
+
+footer {
+  padding: 39px 20px 30px;
+  border-top: 1px solid var(--brand-border, #E9EEE6);
+  background: #FFFFFF;
+  color: #667074;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-brand {
+  font-family: "LINE Seed JP", sans-serif;
+  color: var(--brand-black, #202820);
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -.05em;
+}
+
+.footer-description {
+  margin-top: 5px;
+  color: #7A8588;
+  font-size: 12px;
+  line-height: 1.8;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
+  padding: 0 8px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 23px;
+  row-gap: 14px;
+  margin-top: 22px;
+}
+
+.footer-links a {
+  display: inline-block;
+  color: #465255;
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  flex-shrink: 0;
+}
+
+.footer-links a:hover {
+  color: #007F83;
+  text-decoration: underline;
+}
+
+.footer-links a::before,
+.footer-links a::after {
+  content: none;
+}
+
+.footer-copy {
+  margin-top: 22px;
+  color: #929B9E;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  footer {
+    padding: 30px 16px;
+  }
+
+  .footer-description {
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .footer-links {
+    column-gap: 16px;
+    row-gap: 14px;
+  }
+}
+
+/* MyPinto Future Journey: shared soft morning world */
+body { isolation:isolate; }
+#mp-world { position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; opacity:0; visibility:hidden; background:linear-gradient(145deg,#fbfffe 0%,#eefaf8 38%,#edf5ff 72%,#fffaf2 100%); transition:opacity .8s ease,visibility .8s ease; }
+body.mp-world-active #mp-world { opacity:1; visibility:visible; }
+body.mp-world-active > header,body.mp-world-active > main,body.mp-world-active > footer { position:relative; z-index:1; }
+body.mp-world-active #quizScreen,body.mp-world-active #resultScreen { background:transparent!important; }
+body.mp-world-active #quizScreen .card,body.mp-world-active #resultScreen>.card { background:rgba(255,255,255,.79); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,.9); box-shadow:0 18px 48px rgba(82,145,153,.12); }
+.mp-cloud { position:absolute; width:46vw; height:22vw; min-height:150px; border-radius:50%; background:radial-gradient(ellipse,rgba(255,255,255,.9) 0%,rgba(255,255,255,.48) 42%,rgba(255,255,255,0) 72%); filter:blur(18px); will-change:transform; }
+.mp-cloud-a { top:8%; left:-12%; animation:mpCloudA 27s ease-in-out infinite alternate; }
+.mp-cloud-b { top:43%; right:-15%; width:54vw; animation:mpCloudB 34s ease-in-out infinite alternate; opacity:.8; }
+.mp-cloud-c { bottom:-8%; left:22%; width:58vw; animation:mpCloudC 31s ease-in-out infinite alternate; opacity:.72; }
+.mp-ribbon { position:absolute; width:85vw; height:35vw; min-height:220px; border:1px solid rgba(255,255,255,.8); border-radius:50%; filter:blur(1px); transform:rotate(-18deg); opacity:.48; }
+.mp-ribbon::after { content:""; position:absolute; inset:8% 0; border:2px solid rgba(133,220,210,.22); border-radius:50%; filter:blur(7px); }
+.mp-ribbon-a { top:18%; left:12%; animation:mpRibbonA 22s ease-in-out infinite alternate; }
+.mp-ribbon-b { top:51%; left:-28%; width:110vw; opacity:.28; animation:mpRibbonB 28s ease-in-out infinite alternate; }
+.mp-particles { position:absolute; inset:0; opacity:.55; background-image:radial-gradient(circle at 12% 22%,rgba(255,255,255,.95) 0 2px,transparent 3px),radial-gradient(circle at 76% 18%,rgba(255,255,255,.9) 0 1.5px,transparent 3px),radial-gradient(circle at 68% 72%,rgba(125,220,210,.48) 0 2px,transparent 3px),radial-gradient(circle at 28% 82%,rgba(255,255,255,.95) 0 2px,transparent 3px),radial-gradient(circle at 90% 52%,rgba(255,255,255,.8) 0 1px,transparent 3px); animation:mpParticles 16s ease-in-out infinite alternate; }
+@keyframes mpCloudA { to { transform:translate(13vw,5vh) scale(1.12); } }
+@keyframes mpCloudB { to { transform:translate(-12vw,-4vh) scale(.92); } }
+@keyframes mpCloudC { to { transform:translate(8vw,-7vh) scale(1.08); } }
+@keyframes mpRibbonA { to { transform:translate(4vw,-3vh) rotate(-12deg) scale(1.04); } }
+@keyframes mpRibbonB { to { transform:translate(7vw,3vh) rotate(-23deg) scale(.96); } }
+@keyframes mpParticles { to { transform:translateY(-12px); opacity:.9; } }
+#mp-focus-intro { position:fixed; inset:0; z-index:10000; display:grid; place-items:center; align-content:center; gap:22px; overflow:hidden; background:linear-gradient(145deg,#fbfffe,#edf8f8 48%,#edf4ff); opacity:0; visibility:hidden; pointer-events:none; }
+#mp-focus-intro.is-active { opacity:1; visibility:visible; animation:mpIntroOut .65s ease 1.35s forwards; }
+#mp-focus-intro.is-active .mp-focus-blur { animation:mpFocusClear 1.55s cubic-bezier(.2,.7,.2,1) forwards; }
+#mp-focus-intro.is-active .mp-focus-core { animation:mpCoreFocus 1.35s cubic-bezier(.16,.8,.25,1) forwards; }
+#mp-focus-intro.is-active p { animation:mpTextIn .7s ease .45s forwards; }
+.mp-focus-blur { position:absolute; inset:-12%; backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); background:radial-gradient(circle at 50% 47%,rgba(255,255,255,.08),rgba(255,255,255,.45)); }
+.mp-focus-core { position:relative; width:92px; height:92px; border-radius:50%; background:radial-gradient(circle,#fff 0 5%,#caffb5 10%,rgba(130,255,180,.35) 30%,rgba(130,220,255,.08) 68%,transparent 72%); box-shadow:0 0 30px 12px rgba(140,255,190,.34),0 0 100px 35px rgba(140,220,255,.22); transform:scale(.28); }
+.mp-focus-core::before,.mp-focus-core::after { content:""; position:absolute; inset:-28px; border:1px solid rgba(255,255,255,.9); border-radius:50%; }
+#mp-focus-intro.is-active .mp-focus-core::before,#mp-focus-intro.is-active .mp-focus-core::after { animation:mpHalo 1.4s ease-out forwards; }
+.mp-focus-core::after { inset:-58px; animation-delay:.12s; }
+.mp-focus-core span { position:absolute; width:10px; height:10px; left:50%; top:50%; border-radius:50%; background:#fff; transform:translate(-50%,-50%); box-shadow:0 0 18px 8px #fff; }
+#mp-focus-intro p { position:relative; margin:0; color:#49676a; font-size:15px; font-weight:700; letter-spacing:.08em; opacity:0; }
+@keyframes mpFocusClear { 0% { backdrop-filter:blur(22px); opacity:1; } 70% { backdrop-filter:blur(2px); opacity:.9; } 100% { backdrop-filter:blur(0); opacity:0; } }
+@keyframes mpCoreFocus { 0% { transform:scale(.28); opacity:.25; } 65% { transform:scale(1.12); opacity:1; } 100% { transform:scale(1); opacity:1; } }
+@keyframes mpHalo { 0% { transform:scale(.45); opacity:.9; } 100% { transform:scale(1.7); opacity:0; } }
+@keyframes mpTextIn { to { opacity:1; } }
+@keyframes mpIntroOut { to { opacity:0; visibility:hidden; } }
+.mp-guide { display:flex; align-items:center; gap:11px; min-height:44px; margin:0 0 18px; padding:9px 13px; border:1px solid rgba(151,222,211,.48); border-radius:12px; background:linear-gradient(100deg,rgba(241,255,250,.88),rgba(246,250,255,.84)); color:#526d6d; font-size:13px; font-weight:700; line-height:1.6; }
+.mp-guide-orb { flex:0 0 22px; width:22px; height:22px; border-radius:50%; background:radial-gradient(circle at 40% 35%,#fff 0 12%,#c9ff91 30%,#8be5c8 60%,rgba(139,229,200,.2) 100%); box-shadow:0 0 13px rgba(112,232,176,.45); }
+.mp-guide.is-changing { animation:mpGuideIn .35s ease both; }
+@keyframes mpGuideIn { from { opacity:.35; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+#resultScreen.mp-result-reveal .result-head { animation:mpResultReveal .9s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes mpResultReveal { from { opacity:0; transform:translateY(18px) scale(.985); filter:blur(8px); } to { opacity:1; transform:none; filter:blur(0); } }
+@media(max-width:600px) { .mp-cloud { width:85vw; height:42vw; } .mp-ribbon { width:130vw; height:55vw; } .mp-guide { font-size:12px; } }
+@media(prefers-reduced-motion:reduce) { #mp-world *,#mp-focus-intro *, .mp-guide, #resultScreen.mp-result-reveal .result-head { animation:none!important; transition:none!important; } }
+
+</style>
+</head>
+<body>
+<div id="mp-world" aria-hidden="true">
+  <div class="mp-cloud mp-cloud-a"></div><div class="mp-cloud mp-cloud-b"></div><div class="mp-cloud mp-cloud-c"></div>
+  <div class="mp-ribbon mp-ribbon-a"></div><div class="mp-ribbon mp-ribbon-b"></div><div class="mp-particles"></div>
+</div>
+<div id="mp-focus-intro" aria-hidden="true">
+  <div class="mp-focus-blur"></div><div class="mp-focus-core"><span></span></div>
+  <p>あなたに合う進路と可能性を見つける旅へ。</p>
+</div>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="https://my-pinto.github.io/">MyPinto</a>
+    <span class="header-category">半導体キャリア診断</span>
+  </div>
+</header>
+<main>
+<section id="startScreen" class="card start-card">
+
+  <!-- メインビジュアル -->
+  <img
+    src="IMG_6547.png"
+    alt="MyPinto 半導体キャリア診断 20問適性診断"
+    class="hero-banner"
+  >
+<h1>20問で見つける<br>半導体業界への進路</h1>
+<p class="lead">興味・得意分野・学び方・地域・費用・将来の働き方を20問で整理。あなたに合う進学ルート、学校候補、企業候補、職種を具体的に提案します。</p>
+<div class="notice"><b>診断について</b><br>全国の学校・企業を候補として比較し、回答との一致度から推薦順位を表示します。学校・企業の「ベスト1・2・3」と、それぞれを選んだ理由も説明します。診断は進路選択の参考情報であり、合格・採用・適性を保証するものではありません。学科・募集職種・学費・入試情報は必ず公式情報で最新状況をご確認ください。</div>
+<button class="primary" onclick="startQuiz()">20問の診断をはじめる</button>
+</section>
+
+<section id="quizScreen" class="hidden">
+<div class="progress-area"><div class="progress-text"><span id="progressLabel">質問 1 / 20</span><span id="progressPercent">5%</span></div><div class="progress-track"><div id="progressBar" class="progress"></div></div></div>
+<div class="mp-guide" id="mp-guide" aria-live="polite" aria-atomic="true"><span class="mp-guide-orb" aria-hidden="true"></span><span id="mp-guide-text">あなたのペースで大丈夫。直感で選んでみてください。</span></div>
+<div class="card"><div id="questionGroup" class="qgroup"></div><div id="questionNumber" class="qgroup"></div><h2 id="questionText" class="question"></h2><div id="options" class="options"></div><button id="backButton" class="back" onclick="goBack()">← 前の質問に戻る</button></div>
+</section>
+
+<section id="resultScreen" class="hidden">
+<div class="result-head"><div class="eyebrow">YOUR CAREER DIAGNOSIS</div><h2 id="resultTitle"></h2><p id="resultSummary"></p></div>
+<div class="card">
+<div class="section" style="margin-top:0;padding-top:0;border:0"><h3>1. 診断スコアと適性分析</h3><div id="scoreList" class="score-list"></div><p id="scoreExplanation"></p></div>
+<div class="section"><h3>2. あなたに合う進路ルート</h3><div id="routeRecommendation"></div></div>
+<div class="section"><h3>3. 学ぶべき分野・学科</h3><div id="fieldRecommendation"></div></div>
+<div class="section"><h3>4. 推奨学校ランキング｜全国候補20校｜TOP5は適合度グラフ</h3><p>回答との一致度をもとに候補を並べています。ベスト1・2・3は特に詳しく理由を表示します。</p><div id="schoolRanking"></div></div>
+<div class="section"><h3>5. 推奨企業ランキング｜全国候補20社｜TOP5は適合度グラフ</h3><p>半導体業界の企業・事業領域と、あなたの興味・希望職種との関連性から候補を表示します。採用職種は年度や事業所で異なります。</p><div id="companyRanking"></div></div>
+<div class="section"><h3>6. 向いている職種ベスト3</h3><div id="jobRanking"></div></div>
+<div class="section"><h3>7. あなたの回答から分かる強み・注意点</h3><div id="strengths"></div></div>
+<div class="section"><h3>8. 進路決定までの行動ロードマップ</h3><ol id="roadmap" class="action-list"></ol></div>
+<div class="callout"><h3>最終提案</h3><p id="finalRecommendation"></p></div>
+<p class="small" style="margin-top:18px">情報の扱い：このページはブラウザ内で診断を行い、回答をサーバーへ送信しません。掲載候補は全国の代表的な教育機関・企業例です。学科名、募集要項、採用条件、授業料、所在地、事業内容は変更される場合があります。出願・応募前に必ず各公式サイトで確認してください。</p>
+<button class="restart" onclick="restartQuiz()">もう一度診断する</button>
+</div>
+</section>
+</main>
+
+
+<footer>
+  <div class="footer-brand">MyPinto</div>
+
+  <div class="footer-description">
+    自分に合う進路と可能性を見つける、半導体キャリア診断
+  </div>
+
+  <div class="footer-links">
+    <a href="https://my-pinto.github.io/">MyPintoトップページ</a>
+    <a href="https://forms.gle/eSEsjBmjqJ6iZYtQ8"
+       target="_blank"
+       rel="noopener noreferrer">お問い合わせ</a>
+    <a href="https://my-pinto.github.io/privacy.html">プライバシーポリシー</a>
+    <a href="https://my-pinto.github.io/about.html">運営者情報・免責事項</a>
+  </div>
+
+  <div class="footer-copy">
+    © MyPinto. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+const questions = [
+{group:"A. 現在の状況と進路条件",q:"1. 現在のあなたに最も近い状況は？",o:[["高校生・高専受験を考えている","highschool"],["大学・高専・専門学校に在学中","student"],["社会人・転職を検討中","career"],["保護者として情報を集めている","parent"]]},
+{group:"A. 現在の状況と進路条件",q:"2. 今回、主に考えたい進路は？",o:[["高校卒業後の進学先","afterHigh"],["大学・高専等からの就職","graduate"],["専門学校等からの就職","vocational"],["社会人からの転職・学び直し","reskill"],["まだ決めていない","unsure"]]},
+{group:"A. 現在の状況と進路条件",q:"3. 学校を選ぶ場合、希望する地域は？",o:[["北海道・東北","north"],["関東・甲信越","east"],["東海・北陸","central"],["近畿","west"],["中国・四国","chugoku"],["九州・沖縄","kyushu"],["地域は問わず全国から選びたい","anywhere"]]},
+{group:"A. 現在の状況と進路条件",q:"4. 進学・就職に伴う転居について、近い考えは？",o:[["希望地域内・自宅から通える範囲がよい","local"],["寮や一人暮らしも検討できる","move"],["条件が合えば全国どこでもよい","flexible"],["まだ判断できない","moveUnknown"]]},
+{group:"B. 興味・得意分野",q:"5. 学校の科目や学習内容で、比較的興味があるものは？",o:[["数学・物理","math"],["化学・生物・材料","chem"],["情報・プログラミング","info"],["機械・電気・技術","mech"],["幅広く学ぶこと・まだ分からない","broad"]]},
+{group:"B. 興味・得意分野",q:"6. どのような作業に魅力を感じる？",o:[["機械や装置の構造を考える","machine"],["電子回路や電気の仕組みを扱う","electric"],["材料や薬品、表面の性質を調べる","material"],["プログラムやデータを扱う","code"],["製品を組み立て、動作を確かめる","hands"]]},
+{group:"B. 興味・得意分野",q:"7. 問題が起きたとき、取り組みたい方法は？",o:[["原因を理論や数値から分析する","analysis"],["実物を確認して調整・改善する","fix"],["データを集めて傾向を見つける","data"],["周囲と相談し、手順や仕組みを改善する","team"],["まず試しながら学ぶ","trial"]]},
+{group:"B. 興味・得意分野",q:"8. 半導体のどの部分に興味がある？",o:[["半導体そのものの設計・材料・製造","device"],["半導体を作る製造装置","equipment"],["工場の生産・品質・工程","factory"],["ソフトウェア・AI・データ活用","digital"],["まだ知らないので幅広く知りたい","explore"]]},
+{group:"C. 学び方・専門性",q:"9. 学び方として、自分に合いそうなのは？",o:[["数式・理論・原理を深く学ぶ","theory"],["実験・実習・実物に触れて学ぶ","practice"],["研究テーマを決めて探究する","research"],["資格や実務スキルを段階的に身につける","skill"],["組み合わせて学びたい","mix"]]},
+{group:"C. 学び方・専門性",q:"10. 数学・物理などの基礎科目について、今の感覚は？",o:[["得意・もっと深く学びたい","strong"],["苦手ではない・努力すれば取り組める","okay"],["少し不安がある","weak"],["まだ判断できない・学び直したい","relearn"]]},
+{group:"C. 学び方・専門性",q:"11. 将来、どの程度まで専門性を深めたい？",o:[["大学院なども視野に研究・開発を深めたい","advanced"],["大学・高専等で専門を学び技術職を目指したい","degree"],["実習・資格・実務力を重視したい","practical"],["働きながら必要な専門性を高めたい","worklearn"],["まだ決めていない","open"]]},
+{group:"C. 学び方・専門性",q:"12. チームでの仕事について、近い考えは？",o:[["一人で集中して設計・分析する時間が好き","solo"],["チームで相談しながら進めたい","teamwork"],["現場で多くの人と連携する仕事がよい","field"],["どれも対応してみたい","variety"]]},
+{group:"D. 将来の仕事・働き方",q:"13. 仕事として特に関心があるものは？",o:[["研究・デバイス開発","researchjob"],["装置・機械・電気の設計開発","design"],["装置製造・組立・保守・技術サポート","production"],["工場の生産技術・品質・工程改善","quality"],["ソフトウェア・AI・データ分析","software"],["まだ絞れていない","undecided"]]},
+{group:"D. 将来の仕事・働き方",q:"14. 働く場所・環境で希望に近いものは？",o:[["研究所・開発部門","lab"],["工場・製造現場","plant"],["オフィス中心","office"],["顧客先や国内外の現場にも行く","customer"],["特にこだわらない","any"]]},
+{group:"D. 将来の仕事・働き方",q:"15. 仕事で大切にしたいことは？",o:[["技術を深く追求できること","expert"],["製品や装置を完成させる達成感","make"],["安定した品質・安全を支えること","reliable"],["新しい技術やデジタルを活用すること","innovation"],["幅広い仕事を経験できること","broadcareer"]]},
+{group:"D. 将来の仕事・働き方",q:"16. 将来働きたい地域について、希望は？",o:[["地元・現在の居住地域に近い場所","home"],["特定の地域（進学先・希望勤務地）","preferred"],["全国転勤・海外勤務も選択肢","global"],["仕事内容を優先し地域は柔軟に考える","workfirst"],["まだ決めていない","unknownplace"]]},
+{group:"E. 費用・就職・目標",q:"17. 進学費用について、最も近い考えは？",o:[["費用を抑えられる国公立・高専を優先したい","lowcost"],["奨学金や授業料支援も含めて検討したい","aid"],["学びたい内容を優先し費用も比較したい","balanced"],["専門性や設備が合えば私立も検討できる","private"],["まだ分からない","costunknown"]]},
+{group:"E. 費用・就職・目標",q:"18. 就職先を選ぶとき、重視することは？",o:[["半導体の研究開発に強い企業","rcompany"],["製造装置・装置技術に強い企業","ecompany"],["半導体メーカー・工場を持つ企業","mcompany"],["IT・ソフトウェア・データ分野の企業","scompany"],["教育・研修・働き方など総合的な環境","environment"]]},
+{group:"E. 費用・就職・目標",q:"19. 半導体業界で働くために、今の自分に必要だと思うことは？",o:[["数学・物理・化学など基礎学力","basics"],["電気・機械・材料など専門知識","technical"],["プログラミング・データ分析","programming"],["実験・実習・ものづくり経験","experience"],["業界や職種について知ること","knowledge"]]},
+{group:"E. 費用・就職・目標",q:"20. 診断後、最もはっきりさせたいことは？",o:[["進学する学校・学科の第一候補","schoolchoice"],["目指す職種と必要な学び","jobchoice"],["就職したい企業・業界","companychoice"],["費用や地域も含めた現実的な進路","realistic"],["自分に合う方向性と次の一歩","direction"]]}
+];
+
+const schools=[
+{name:"東北大学",region:"north",type:"国立大学",fields:["device","material","research","math","chem"],route:["afterHigh","graduate"],why:"材料・電子・デバイスなどを理論と研究の両面から深めたい人に向く候補。研究開発志向や大学院進学を考える回答と相性が高い。",url:"https://www.tohoku.ac.jp/"},
+{name:"北海道大学",region:"north",type:"国立大学",fields:["device","material","research","chem","math"],route:["afterHigh","graduate"],why:"材料・化学・電子系の基礎を広く学び、研究テーマを探したい人に向く候補。",url:"https://www.hokudai.ac.jp/"},
+{name:"東京科学大学",region:"east",type:"国立大学",fields:["device","equipment","electric","research","math","design"],route:["afterHigh","graduate"],why:"理工系の専門性を高め、半導体デバイス・電子工学・装置技術などの研究開発を目指す人に向く候補。",url:"https://www.isct.ac.jp/"},
+{name:"東京理科大学",region:"east",type:"私立大学",fields:["device","electric","material","software","research","math"],route:["afterHigh","graduate"],why:"理学・工学系の基礎を土台に、電気電子・材料・情報など複数の専門分野を比較したい人に向く候補。",url:"https://www.tus.ac.jp/"},
+{name:"名古屋大学",region:"central",type:"国立大学",fields:["device","material","research","math","electric"],route:["afterHigh","graduate"],why:"研究・開発志向があり、材料・電気電子・物理などを深く学びたい人に向く候補。",url:"https://www.nagoya-u.ac.jp/"},
+{name:"豊橋技術科学大学",region:"central",type:"国立大学",fields:["equipment","electric","practice","design","skill","mech"],route:["afterHigh","graduate","vocational"],why:"実践的な技術教育と工学専門性の両方を重視したい人に向く候補。高専からの編入も進路の選択肢になる。",url:"https://www.tut.ac.jp/"},
+{name:"大阪大学",region:"west",type:"国立大学",fields:["device","material","research","software","math","electric"],route:["afterHigh","graduate"],why:"基礎研究から応用研究まで視野に入れ、電子・情報・材料などの専門性を深めたい人に向く候補。",url:"https://www.osaka-u.ac.jp/"},
+{name:"広島大学",region:"chugoku",type:"国立大学",fields:["device","electric","material","research","chem"],route:["afterHigh","graduate"],why:"電気電子・材料・化学などを学び、半導体関連の研究・技術職を目指したい人に向く候補。",url:"https://www.hiroshima-u.ac.jp/"},
+{name:"九州大学",region:"kyushu",type:"国立大学",fields:["device","material","research","software","math","chem"],route:["afterHigh","graduate"],why:"材料・応用化学・電気電子・情報などを横断し、研究開発やプロセス技術を目指したい人に向く候補。",url:"https://www.kyushu-u.ac.jp/"},
+{name:"熊本大学",region:"kyushu",type:"国立大学",fields:["device","electric","material","research","equipment"],route:["afterHigh","graduate"],why:"半導体関連の研究・教育や地域産業との接点も視野に、電気電子・材料などを学びたい人に向く候補。",url:"https://www.kumamoto-u.ac.jp/"},
+{name:"九州工業大学",region:"kyushu",type:"国立大学",fields:["equipment","electric","software","mech","practice","design"],route:["afterHigh","graduate"],why:"電気・機械・情報などの工学を学び、装置・制御・生産技術・ソフトウェア分野を目指したい人に向く候補。",url:"https://www.kyutech.ac.jp/"},
+{name:"長岡技術科学大学",region:"east",type:"国立大学",fields:["equipment","electric","material","practice","design","skill"],route:["afterHigh","graduate","vocational"],why:"実務・実験・工学専門性を重視し、製造技術や装置技術につなげたい人に向く候補。高専からの編入ルートも検討できる。",url:"https://www.nagaokaut.ac.jp/"}
+
+,{name:"仙台高等専門学校",region:"north",type:"国立高等専門学校",fields:["equipment","electric","software","practice","skill","mech"],route:["afterHigh","graduate"],why:"実験・実習を重視しながら、機械・電気電子・情報系の専門性を身につけたい人に向く候補。",url:"https://www.sendai-nct.ac.jp/"}
+,{name:"群馬工業高等専門学校",region:"east",type:"国立高等専門学校",fields:["equipment","production","electric","practice","mech"],route:["afterHigh","graduate"],why:"早い段階から工学技術を学び、製造装置・生産技術につながる力を身につけたい人に向く候補。",url:"https://www.gunma-ct.ac.jp/"}
+,{name:"富山高等専門学校",region:"central",type:"国立高等専門学校",fields:["equipment","software","production","practice","electric"],route:["afterHigh","graduate"],why:"実践的な技術教育を通じて、機械・電気・情報系の進路を考えたい人に向く候補。",url:"https://www.nc-toyama.ac.jp/"}
+,{name:"大阪公立大学",region:"west",type:"公立大学",fields:["equipment","software","quality","electric","mech"],route:["afterHigh","graduate"],why:"都市部で工学系の専門分野を幅広く比較し、設計・情報・品質系を検討したい人に向く候補。",url:"https://www.omu.ac.jp/"}
+,{name:"奈良工業高等専門学校",region:"west",type:"国立高等専門学校",fields:["equipment","production","software","practice","skill"],route:["afterHigh","graduate"],why:"実習を重視し、ものづくり・制御・情報技術を早期から身につけたい人に向く候補。",url:"https://www.nara-k.ac.jp/"}
+,{name:"松江工業高等専門学校",region:"chugoku",type:"国立高等専門学校",fields:["equipment","production","software","practice","mech"],route:["afterHigh","graduate"],why:"機械・電気電子・情報系の実践技術を学び、地域産業から全国の技術職まで視野に入れたい人に向く候補。",url:"https://www.matsue-ct.jp/"}
+,{name:"佐世保工業高等専門学校",region:"kyushu",type:"国立高等専門学校",fields:["equipment","production","software","practice","electric"],route:["afterHigh","graduate"],why:"九州で実践的な工学教育を受け、装置・製造・情報系の技術職を目指したい人に向く候補。",url:"https://www.sasebo.ac.jp/"}
+,{name:"大分工業高等専門学校",region:"kyushu",type:"国立高等専門学校",fields:["equipment","production","quality","practice","mech"],route:["afterHigh","graduate"],why:"ものづくりと実習を重視し、製造技術・設備・品質分野を目指したい人に向く候補。",url:"https://www.oita-ct.ac.jp/"}];
+
+const companies=[
+{name:"東京エレクトロン",area:"製造装置",tags:["equipment","design","production","quality","customer","mech","electric"],jobs:"半導体製造装置の開発・設計、プロセス技術、製造技術、品質、フィールド技術など。",why:"装置そのものや、装置を使った製造プロセスに関心がある回答と結びつきやすい。機械・電気・制御・材料など複数の専門を活かせる。",url:"https://www.tel.co.jp/"},
+{name:"アドバンテスト",area:"半導体試験装置",tags:["equipment","design","electric","software","data","research"],jobs:"半導体テストシステム、電子計測、ソフトウェア、ハードウェア、技術サポートなど。",why:"電気電子・ソフトウェア・計測技術に興味があり、半導体の性能評価を支える仕事を目指す人に合う候補。",url:"https://www.advantest.com/"},
+{name:"SCREENホールディングス",area:"製造装置",tags:["equipment","production","chem","material","quality","customer"],jobs:"洗浄・塗布現像などの半導体製造装置関連の開発、製造、プロセス、品質、サービスなど。",why:"化学・材料・装置・製造工程に関心がある人に候補となる。装置とプロセスの両方に接点がある。",url:"https://www.screen.co.jp/"},
+{name:"ディスコ",area:"精密加工装置・加工ツール",tags:["equipment","mech","design","production","quality","hands"],jobs:"精密加工装置・加工ツールの開発、設計、製造、加工技術、品質など。",why:"機械の仕組みや精密なものづくり、実物を完成させる仕事に関心がある人に向く候補。",url:"https://www.disco.co.jp/"},
+{name:"レーザーテック",area:"検査・計測装置",tags:["equipment","research","design","electric","software","analysis"],jobs:"半導体マスク・ウェハー関連の検査装置、光学・電気・ソフトウェアの開発や技術職など。",why:"精密機器、光学、電気、ソフトウェアを組み合わせた装置開発に興味がある人に候補となる。",url:"https://www.lasertec.co.jp/"},
+{name:"ルネサス エレクトロニクス",area:"半導体デバイス",tags:["device","electric","software","research","design","quality"],jobs:"半導体製品・回路・デバイス開発、組込みソフトウェア、品質・生産技術など。",why:"半導体そのものの設計・開発や、電子回路・ソフトウェアに関心がある人に合う候補。",url:"https://www.renesas.com/"},
+{name:"キオクシア",area:"メモリ半導体",tags:["device","research","material","electric","quality","data"],jobs:"メモリ半導体の研究開発、プロセス・デバイス技術、生産技術、品質、情報系職種など。",why:"半導体デバイスの仕組みや材料・プロセスを深く学び、研究・製造技術を目指したい人に候補となる。",url:"https://www.kioxia.com/"},
+{name:"ソニーセミコンダクタソリューションズ",area:"イメージセンサー等",tags:["device","research","electric","software","material","quality"],jobs:"イメージセンサーなどのデバイス開発、回路設計、プロセス、画像・信号処理、品質など。",why:"電子・物理・材料・ソフトウェアを組み合わせ、デバイス開発や画像技術に関心がある人に向く候補。",url:"https://www.sony-semicon.com/"},
+{name:"マイクロンメモリジャパン",area:"メモリ半導体",tags:["device","research","production","quality","material","electric"],jobs:"メモリ製品・プロセス・設備・製造・品質・技術開発など。",why:"半導体工場やメモリ製造の工程・設備・品質に興味がある人に候補となる。",url:"https://www.micron.com/"},
+{name:"JASM",area:"半導体製造",tags:["device","production","quality","material","chem","factory"],jobs:"半導体製造、生産技術、設備、プロセス、品質、工場運営など。",why:"半導体を実際に製造する工場の仕事に関心があり、製造・工程・品質分野を目指す人に候補となる。",url:"https://www.tsmc.com/"},
+{name:"ローム",area:"半導体・電子部品",tags:["device","electric","research","material","quality","production"],jobs:"パワー半導体・電子部品の開発、デバイス・プロセス、生産技術、品質など。",why:"電気電子・材料・デバイスに興味があり、半導体や電子部品の開発・製造を支えたい人に候補となる。",url:"https://www.rohm.co.jp/"},
+{name:"キヤノンアネルバ",area:"半導体製造装置",tags:["equipment","mech","electric","material","production","design"],jobs:"真空成膜装置などの開発・設計、製造、プロセス、品質、技術サポートなど。",why:"真空技術・機械・電気・材料に関心があり、装置開発や製造技術を目指す人に候補となる。",url:"https://anelva.canon/"}
+
+,{name:"ソニーセミコンダクタマニュファクチャリング",area:"半導体製造",tags:["device","production","quality","factory","plant","mcompany"],jobs:"半導体製造、デバイス・プロセス技術、生産技術、品質関連など。",why:"半導体そのものや工場の製造・品質に関心がある人に候補となる。",url:"https://www.sony-semicon.com/"}
+,{name:"キヤノン",area:"製造装置・精密機器",tags:["equipment","design","software","quality","mech"],jobs:"精密機器・製造装置関連の開発、設計、ソフトウェア、品質など。",why:"精密な装置や機械・電気・ソフトウェアを組み合わせた技術に関心がある人に候補となる。",url:"https://global.canon/"}
+,{name:"ニコン",area:"精密機器・装置",tags:["equipment","design","software","quality","mech"],jobs:"精密機器・装置関連の開発、設計、ソフトウェア、品質など。",why:"精密機械や光学・電子技術を活かした装置開発に関心がある人に候補となる。",url:"https://www.nikon.com/"}
+,{name:"SUMCO",area:"半導体材料",tags:["device","material","chem","quality","factory","mcompany"],jobs:"シリコンウェーハ関連の材料・製造・品質・技術開発など。",why:"材料・化学・品質や半導体製造の基盤技術に関心がある人に候補となる。",url:"https://www.sumcosi.com/"}
+,{name:"信越化学工業",area:"半導体材料",tags:["device","material","chem","quality","factory","mcompany"],jobs:"材料・化学・製造技術・品質・研究開発など。",why:"化学・材料を土台に半導体関連の技術分野を目指したい人に候補となる。",url:"https://www.shinetsu.co.jp/"}
+,{name:"東京応化工業",area:"半導体材料",tags:["device","material","chem","quality","research"],jobs:"半導体用材料の研究開発、品質、生産技術など。",why:"化学・材料・プロセス技術に関心があり、研究から製造まで幅広く考えたい人に候補となる。",url:"https://www.tok.co.jp/"}
+,{name:"荏原製作所",area:"製造装置",tags:["equipment","production","quality","mech","ecompany"],jobs:"装置・機械関連の開発、製造技術、品質など。",why:"機械・装置技術や製造現場の改善に関心がある人に候補となる。",url:"https://www.ebara.com/"}
+,{name:"アルバック",area:"製造装置",tags:["equipment","production","quality","mech","material","ecompany"],jobs:"真空技術を活かした装置開発、製造、プロセス、品質など。",why:"装置・材料・真空技術や製造プロセスに関心がある人に候補となる。",url:"https://www.ulvac.co.jp/"}];
+
+const categoryNames={device:"デバイス・材料・プロセス研究型",equipment:"製造装置・機械電気設計型",production:"製造・生産技術・現場実践型",software:"ソフトウェア・AI・データ活用型",quality:"品質・工程改善型",explore:"幅広く比較して進路を決める探索型"};
+let current=0,answers=[];
+let currentProfile={};
+function startQuiz(){
+  current=0; answers=[];
+  document.getElementById("startScreen").classList.add("hidden");
+  document.getElementById("resultScreen").classList.add("hidden");
+  document.getElementById("resultScreen").classList.remove("mp-result-reveal");
+  document.body.classList.add("mp-world-active");
+  const intro=document.getElementById("mp-focus-intro");
+  intro.classList.remove("is-active"); void intro.offsetWidth; intro.classList.add("is-active");
+  window.scrollTo(0,0);
+  setTimeout(()=>{
+    intro.classList.remove("is-active");
+    document.getElementById("quizScreen").classList.remove("hidden");
+    showQuestion();
+    window.scrollTo({top:0,behavior:"smooth"});
+  },2000);
+}
+function showQuestion(){
+  const q=questions[current];
+  document.getElementById("questionGroup").textContent=q.group;
+  document.getElementById("questionNumber").textContent="QUESTION "+(current+1);
+  document.getElementById("questionText").textContent=q.q;
+  document.getElementById("progressLabel").textContent=`質問 ${current+1} / ${questions.length}`;
+  const p=Math.round((current+1)/questions.length*100);
+  document.getElementById("progressPercent").textContent=p+"%";
+  document.getElementById("progressBar").style.width=p+"%";
+  const guideMessages={
+    0:"あなたのペースで大丈夫。今の興味や感覚を大切に選んでみてください。",
+    4:"ここまでの回答から、興味の方向が少しずつ見えてきました。",
+    9:"折り返し地点です。まだ迷っていても大丈夫。そのまま進みましょう。",
+    14:"あなたに合う学び方や働き方の輪郭が見えてきています。",
+    18:"あと2問です。最後まで答えると、進路の候補を整理できます。"
+  };
+  const guide=document.getElementById("mp-guide");
+  if(guideMessages[current]){
+    document.getElementById("mp-guide-text").textContent=guideMessages[current];
+    guide.classList.remove("is-changing"); void guide.offsetWidth; guide.classList.add("is-changing");
+  }
+  const box=document.getElementById("options"); box.innerHTML="";
+  q.o.forEach(([label,value])=>{const b=document.createElement("button");b.className="option";b.textContent=label;b.onclick=()=>choose(value);box.appendChild(b)});
+  document.getElementById("backButton").classList.toggle("hidden",current===0);
+}
+function choose(v){answers[current]=v;if(current<questions.length-1){current++;showQuestion();window.scrollTo({top:0,behavior:"smooth"})}else showResult()}
+function goBack(){if(current>0){current--;showQuestion()}}
+function scoreProfile(){let s={device:0,equipment:0,production:0,software:0,quality:0,explore:0};const add=(k,n)=>s[k]+=n;
+const map={math:["device",2],chem:["device",2],info:["software",3],mech:["equipment",3],broad:["explore",2],machine:["equipment",3],electric:["equipment",2],material:["device",3],code:["software",3],hands:["production",3],analysis:["device",2],fix:["equipment",2],data:["software",3],team:["quality",2],trial:["production",2],device:["device",4],equipment:["equipment",4],factory:["production",4],digital:["software",4],explore:["explore",3],theory:["device",2],practice:["production",2],research:["device",3],skill:["production",2],mix:["explore",1],strong:["device",1],okay:["equipment",1],weak:["explore",1],relearn:["explore",2],advanced:["device",3],degree:["equipment",1],practical:["production",3],worklearn:["production",2],open:["explore",1],solo:["device",1],teamwork:["quality",2],field:["production",2],variety:["explore",1],researchjob:["device",4],design:["equipment",4],production:["production",4],quality:["quality",4],software:["software",4],undecided:["explore",3],lab:["device",2],plant:["production",2],office:["software",1],customer:["equipment",1],any:["explore",1],expert:["device",2],make:["production",2],reliable:["quality",2],innovation:["software",2],broadcareer:["explore",2],basics:["device",1],technical:["equipment",2],programming:["software",2],experience:["production",2],knowledge:["explore",2]};
+Object.entries(map).forEach(([v,[k,n]])=>{if(answers.includes(v))add(k,n)});
+if(answers[8]==="theory"||answers[8]==="research")add("device",1);
+if(answers[8]==="practice"||answers[8]==="skill")add("production",1);
+if(answers[9]==="strong")add("device",1);
+if(answers[12]==="quality")add("quality",1);
+if(answers[17]==="rcompany")add("device",2);
+if(answers[17]==="ecompany")add("equipment",2);
+if(answers[17]==="mcompany")add("production",2);
+if(answers[17]==="scompany")add("software",2);
+if(answers[19]==="direction")add("explore",2);
+return s}
+function regionScore(item){let pref=answers[2];if(pref==="anywhere")return 2;if(item.region===pref)return 5;if(pref==="east"&&item.region==="central")return 1;if(pref==="central"&&item.region==="east")return 1;return 0}
+function routeScore(item){let r=answers[1];if(r==="unsure")return 1;if(item.route.includes(r))return 3;if(r==="graduate"&&item.route.includes("afterHigh"))return 1;return 0}
+function schoolScore(item,profile){let best=Object.entries(profile).sort((a,b)=>b[1]-a[1])[0][0];let score=0;item.fields.forEach(t=>{if(t===best)score+=4;if(profile[t])score+=Math.min(2,profile[t]*.35)});score+=regionScore(item);score+=routeScore(item);if(answers[3]==="local"&&item.region!==answers[2])score-=3;if(answers[16]==="lowcost")score+=item.type==="国立大学"?3:0;if(answers[16]==="private"&&item.type==="私立大学")score+=2;return score}
+function companyScore(item,profile){let score=0;item.tags.forEach(t=>{if(profile[t])score+=Math.min(4,profile[t]*.65)});const pref=answers[17];if(pref==="rcompany"&&["半導体デバイス","メモリ半導体"].includes(item.area))score+=3;if(pref==="ecompany"&&item.area.includes("装置"))score+=3;if(pref==="mcompany"&&["半導体製造","メモリ半導体"].includes(item.area))score+=3;if(pref==="scompany"&&item.tags.includes("software"))score+=3;return score}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function getMatchPoints(kind, profile, item){
+
+  const topProfile = Object.entries(profile)
+    .sort((a,b)=>b[1]-a[1])
+    .map(x=>x[0]);
+
+  const points = [];
+
+  const answerMap = {
+    device: "半導体そのもの・デバイス・材料に興味",
+    equipment: "半導体製造装置に強い関心",
+    production: "製造・生産技術・現場に関心",
+    software: "ソフトウェア・AI・データに関心",
+    quality: "品質・工程改善に関心",
+    math: "数学・物理などの基礎分野に興味",
+    chem: "化学・材料分野に興味",
+    mech: "機械・電気・技術分野に興味",
+    electric: "電子回路・電気の仕組みに興味",
+    material: "材料・表面・物性に興味",
+    practice: "実験・実習・実物に触れて学びたい",
+    research: "専門性を深めて研究したい",
+    design: "装置・機械・電気の設計開発を目指したい",
+    hands: "実物を組み立て動作を確かめる仕事に興味",
+    factory: "工場の製造・工程に興味"
+  };
+
+  const tags = kind === "school"
+    ? item.fields
+    : item.tags;
+
+  tags.forEach(tag => {
+
+    if(points.length >= 4) return;
+
+    if(answerMap[tag] && answers.includes(tag)){
+      points.push(answerMap[tag]);
+    }
+
+  });
+
+  topProfile.forEach(tag => {
+
+    if(points.length >= 4) return;
+
+    if(tags.includes(tag) && answerMap[tag]){
+      if(!points.includes(answerMap[tag])){
+        points.push(answerMap[tag]);
+      }
+    }
+
+  });
+
+  if(points.length < 3){
+
+    if(answers[3] === "flexible" || answers[3] === "move"){
+      points.push("進学・就職先を幅広い地域から検討できる");
+    }
+
+    if(answers[8] === "practice"){
+      points.push("実習・実践的な学び方を重視");
+    }
+
+    if(answers[10] === "advanced"){
+      points.push("将来は高度な専門性も視野に入れている");
+    }
+
+  }
+
+  const uniquePoints = [...new Set(points)];
+
+  return uniquePoints.slice(0,4);
+}
+
+
+function getBestDifference(rank, kind, item, bestItem){
+
+  if(rank === 1){
+
+    return kind === "school"
+      ? "BEST1と比べて、学びたい専門分野や地域条件がより合う場合はこちらも有力な選択肢です。"
+      : "BEST1とは異なる技術領域に強みがあります。仕事内容を比較して、興味が続く分野か確認してください。";
+
+  }
+
+  if(rank === 2){
+
+    return kind === "school"
+      ? "条件次第ではBEST1・BEST2より向いている可能性があります。学費、地域、学び方も含めて比較してください。"
+      : "希望する仕事内容や専門分野によっては、BEST1よりこちらが適する可能性があります。";
+
+  }
+
+  return "";
+}
+
+
+function getRankTitle(rank){
+
+  if(rank === 0){
+    return {
+      medal:"🥇",
+      label:"👑 あなたへの最有力候補",
+      sub:"診断結果から最も一致度が高い候補"
+    };
+  }
+
+  if(rank === 1){
+    return {
+      medal:"🥈",
+      label:"BEST 2｜有力な選択肢",
+      sub:"BEST1と比較して検討したい候補"
+    };
+  }
+
+  if(rank === 2){
+    return {
+      medal:"🥉",
+      label:"BEST 3｜条件次第でおすすめ",
+      sub:"進路条件によって有力になる候補"
+    };
+  }
+
+  return null;
+}
+
+
+function renderRanks(items, container, kind){
+
+  const max = Math.max(...items.map(x => x.score), 1);
+  const min = Math.min(...items.map(x => x.score));
+
+  let html = "";
+
+  items.forEach((it, i) => {
+
+    const fit = Math.round(
+      68 + ((it.score - min) / Math.max(1, max - min)) * 29
+    );
+
+    const cls =
+      i === 0 ? "top1" :
+      i === 1 ? "top2" :
+      i === 2 ? "top3" : "";
+
+    const detail = kind === "school"
+      ? `${it.type}｜${
+          it.region === "north" ? "北海道・東北" :
+          it.region === "east" ? "関東・甲信越" :
+          it.region === "central" ? "東海・北陸" :
+          it.region === "west" ? "近畿" :
+          it.region === "chugoku" ? "中国・四国" :
+          "九州・沖縄"
+        }`
+      : `領域：${it.area}`;
+
+    /* =====================
+       🥇 BEST1
+    ===================== */
+
+    if(i === 0){
+
+      const points = getMatchPoints(kind, currentProfile, it);
+
+      html += `
+      <article class="rank-card top1">
+
+        <div class="best1-hero">
+
+          <div class="best1-medal">👑</div>
+
+          <div class="best1-title">
+            <div class="best1-kicker">🥇 BEST 1</div>
+            <h4 class="best1-name">${esc(it.name)}</h4>
+          </div>
+
+        </div>
+
+        <div class="meta">${esc(detail)}</div>
+
+        <div class="best1-fit-box">
+
+          <div class="best1-fit-label">
+            あなたとの適合度
+          </div>
+
+          <div class="best1-fit-number">
+            ${fit}<span>%</span>
+          </div>
+
+          <div class="best1-fit-track">
+            <div
+              class="best1-fit-bar"
+              style="width:${fit}%"
+            ></div>
+          </div>
+
+        </div>
+
+        <div class="why-best">
+
+          <div class="why-best-title">
+            👑 なぜあなたにBEST1なのか？
+          </div>
+
+          <p>
+            ${esc(it.why)}
+          </p>
+
+          <div class="why-best-title" style="margin-top:14px">
+            ✓ あなたの回答との一致ポイント
+          </div>
+
+          <div class="match-points">
+
+            ${points.map(point => `
+              <div class="match-point">
+                <b>✓</b>${esc(point)}
+              </div>
+            `).join("")}
+
+          </div>
+
+        </div>
+
+        ${
+          kind === "company"
+          ? `
+          <div class="compare-box">
+            <b>想定される仕事</b><br>
+            ${esc(it.jobs)}
+          </div>
+          `
+          : ""
+        }
+
+        <a
+          class="official-top"
+          href="${it.url}"
+          target="_blank"
+          rel="noopener"
+        >
+          ${esc(it.name)}の公式サイトを見る ↗
+        </a>
+
+      </article>
+      `;
+
+      return;
+    }
+
+
+    /* =====================
+       🥈 BEST2
+    ===================== */
+
+    if(i === 1){
+
+      const info = getRankTitle(i);
+
+      html += `
+      <article class="rank-card top2">
+
+        <div class="best-rank-header">
+
+          <div class="best-medal">${info.medal}</div>
+
+          <div>
+            <div class="best-rank-title">
+              ${info.label}
+            </div>
+
+            <div class="best-rank-sub">
+              ${info.sub}
+            </div>
+          </div>
+
+        </div>
+
+        <h4>${esc(it.name)}</h4>
+
+        <div class="fitline">
+          <span class="fitnum">${fit}%</span>
+          <div class="fittrack">
+            <div
+              class="fitbar"
+              style="width:${fit}%"
+            ></div>
+          </div>
+        </div>
+
+        <div class="meta">${esc(detail)}</div>
+
+        <p>
+          <b>なぜ有力なのか：</b>
+          ${esc(it.why)}
+        </p>
+
+        <div class="compare-box">
+          <b>🥇 BEST1との違い</b><br>
+          ${esc(getBestDifference(i, kind, it, items[0]))}
+        </div>
+
+        ${
+          kind === "company"
+          ? `
+          <p>
+            <b>想定される仕事：</b>
+            ${esc(it.jobs)}
+          </p>
+          `
+          : ""
+        }
+
+        <a
+          class="official-top"
+          href="${it.url}"
+          target="_blank"
+          rel="noopener"
+        >
+          公式サイトを見る ↗
+        </a>
+
+      </article>
+      `;
+
+      return;
+    }
+
+
+    /* =====================
+       🥉 BEST3
+    ===================== */
+
+    if(i === 2){
+
+      const info = getRankTitle(i);
+
+      html += `
+      <article class="rank-card top3">
+
+        <div class="best-rank-header">
+
+          <div class="best-medal">${info.medal}</div>
+
+          <div>
+            <div class="best-rank-title">
+              ${info.label}
+            </div>
+
+            <div class="best-rank-sub">
+              ${info.sub}
+            </div>
+          </div>
+
+        </div>
+
+        <h4>${esc(it.name)}</h4>
+
+        <div class="fitline">
+          <span class="fitnum">${fit}%</span>
+          <div class="fittrack">
+            <div
+              class="fitbar"
+              style="width:${fit}%"
+            ></div>
+          </div>
+        </div>
+
+        <div class="meta">${esc(detail)}</div>
+
+        <p>
+          <b>おすすめする理由：</b>
+          ${esc(it.why)}
+        </p>
+
+        <div class="compare-box">
+          <b>🥉 こんな場合はこちらもおすすめ</b><br>
+          ${esc(getBestDifference(i, kind, it, items[0]))}
+        </div>
+
+        ${
+          kind === "company"
+          ? `
+          <p>
+            <b>想定される仕事：</b>
+            ${esc(it.jobs)}
+          </p>
+          `
+          : ""
+        }
+
+        <a
+          class="official-top"
+          href="${it.url}"
+          target="_blank"
+          rel="noopener"
+        >
+          公式サイトを見る ↗
+        </a>
+
+      </article>
+      `;
+
+      return;
+    }
+
+
+    /* =====================
+       4位以降
+    ===================== */
+
+    const rank = i < 5 ? `BEST ${i+1}` : `候補 ${i+1}`;
+
+    html += `
+    <article class="rank-card">
+
+      <div class="rank-top">
+
+        <span class="rank">
+          ${rank}
+        </span>
+
+        <h4>${esc(it.name)}</h4>
+
+      </div>
+
+      ${
+        i < 5
+        ? `
+        <div class="fitline">
+
+          <span class="fitnum">
+            ${fit}%
+          </span>
+
+          <div class="fittrack">
+            <div
+              class="fitbar"
+              style="width:${fit}%"
+            ></div>
+          </div>
+
+        </div>
+        `
+        : ""
+      }
+
+      <div class="meta">
+        ${esc(detail)}
+      </div>
+
+      <p>
+        <b>推薦理由：</b>
+        ${esc(it.why)}
+      </p>
+
+    </article>
+    `;
+
+  });
+
+  document.getElementById(container).innerHTML = html;
+
+}
+function showResult(){document.getElementById("quizScreen").classList.add("hidden");currentProfile = scoreProfile();document.getElementById("resultScreen").classList.remove("hidden");document.getElementById("resultScreen").classList.remove("mp-result-reveal");void document.getElementById("resultScreen").offsetWidth;document.getElementById("resultScreen").classList.add("mp-result-reveal");const s=currentProfile;const sorted=Object.entries(s).sort((a,b)=>b[1]-a[1]);const top=sorted[0][0],second=sorted[1][0];const labels={device:"デバイス・材料・プロセス研究",equipment:"製造装置・機械電気設計",production:"製造・生産技術・現場実践",software:"ソフトウェア・AI・データ",quality:"品質・工程改善",explore:"幅広く比較する探索"};document.getElementById("resultTitle").textContent=labels[top]+"型が第一候補です";document.getElementById("resultSummary").textContent=`20問の回答では「${labels[top]}」との一致が最も多く、次点は「${labels[second]}」です。興味だけでなく、学び方・仕事環境・進路条件も加味して候補を整理しました。`;
+const max=Math.max(...Object.values(s),1);document.getElementById("scoreList").innerHTML=sorted.map(([k,v])=>`<div class="score-row"><b>${labels[k]}</b><div class="bar"><span style="width:${Math.max(3,v/max*100)}%"></span></div><b>${v}点</b></div>`).join("");
+document.getElementById("scoreExplanation").textContent=`第一候補は「${labels[top]}」、第二候補は「${labels[second]}」です。これは回答内容の傾向を点数化した相対評価です。能力や将来を固定的に判定するものではありません。`;
+let route=answers[0]==="career"||answers[1]==="reskill"?"社会人の場合は、現在の経験を活かせる職種から検討します。機械・電気・情報・品質・製造などの経験を棚卸しし、未経験分野は基礎学習や職業訓練、企業の研修制度を確認してください。":answers[0]==="parent"?"本人の希望を中心に、大学・高専・専門学校の学び方と卒業後の職種を並べて比較する進め方が適しています。":answers[1]==="vocational"?"実習設備、資格、企業連携、就職実績を重視して専門学校を比較し、大学・高専との違いも確認してください。":answers[1]==="graduate"?"現在の専攻・研究・実習経験を応募職種に結び付け、研究開発・装置技術・製造技術・品質・ITの募集要件を比較してください。":answers[1]==="afterHigh"?"大学・高専・専門学校を、学びたい専門分野、実習量、研究環境、学費、卒業後の進路で比較するのが適しています。":"現時点では一つに絞らず、学び方・費用・専門分野を比較しながら進学と就職の両方を検討しましょう。";
+document.getElementById("routeRecommendation").innerHTML=`<p><b>第一候補：</b>${esc(top==="device"?"理工系大学で電気電子・応用物理・材料・化学を学び、研究開発やプロセス技術を目指すルート":top==="equipment"?"大学・高専等で機械・電気電子・制御を学び、製造装置の設計開発や技術職を目指すルート":top==="production"?"高専・工学系大学・実践型教育で機械電気や生産技術を学び、製造・工程・設備分野を目指すルート":top==="software"?"情報系学科でプログラミング・制御・データ分析を学び、半導体製造を支えるソフトウェア職を目指すルート":top==="quality"?"工学系で材料・電気・機械・統計などを学び、品質保証・品質管理・工程改善を目指すルート":"複数の工学分野を体験できる大学・高専等で基礎を学び、実習・研究・インターンで適性を絞るルート")}</p><p>${esc(route)}</p><p><b>第二候補：</b>${esc(labels[second])}に関連する学科・職種も併せて比較すると、進路の幅を残せます。</p>`;
+const fields={device:"電気電子工学、応用物理、材料工学、応用化学、半導体デバイス、電子物性、プロセス工学",equipment:"機械工学、電気電子工学、制御工学、ロボティクス、精密工学、計測・真空技術",production:"機械・電気電子、生産システム、制御、材料、品質工学、安全・工程管理",software:"情報工学、ソフトウェア、AI・データサイエンス、組込みシステム、制御・ネットワーク",quality:"電気電子、機械、材料・化学、品質工学、統計・データ分析、生産システム",explore:"機械・電気電子・情報・材料・化学の基礎を比較し、実験・実習で興味を絞る"};
+document.getElementById("fieldRecommendation").innerHTML=`<p><b>優先して検討する分野：</b>${fields[top]}</p><p><b>併せて学ぶと強みになる内容：</b>数学・物理の基礎、データの読み取り、レポート作成、チームでの実験・実習、安全意識。</p>`;
+let schoolList=schools.map(x=>({...x,score:schoolScore(x,s)})).sort((a,b)=>b.score-a.score);let compList=companies.map(x=>({...x,score:companyScore(x,s)})).sort((a,b)=>b.score-a.score);renderRanks(schoolList,"schoolRanking","school");renderRanks(compList,"companyRanking","company");
+const jobs=top==="device"?["半導体デバイス・プロセス開発","材料・分析・評価技術","半導体製造プロセスエンジニア"]:top==="equipment"?["半導体製造装置の機械・電気設計","装置開発・制御エンジニア","フィールド／アプリケーションエンジニア"]:top==="production"?["半導体製造・設備技術","生産技術・工程改善","装置組立・検査・技術サポート"]:top==="software"?["製造装置ソフトウェア・制御開発","製造データ分析・スマートファクトリー","組込み・AIエンジニア"]:top==="quality"?["品質保証・品質管理","プロセス・生産技術","製品評価・故障解析"]:["製造技術・生産技術","装置設計・技術開発","品質・評価・データ分析"];
+document.getElementById("jobRanking").innerHTML=jobs.map((j,i)=>`<article class="rank-card"><div class="rank-top"><span class="${i===0?"rank best":"rank"}">ベスト${i+1}</span><h4>${j}</h4></div><p>${i===0?"回答で最も強く表れた興味・学び方・仕事観と一致するため、第一候補です。":i===1?"第一候補に近い専門性を活かせるため、比較対象として有力です。":"将来の選択肢を広げる関連職種です。必要な知識や働き方を比べてください。"}</p></article>`).join("");
+let strengths=[];if(answers[6]==="analysis")strengths.push("原因を分析して考える志向");if(answers[6]==="fix"||answers[5]==="hands")strengths.push("実物を扱い改善する志向");if(answers[11]==="teamwork"||answers[11]==="field")strengths.push("周囲と連携して進める志向");if(answers[9]==="strong")strengths.push("数学・物理など基礎科目への自信");if(answers[8]==="research"||answers[10]==="advanced")strengths.push("専門性を深め、探究する志向");if(!strengths.length)strengths.push("複数の選択肢を比較しながら、自分に合う環境を探す姿勢");document.getElementById("strengths").innerHTML=`<p><b>回答から読み取れる傾向：</b>${strengths.map(esc).join("、")}。</p><p><b>確認しておきたい点：</b>${answers[9]==="weak"||answers[9]==="relearn"?"数学・物理に不安がある場合も、基礎から学び直せるカリキュラムや補習体制を学校選びの条件に加えましょう。":"専門分野を選ぶ前に、授業・実験・仕事体験を通じて「興味が続くか」「必要な基礎を学べるか」を確認しましょう。"} ${answers[3]==="local"?"通学・転居条件を優先して、無理のない候補に絞ることも重要です.":""}</p>`;
+let steps=answers[0]==="career"?["経験・得意な作業・使える知識を棚卸しし、半導体業界の職種に対応づける。","候補企業の中途採用ページで応募条件・勤務地・研修制度を確認する。","不足する基礎知識をオンライン講座や職業訓練等で補い、職務経歴書に具体的な経験を書く。","複数社の仕事内容・働き方・条件を比較して応募先を決める。"]:["第一候補の職種を一つ選び、仕事内容と必要な専攻・知識を確認する。","学校ランキング上位3校の学科ページ、カリキュラム、研究室、実習設備を比較する。","学費・入試科目・奨学金・通学や住居条件を確認し、現実的な候補を2〜3校に絞る。","数学・物理・化学・情報の基礎を補強し、オープンキャンパスや学校説明会に参加する。","企業ランキング上位3社の職種・採用要件を読み、学校で学ぶ内容と結び付ける。","学校・学科の第一候補と第二候補を決め、受験・就職準備の年間計画を作る。"];document.getElementById("roadmap").innerHTML=steps.map(x=>`<li>${esc(x)}</li>`).join("");
+let bestSchool=schoolList[0],bestCompany=compList[0];document.getElementById("finalRecommendation").textContent=`現時点の第一候補は「${labels[top]}」です。学校候補のベスト1は${bestSchool.name}、企業候補のベスト1は${bestCompany.name}です。まずはこの3つ（職種・学校・企業）を起点に、学科内容と実際の募集職種がつながっているかを確認してください。学校は入試・学費・所在地、企業は勤務地・募集職種・応募条件を確認したうえで、ベスト2・3も含めて比較し、最終決定することをおすすめします。`;
+window.scrollTo({top:0,behavior:"smooth"})}
+function restartQuiz(){current=0;answers=[];document.getElementById("resultScreen").classList.add("hidden");document.getElementById("resultScreen").classList.remove("mp-result-reveal");document.getElementById("quizScreen").classList.add("hidden");document.getElementById("startScreen").classList.remove("hidden");document.body.classList.remove("mp-world-active");window.scrollTo(0,0)}
+</script>
+</body>
+</html>
