@@ -3730,7 +3730,6 @@ const questionContent=document.getElementById("question-content");
 const answersArea=document.getElementById("answers");
 const navigationArea=document.getElementById("navigation-area");
 
-
 /* =========================
    質問の重要度
 ========================= */
@@ -3757,7 +3756,6 @@ const questionWeights=[
 0.9,
 1.1
 ];
-
 
 /* =========================
    タグ重要度
@@ -3804,7 +3802,6 @@ proofreading:1.7,
 englishCorrection:1.7
 
 };
-
 
 /* =========================
    表示用タグ名
@@ -3857,7 +3854,6 @@ englishCorrection:"英語の添削・校正"
 
 };
 
-
 /* =========================
    選択状態をクリア
 ========================= */
@@ -3876,7 +3872,6 @@ document.activeElement.blur();
 }
 
 }
-
 
 /* =========================
    診断開始
@@ -3975,7 +3970,6 @@ isTransitioning=false;
 document.getElementById("diagnosis").scrollIntoView({behavior:prefersReducedMotion()?"auto":"smooth",block:"start"});
 }
 
-
 /* =========================
    質問表示
 ========================= */
@@ -3989,10 +3983,44 @@ updatePinto();
 
 setTimeout(()=>{
 
-document.getElementById("diagnosis").scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
+setTimeout(()=>{
+
+  const questionEl=document.getElementById("question");
+  const answerButtons=answersArea.querySelectorAll(".answer-button");
+
+  if(!questionEl || answerButtons.length===0)return;
+
+  /* 5個目の回答ボタンを確認対象にする */
+  const targetAnswer=
+    answerButtons[Math.min(4,answerButtons.length-1)];
+
+  const questionRect=questionEl.getBoundingClientRect();
+  const answerRect=targetAnswer.getBoundingClientRect();
+
+  const margin=16;
+  let delta=0;
+
+  /* 質問文が画面上端より上にある場合 */
+  if(questionRect.top<margin){
+
+    delta=questionRect.top-margin;
+
+  /* 5個目の回答ボタンが画面下端からはみ出す場合 */
+  }else if(answerRect.bottom>window.innerHeight-margin){
+
+    delta=answerRect.bottom-(window.innerHeight-margin);
+
+  }
+
+  /* 必要な場合だけ最小限スクロール */
+  if(delta!==0){
+
+    window.scrollBy({
+      top:delta,
+      behavior:"smooth"
+    });
+
+  }
 
 },50);
 
