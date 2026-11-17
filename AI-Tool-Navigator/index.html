@@ -3868,6 +3868,32 @@ function updatePinto(){
   }
 
 }
+function updatePintoPosition(percent){
+
+  const guide=document.getElementById("pinto-guide");
+  const progressArea=document.querySelector(".progress-area");
+  const progressBar=document.querySelector(".progress-bar");
+
+  if(!guide || !progressArea || !progressBar)return;
+
+  /* ピントを進捗エリアへ移動 */
+  if(guide.parentElement!==progressArea){
+    progressArea.appendChild(guide);
+  }
+
+  const barRect=progressBar.getBoundingClientRect();
+  const areaRect=progressArea.getBoundingClientRect();
+
+  const guideWidth=guide.getBoundingClientRect().width || 44;
+
+  const left=
+    barRect.left-areaRect.left
+    +barRect.width*(percent/100)
+    -guideWidth/2;
+
+  guide.style.left=left+"px";
+
+}
 
 async function startDiagnosis(){
 currentQuestion=0;
