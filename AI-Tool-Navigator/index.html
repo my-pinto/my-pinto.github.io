@@ -2454,6 +2454,71 @@ strong,
 b {
   font-weight: 700;
 }
+/* =================================
+   ピント進捗ナビゲーター
+================================= */
+
+.progress-area {
+  position: relative;
+  margin-bottom: 16px;
+  padding-bottom: 42px;
+}
+
+.pinto-guide {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  z-index: 4;
+
+  width: 44px;
+  height: 40px;
+  min-height: 0;
+
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+
+  pointer-events: none;
+}
+
+.pinto-art {
+  width: 44px;
+  height: 40px;
+  flex: 0 0 44px;
+}
+
+/* 質問文と回答の間隔を調整 */
+.question {
+  margin-bottom: 16px;
+}
+
+/* スマートフォン */
+@media (max-width:700px) {
+
+  .progress-area {
+    margin-bottom: 14px;
+    padding-bottom: 36px;
+  }
+
+  .pinto-guide {
+    top: 31px;
+    width: 38px;
+    height: 34px;
+  }
+
+  .pinto-art {
+    width: 38px;
+    height: 34px;
+    flex-basis: 38px;
+  }
+
+  .question {
+    margin-bottom: 15px;
+  }
+
+}
 </style>
 
 <link rel="icon" href="/favicon.ico">
