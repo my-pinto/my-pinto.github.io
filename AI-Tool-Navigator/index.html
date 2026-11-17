@@ -3836,22 +3836,12 @@ resolve();
 });
 }
 
-const pintoMessages={
-1:"こんにちは、ピントだよ！20問で、あなたに合うAIを一緒に見つけよう。",
-5:"いい調子！使う場面を思い浮かべながら答えてね。",
-10:"ここまで半分！あなたらしい使い方が見えてきたよ。",
-15:"あと少し！大切にしたい条件も、しっかり反映するね。",
-20:"最後の質問だよ！答え終わったら、BEST3を発表するね。"
-};
-
 function updatePinto(){
+
   const guide=document.getElementById("pinto-guide");
-  const bubble=document.getElementById("pinto-bubble");
   const questionNo=currentQuestion+1;
-  const message=pintoMessages[questionNo];
 
   guide.classList.remove(
-    "has-bubble",
     "pinto-talking",
     "pinto-good",
     "pinto-celebrate",
@@ -3859,26 +3849,24 @@ function updatePinto(){
     "pinto-q20-ring"
   );
 
+  /* 10問目：話す表情 */
   if(questionNo===10){
     guide.classList.add("pinto-talking");
   }
 
+  /* 15〜19問目：虹色ホログラム */
   if(questionNo>=15 && questionNo<=19){
     guide.classList.add("pinto-q15-glow");
   }
 
+  /* 20問目：最終演出 */
   if(questionNo===20){
-    guide.classList.add("pinto-celebrate","pinto-q20-ring");
+    guide.classList.add(
+      "pinto-celebrate",
+      "pinto-q20-ring"
+    );
   }
 
-  if(message){
-    bubble.textContent=message;
-    bubble.hidden=false;
-    guide.classList.add("has-bubble");
-  }else{
-    bubble.hidden=true;
-    bubble.textContent="";
-  }
 }
 
 async function startDiagnosis(){
