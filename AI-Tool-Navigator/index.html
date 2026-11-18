@@ -1895,6 +1895,14 @@ footer {
   width: 76px;
   height: 76px;
   object-fit: contain;
+
+  /* 白い背景を結果ページに馴染ませる */
+  mix-blend-mode: multiply;
+
+  /* シンボルの発光感を少し加える */
+  filter:
+    drop-shadow(0 0 5px rgba(90, 255, 25, 0.25))
+    drop-shadow(0 0 10px rgba(90, 255, 25, 0.15));
 }
 
 @media (max-width:700px) {
