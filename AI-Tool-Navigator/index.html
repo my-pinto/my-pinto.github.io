@@ -630,13 +630,24 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 76px;
-  height: 76px;
+  width: 228px;
+  height: 228px;
   margin: 0 auto 13px;
   border: none;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.completion-icon img {
+  display: block;
+  width: 228px;
+  height: 228px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter:
+    drop-shadow(0 0 5px rgba(90, 255, 25, 0.25))
+    drop-shadow(0 0 10px rgba(90, 255, 25, 0.15));
 }
 
 .result-subtitle {
