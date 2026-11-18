@@ -4162,38 +4162,27 @@ function showQuestion(){
     navigationArea.appendChild(back);
   }
 
-  /* 質問文と5個目の回答が見える範囲に入るよう、必要な場合だけ微調整 */
+    /* 質問1〜20の表示位置を統一 */
   setTimeout(()=>{
 
-    const questionEl=document.getElementById("question");
-    const answerButtons=answersArea.querySelectorAll(".answer-button");
+    const progressArea=document.querySelector(".progress-area");
 
-    if(!questionEl || answerButtons.length===0)return;
+    if(!progressArea)return;
 
-    const targetAnswer=
-      answerButtons[Math.min(4,answerButtons.length-1)];
+    const progressRect=progressArea.getBoundingClientRect();
 
-    const questionRect=questionEl.getBoundingClientRect();
-    const answerRect=targetAnswer.getBoundingClientRect();
-
-    const margin=16;
-    let delta=0;
-
-    if(questionRect.top<margin){
-      delta=questionRect.top-margin;
-    }else if(answerRect.bottom>window.innerHeight-margin){
-      delta=answerRect.bottom-(window.innerHeight-margin);
-    }
+    /* 進捗エリアの上端を画面上部から16pxに固定 */
+    const targetTop=16;
+    const delta=progressRect.top-targetTop;
 
     if(Math.abs(delta)>1){
       window.scrollBy({
         top:delta,
-        behavior:prefersReducedMotion()?"auto":"smooth"
+        behavior:"auto"
       });
     }
 
   },80);
-
 }
 
 /* =========================
