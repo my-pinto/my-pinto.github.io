@@ -230,7 +230,7 @@ header {
   z-index: 0;
 }
 
-.hero h1 span::after {
+.hero h1 span:not([data-question-count])::after {
   content: "";
   position: absolute;
   z-index: -1;
