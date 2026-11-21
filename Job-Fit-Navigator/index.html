@@ -1,1179 +1,610 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>適職・転職診断｜自分に合う働き方と向いている仕事が見つかる | MyPinto</title>
-  <meta name="description" content="全18問の質問に答えるだけで、あなたの働き方のクセや価値観に合う職種・適性スタイルのBEST3を診断します。" />
-  <meta property="og:title" content="適職・転職診断｜自分に合う働き方と向いている仕事が見つかる | MyPinto" />
-  <meta property="og:description" content="全18問の質問に答えるだけで、あなたの働き方のクセや価値観に合う職種・適性スタイルのBEST3を診断します。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://my-pinto.github.io/Job-Fit-Navigator/" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyPinto｜20問の無料診断サイト</title>
+  <meta name="description" content="MyPintoは20問の質問に答えるだけで、AIツールや半導体キャリアなどの適性や方向性を手軽に診断できる無料Webサイトです。">
+  <meta name="application-name" content="MyPinto">
+  <meta name="apple-mobile-web-app-title" content="MyPinto">
+
+  <!-- OGP設定（1200x630px推奨） -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MyPinto">
+  <meta property="og:title" content="MyPinto｜20問の無料診断サイト">
+  <meta property="og:description" content="20問の質問に答えるだけで、今の自分にぴったりの選択肢が見つかる無料診断サイト。">
+  <meta property="og:url" content="https://my-pinto.github.io/">
+  <meta property="og:image" content="https://my-pinto.github.io/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts（LINE Seed JP / Noto Sans JP フォールバック） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --accent: #2563eb;
-      --accent-dark: #1d4ed8;
-      --accent-soft: #eff6ff;
-      --accent-border: #bfdbfe;
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --text-sub: #475569;
-      --border: #e2e8f0;
-      --warn-bg: #fff7ed;
-      --warn-border: #fed7aa;
-      --warn-text: #9a3412;
-      --radius: 16px;
-      --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --bg-page: #f4f7fb;
+      --bg-card: #ffffff;
+      --bg-subtle: #eef3f9;
+      --text-main: #18202c;
+      --text-sub: #4b5a6e;
+      --text-muted: #6c7c93;
+      --accent: #1d63ed;
+      --accent-hover: #144ec2;
+      --accent-soft: #eaf1fe;
+      --border: #dde5f0;
+      --shadow-card: 0 8px 24px rgba(24, 32, 44, 0.06);
+      --shadow-hover: 0 14px 32px rgba(29, 99, 237, 0.12);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      padding: 0;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: "LINE Seed JP", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      line-break: strict;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-
-    .header-inner {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    a {
+      color: inherit;
       text-decoration: none;
-      color: var(--text);
-      font-weight: 800;
-      font-size: 16px;
-      letter-spacing: 0.02em;
-    }
-
-    .brand-badge {
-      background: var(--accent);
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 999px;
-    }
-
-    .top-link {
-      font-size: 12px;
-      color: var(--text-sub);
-      text-decoration: none;
-      font-weight: 600;
     }
 
     .container {
-      max-width: 680px;
+      width: 100%;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 16px 14px 48px;
+      padding: 0 20px;
     }
 
-    .card {
-      background: var(--card);
+    /* ヘッダー */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 64px;
+      padding: 8px 0;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--text-main);
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1d63ed, #3b82f6);
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .header-nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ヒーローセクション */
+    .hero {
+      padding: 48px 0 36px;
+    }
+
+    .hero-card {
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px 18px;
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-card);
     }
 
-    .hidden {
-      display: none !important;
-    }
-
-    /* Intro */
-    .category-pill {
+    .hero-badge {
       display: inline-block;
       background: var(--accent-soft);
       color: var(--accent);
-      border: 1px solid var(--accent-border);
-      font-size: 12px;
+      font-size: 0.82rem;
       font-weight: 700;
       padding: 4px 12px;
       border-radius: 999px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
-    h1 {
-      margin: 0 0 10px;
-      font-size: 24px;
+    .hero-title {
+      margin: 0 0 14px;
+      font-size: clamp(1.65rem, 3.6vw, 2.35rem);
+      font-weight: 700;
       line-height: 1.35;
-      font-weight: 800;
-      letter-spacing: -0.01em;
+      color: var(--text-main);
     }
 
-    .lead {
-      margin: 0 0 18px;
+    .hero-lead {
+      margin: 0 0 24px;
+      max-width: 720px;
+      font-size: 1rem;
       color: var(--text-sub);
-      font-size: 14.5px;
     }
 
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .meta-box {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 10px 8px;
-      text-align: center;
-    }
-
-    .meta-label {
-      display: block;
-      font-size: 11px;
-      color: var(--text-sub);
-      margin-bottom: 2px;
-    }
-
-    .meta-value {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--accent);
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .btn-primary {
-      width: 100%;
-      border: none;
-      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
       background: var(--accent);
       color: #ffffff;
-      font-size: 16px;
-      font-weight: 800;
-      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      border: none;
       cursor: pointer;
-      transition: background 0.15s ease, transform 0.08s ease;
+      transition: background-color 0.2s ease, transform 0.15s ease;
     }
 
     .btn-primary:hover {
-      background: var(--accent-dark);
-    }
-
-    .btn-primary:active {
-      transform: scale(0.99);
-    }
-
-    /* Quiz */
-    .progress-wrap {
-      margin-bottom: 14px;
-    }
-
-    .progress-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--text-sub);
-      margin-bottom: 6px;
-    }
-
-    .progress-count {
-      color: var(--accent);
-      font-size: 14px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 8px;
-      background: #e2e8f0;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 0%;
-      background: var(--accent);
-      border-radius: 999px;
-      transition: width 0.25s ease;
-    }
-
-    .question-text {
-      margin: 0 0 14px;
-      font-size: 18px;
-      line-height: 1.45;
-      font-weight: 800;
-    }
-
-    .options-list {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .option-btn {
-      width: 100%;
-      text-align: left;
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 14px;
-      font-size: 14.5px;
-      line-height: 1.4;
-      font-weight: 600;
-      color: var(--text);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: border-color 0.15s ease, background 0.15s ease;
-    }
-
-    .option-btn:hover,
-    .option-btn.selected {
-      border-color: var(--accent);
-      background: var(--accent-soft);
-    }
-
-    .option-key {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      border-radius: 999px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text-sub);
-      font-size: 12px;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .option-btn.selected .option-key {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #ffffff;
-    }
-
-    .quiz-nav {
-      margin-top: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .btn-back {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-sub);
-      border-radius: 10px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .btn-back:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-
-    /* Result */
-    .result-head {
-      text-align: center;
-      margin-bottom: 18px;
-    }
-
-    .result-head h2 {
-      margin: 6px 0 6px;
-      font-size: 22px;
-      font-weight: 800;
-    }
-
-    .result-sub {
-      margin: 0;
-      font-size: 13.5px;
-      color: var(--text-sub);
-    }
-
-    .rank-card {
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      padding: 18px 16px;
-      margin-bottom: 14px;
-      background: #ffffff;
-    }
-
-    .rank-card.rank-1 {
-      border-color: var(--accent);
-      background: linear-gradient(180deg, #eff6ff 0%, #ffffff 34%);
-    }
-
-    .rank-badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .rank-badge {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: #e2e8f0;
-      color: var(--text);
-    }
-
-    .rank-1 .rank-badge {
-      background: var(--accent);
-      color: #ffffff;
-    }
-
-    .match-score {
-      font-size: 12.5px;
-      font-weight: 800;
-      color: var(--accent);
-    }
-
-    .type-title {
-      margin: 0 0 4px;
-      font-size: 20px;
-      font-weight: 800;
-    }
-
-    .type-tagline {
-      margin: 0 0 12px;
-      font-size: 13.5px;
-      font-weight: 700;
-      color: var(--accent-dark);
-    }
-
-    .detail-block {
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    .detail-label {
-      display: block;
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--text-sub);
-      margin-bottom: 4px;
-    }
-
-    .caution-box {
-      margin-top: 12px;
-      background: var(--warn-bg);
-      border: 1px solid var(--warn-border);
-      color: var(--warn-text);
-      border-radius: 12px;
-      padding: 11px 12px;
-      font-size: 13.5px;
-    }
-
-    .caution-box strong {
-      display: block;
-      font-size: 12px;
-      margin-bottom: 3px;
-    }
-
-    .roles-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .role-tag {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 999px;
-    }
-
-    .share-box {
-      margin-top: 20px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px;
-      text-align: center;
-    }
-
-    .share-title {
-      margin: 0 0 10px;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .share-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-
-    .btn-share {
-      border: none;
-      border-radius: 12px;
-      padding: 12px 10px;
-      font-size: 13.5px;
-      font-weight: 800;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn-x {
-      background: #0f172a;
-      color: #ffffff;
-    }
-
-    .btn-copy {
-      background: #ffffff;
-      color: var(--text);
-      border: 1.5px solid var(--border);
-    }
-
-    .copy-feedback {
-      margin: 8px 0 0;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-      min-height: 18px;
-    }
-
-    .retry-wrap {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      background: var(--accent-hover);
+      transform: translateY(-1px);
     }
 
     .btn-secondary {
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      color: var(--text);
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 13.5px;
-      font-weight: 800;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      transition: background-color 0.2s ease;
     }
 
-    .footer {
-      text-align: center;
-      font-size: 12px;
+    .btn-secondary:hover {
+      background: #e2eaf4;
+    }
+
+    /* セクション共通 */
+    .section {
+      padding: 24px 0 44px;
+    }
+
+    .section-header {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin: 0 0 6px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-desc {
+      margin: 0;
+      font-size: 0.95rem;
       color: var(--text-sub);
-      margin-top: 28px;
+    }
+
+    /* カードグリッド */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .diag-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      min-width: 0;
+    }
+
+    .diag-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: #b7ccf5;
+    }
+
+    .diag-card--upcoming {
+      background: #fafbfd;
+      border-style: dashed;
+      box-shadow: none;
+    }
+
+    .diag-card--upcoming:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: var(--border);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .card-status {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .card-status--upcoming {
+      background: #eef2f6;
+      color: var(--text-muted);
+    }
+
+    .card-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .card-title {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--text-main);
+    }
+
+    .card-text {
+      margin: 0 0 20px;
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      flex-grow: 1;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-subtle);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .diag-card:not(.diag-card--upcoming):hover .card-link {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .card-link--disabled {
+      background: #f1f4f8;
+      color: var(--text-muted);
+      cursor: default;
+    }
+
+    /* フッター */
+    .site-footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      margin-top: 16px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* スマホ調整 */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 28px 0 20px;
+      }
+
+      .hero-card {
+        padding: 24px 20px;
+        border-radius: var(--radius-md);
+      }
+
+      .header-nav {
+        gap: 12px;
+        font-size: 0.84rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .diag-card {
+        padding: 20px;
+        border-radius: var(--radius-md);
+      }
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-inner">
-      <a href="../" class="brand">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="brand-logo" aria-label="MyPinto ホーム">
+        <span class="brand-mark" aria-hidden="true">P</span>
         <span>MyPinto</span>
-        <span class="brand-badge">JOB FIT</span>
       </a>
-      <a href="../" class="top-link">診断一覧へ戻る</a>
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="#live-diagnostics">公開中の診断</a>
+        <a href="#upcoming-diagnostics">準備中のテーマ</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <!-- Start Screen -->
-    <section id="intro-section" class="card">
-      <span class="category-pill">07 / JOB FIT（適職・転職診断）</span>
-      <h1>適職・転職診断</h1>
-      <p class="lead">
-        全18問の質問に答えるだけで、あなたの働き方のクセ・判断基準・ストレス耐性から「本当に合う仕事スタイル BEST3」を診断します。
-      </p>
-      <div class="meta-grid">
-        <div class="meta-box">
-          <span class="meta-label">質問数</span>
-          <span class="meta-value">全18問</span>
-        </div>
-        <div class="meta-box">
-          <span class="meta-label">所要時間</span>
-          <span class="meta-value">約3分</span>
-        </div>
-        <div class="meta-box">
-          <span class="meta-label">診断結果</span>
-          <span class="meta-value">8タイプ BEST3</span>
-        </div>
-      </div>
-      <button id="start-btn" class="btn-primary" type="button">診断をはじめる（無料）</button>
-    </section>
-
-    <!-- Quiz Screen -->
-    <section id="quiz-section" class="card hidden" aria-live="polite">
-      <div class="progress-wrap">
-        <div class="progress-top">
-          <span id="progress-label">質問 1 / 18</span>
-          <span id="progress-percent" class="progress-count">6%</span>
-        </div>
-        <div class="progress-bar">
-          <div id="progress-fill" class="progress-fill"></div>
-        </div>
-      </div>
-
-      <h2 id="question-text" class="question-text"></h2>
-      <div id="options-list" class="options-list"></div>
-
-      <div class="quiz-nav">
-        <button id="back-btn" class="btn-back" type="button">← 前の質問へ</button>
-        <span style="font-size:12px; color:#64748b;">直感で選んでOKです</span>
-      </div>
-    </section>
-
-    <!-- Result Screen -->
-    <section id="result-section" class="hidden" aria-live="polite">
-      <div class="card">
-        <div class="result-head">
-          <span class="category-pill">診断結果レポート</span>
-          <h2>あなたの適職タイプ BEST3</h2>
-          <p class="result-sub">1位があなたの主軸、2位・3位が掛け合わせると強みになる適性です。</p>
-        </div>
-
-        <div id="results-container"></div>
-
-        <div class="share-box">
-          <p class="share-title">診断結果をシェア・保存する</p>
-          <div class="share-actions">
-            <a id="share-x-btn" class="btn-share btn-x" href="#" target="_blank" rel="noopener noreferrer">X（旧Twitter）でシェア</a>
-            <button id="copy-btn" class="btn-share btn-copy" type="button">結果をコピーする</button>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <span class="hero-badge">全問無料・20問のクイック診断</span>
+          <h1 class="hero-title">今の自分に合う選択肢を、<br>20問の診断でサクッと整理。</h1>
+          <p class="hero-lead">
+            MyPintoは、20問の質問に答えるだけで現在の状況や関心に合った方向性を分かりやすく整理できる無料診断サイトです。まずは公開中の診断からお試しください。
+          </p>
+          <div class="hero-actions">
+            <a href="#live-diagnostics" class="btn-primary">公開中の診断を見る</a>
+            <a href="#upcoming-diagnostics" class="btn-secondary">追加予定のテーマを見る</a>
           </div>
-          <p id="copy-feedback" class="copy-feedback"></p>
-        </div>
-
-        <div class="retry-wrap">
-          <button id="retry-btn" class="btn-secondary" type="button">もう一度診断する</button>
-          <a href="../" class="btn-secondary">他の診断を見る</a>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      &copy; MyPinto - 適職・転職診断
-    </footer>
+    <section id="live-diagnostics" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">公開中の診断</h2>
+          <p class="section-desc">すぐに回答できる20問診断はこちらです。</p>
+        </div>
+        <div class="card-grid">
+          <article class="diag-card">
+            <div>
+              <div class="card-top">
+                <span class="card-status">公開中</span>
+                <span class="card-meta">全20問・無料</span>
+              </div>
+              <h3 class="card-title">AIツール診断</h3>
+              <p class="card-text">
+                日々の作業スタイルや目的に合わせて、活用しやすいAIツールの方向性を20問で診断します。
+              </p>
+            </div>
+            <a href="./ai-tool/" class="card-link">
+              <span>診断を始める</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="diag-card">
+            <div>
+              <div class="card-top">
+                <span class="card-status">公開中</span>
+                <span class="card-meta">全20問・無料</span>
+              </div>
+              <h3 class="card-title">半導体キャリア診断</h3>
+              <p class="card-text">
+                これまでの経験や希望する働き方をもとに、半導体業界におけるキャリアの軸や可能性を20問で整理します。
+              </p>
+            </div>
+            <a href="./semiconductor-career/" class="card-link">
+              <span>診断を始める</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="upcoming-diagnostics" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">準備中の診断テーマ（9カテゴリ）</h2>
+          <p class="section-desc">順次公開に向けて準備を進めているテーマ一覧です。</p>
+        </div>
+        <div class="card-grid">
+          <article class="diag-card diag-card--upcoming">
+            <div>
+              <div class="card-top">
+                <span class="card-status card-status--upcoming">準備中</span>
+                <span class="card-meta">全20問予定</span>
+              </div>
+              <h3 class="card-title">健康・ダイエット</h3>
+              <p class="card-text">生活リズムや続けやすさに合わせた健康管理・ダイエットのアプローチを整理する診断です。</p>
+            </div>
+            <span class="card-link card-link--disabled">公開準備中</span>
+          </article>
+
+          <article class="diag-card diag-card--upcoming">
+            <div>
+              <div class="card-top">
+                <span class="card-status card-status--upcoming">準備中</span>
+                <span class="card-meta">全20問予定</span>
+              </div>
+              <h3 class="card-title">恋愛・人間関係</h3>
+              <p class="card-text">コミュニケーションの傾向や心地よい距離感の築き方を振り返る診断です。</p>
+            </div>
+            <span class="card-link card-link--disabled">公開準備中</span>
+          </article>
+
+          <article class="diag-card diag-card--upcoming">
+            <div>
+              <div class="card-top">
+                <span class="card-status card-status--upcoming">準備中</span>
+                <span class="card-meta">全20問予定</span>
+              </div>
+              <h3 class="card-title">副業・スキル</h3>
+              <p class="card-text">確保できる時間や得意分野から、無理なく始めやすい副業やスキル習得の方向性を探ります。</p>
+            </div>
+            <span class="card-link card-link--disabled">公開準備中</span>
+          </article>
+
+          <article class="diag-card diag-card--upcoming">
+            <div>
+              <div class="card-top">
+                <span class="card-status card-status--upcoming">準備中</span>
+                <span class="card-meta">全20問予定</span>
+              </div>
+              <h3 class="card-title">資格・検定</h3>
+              <p class="card-text">目的や学習ペースに合う資格・検定の選び方を20問で絞り込む診断です。</p>
+            </div>
+            <span class="card-link card-link--disabled">公開準備中</span>
+          </article>
+
+          <article class="diag-card diag-card--upcoming">
+            <div>
+              <div class="card-top">
+                <span class="card-status card-status--upcoming">準備中</span>
+                <span class="card-meta">全20問予定</span>
+              </div>
+              <h3 class="card-title">適職・転職</h3>
+              <p class="card-text">仕事で大切にしたい価値観や環境条件から、フィットしやすい職場の特徴を整理します。</p>
+            </div>
+            <span class="card-link card-link--disabled">公開準備中</span>
+          </article>
+
+          <article class="diag-card diag-card--upcoming">
+            <div>
+              <div class="card-top">
+                <span class="card-status card-status--upcoming">準備中</span>
+                <span class="card-meta">全20問予定</span>
+              </div>
+              <h3 class="card-title">性格・自己分析</h3>
+              <p class="card-text">思考のクセや行動パターンの強みを言語化し、自己理解を深める診断です。</p>
+            </div>
+            <span class="card-link card-link--disabled">公開準備中</span>
+          </article>
+
+          <article class="diag-card diag-card--upcoming">
+            <div>
+              <div class="card-top">
+                <span class="card-status card-status--upcoming">準備中</span>
+                <span class="card-meta">全20問予定</span>
+              </div>
+              <h3 class="card-title">美容・ファッション</h3>
+              <p class="card-text">なりたい印象や日常の使いやすさに合わせて、似合うスタイルやケアの軸を見つけます。</p>
+            </div>
+            <span class="card-link card-link--disabled">公開準備中</span>
+          </article>
+
+          <article class="diag-card diag-card--upcoming">
+            <div>
+              <div class="card-top">
+                <span class="card-status card-status--upcoming">準備中</span>
+                <span class="card-meta">全20問予定</span>
+              </div>
+              <h3 class="card-title">金融・投資</h3>
+              <p class="card-text">リスク許容度や目的期間に合わせて、資産形成や学び方の考え方を整理する診断です。</p>
+            </div>
+            <span class="card-link card-link--disabled">公開準備中</span>
+          </article>
+
+          <article class="diag-card diag-card--upcoming">
+            <div>
+              <div class="card-top">
+                <span class="card-status card-status--upcoming">準備中</span>
+                <span class="card-meta">全20問予定</span>
+              </div>
+              <h3 class="card-title">プログラミング</h3>
+              <p class="card-text">作りたいものや学習スタイルから、最初に触れてみたい言語や分野の目安を診断します。</p>
+            </div>
+            <span class="card-link card-link--disabled">公開準備中</span>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    const jobFitDiagnosisConfig = {
-      id: 'job-fit',
-      domainName: '適職・転職',
-      page: {
-        title: '適職・転職診断｜自分に合う働き方と向いている仕事が見つかる',
-        description:
-          '全18問の質問に答えるだけで、あなたの働き方のクセや価値観に合う職種・適性スタイルのBEST3を診断します。',
-        accentColor: '#2563EB',
-        bestCount: 3,
-      },
-      scoring: {
-        tieBreakOrder: ['q18', 'q10', 'lateBlock'],
-        lateBlockQuestions: ['q13', 'q14', 'q15', 'q16', 'q17'],
-      },
-      candidates: [
-        {
-          id: 'architect',
-          name: '緻密な設計アーキテクト',
-          tagline: '混乱を整理し、再現できる仕組みを作る司令塔',
-          reason:
-            '複雑な情報やバラバラな作業から全体の構造を見抜き、「誰がやってもうまく回る型」を作る力に優れています。あなたがいるだけで現場のムダや属人化が減り、組織の生産性が大きく底上げされます。',
-          caution:
-            '方針が朝令暮改でコロコロ変わる環境や、仕組み化を嫌い「気合いと根性・場当たり対応」で乗り切ろうとする職場では強いストレスを感じます。',
-          roles: [
-            '業務設計',
-            '事業企画',
-            'PMO・進行管理',
-            'システム設計',
-            '生産管理',
-            'バックオフィス構築',
-          ],
-          shareText:
-            '私の適職タイプは【緻密な設計アーキテクト】でした！混乱を整理して仕組みを作るのが得意な司令塔タイプ。',
-        },
-        {
-          id: 'leader',
-          name: '現場を動かす推進リーダー',
-          tagline: '迷いを断ち切り、周囲を巻き込んで前へ進める突破役',
-          reason:
-            '状況を素早く見極め、決断力と行動力でチームやプロジェクトをゴールへ導く力があります。停滞している場面でも自ら旗を振り、周囲のエネルギーを引き出しながら成果を形にできます。',
-          caution:
-            '裁量が極端に狭い環境や、小さな決定にも何重もの承認が必要でスピード感が出ない組織では力を発揮しきれず息苦しくなります。',
-          roles: [
-            'プロジェクトマネージャー',
-            '営業リーダー',
-            '店舗・拠点責任者',
-            '新規事業推進',
-            'ディレクター',
-          ],
-          shareText:
-            '私の適職タイプは【現場を動かす推進リーダー】でした！周囲を巻き込んでゴールへ突き進む突破力タイプ。',
-        },
-        {
-          id: 'strategist',
-          name: '本質を見抜く分析ストラテジスト',
-          tagline: '事実とデータから最適解を導く冷静な参謀',
-          reason:
-            '表面的な現象に惑わされず、データや事実から「なぜそうなるのか」の根本原因を突き止める洞察力があります。感情論に流されず、筋の通った判断と勝てる戦略を描ける参謀役です。',
-          caution:
-            '根拠のない精神論がまかり通る職場や、データや検証を軽視して「とりあえず言われた通りやれ」と押し付けられる環境では激しく消耗します。',
-          roles: [
-            '経営企画',
-            'マーケティング分析',
-            'データアナリスト',
-            '品質保証・改善',
-            'コンサルタント',
-            '調査企画',
-          ],
-          shareText:
-            '私の適職タイプは【本質を見抜く分析ストラテジスト】でした！事実と論理で最適解を導く冷静な参謀タイプ。',
-        },
-        {
-          id: 'supporter',
-          name: '心に寄り添う調整サポーター',
-          tagline: '人の本音と安心感をつなぎ、チームの力を引き出す伴走者',
-          reason:
-            '相手の表情や言葉の裏にある気持ちに気づき、人と人の間に入って自然な信頼と合意を作れます。あなたがそばにいることで周囲は安心して本音を出せるようになり、チーム全体の定着や安心感にも大きく貢献します。',
-          caution:
-            '数字や個人成績だけをドライに競い合う職場や、感謝や対話がなく人間関係がギスギスした環境では心がすり減りやすいです。',
-          roles: [
-            'カスタマーサクセス',
-            '人事・採用',
-            'キャリア支援',
-            '伴走型法人営業',
-            '広報',
-            '対人支援・教育系',
-          ],
-          shareText:
-            '私の適職タイプは【心に寄り添う調整サポーター】でした！人の気持ちに寄り添い安心感を作る伴走者タイプ。',
-        },
-        {
-          id: 'craftsman',
-          name: '磨き上げる職人肌プレイヤー',
-          tagline: '細部のクオリティに妥協せず、専門性で信頼を勝ち取るプロ',
-          reason:
-            '一つの領域を深く掘り下げ、細部の仕上がりや技術水準をプロレベルまで磨き上げる集中力と探究心があります。「この人に任せれば間違いない」という圧倒的な品質と専門性で唯一無二の価値を出せます。',
-          caution:
-            '浅く広くマルチタスクをこなす働き方や、質よりもスピード・量だけを一方的に押し付けられる職場は大きなストレスになります。',
-          roles: [
-            'エンジニア・技術職',
-            '研究開発',
-            'クリエイティブ制作',
-            '専門事務',
-            '品質評価・スペシャリスト',
-          ],
-          shareText:
-            '私の適職タイプは【磨き上げる職人肌プレイヤー】でした！専門性と細部のクオリティを極めるプロフェッショナルタイプ。',
-        },
-        {
-          id: 'creator',
-          name: 'ゼロから描く企画クリエイター',
-          tagline: '常識の枠を超え、新しい切り口で価値を生み出す発想家',
-          reason:
-            'まだ形になっていないアイデアや新しい視点を生み出し、人の心を動かす企画や表現に落とし込む力があります。既存のやり方が行き詰まった場面でも、鮮やかな発想の転換で突破口を開けます。',
-          caution:
-            'マニュアル通りのルーティン作業だけを繰り返す環境や、新しい提案が「前例がない」と一蹴される保守的な職場では退屈と閉塞感を感じます。',
-          roles: [
-            '商品企画',
-            'コンテンツ企画',
-            'Webマーケター',
-            '編集・ライティング',
-            'デザイン・広報企画',
-            '新規企画',
-          ],
-          shareText:
-            '私の適職タイプは【ゼロから描く企画クリエイター】でした！常識を超えて新しい切り口を生み出す発想家タイプ。',
-        },
-        {
-          id: 'switcher',
-          name: '変化を楽しむ柔軟スイッチャー',
-          tagline: '予測不能な変化を追い風に変える、軽やかな適応力の持ち主',
-          reason:
-            '急な予定変更や新しいやり方にも動じず、その場の状況に合わせて立ち位置や動き方を素早く切り替えられます。変化の激しい時代や新しい環境でも、持ち前のフットワークの軽さでチャンスを掴めます。',
-          caution:
-            '毎日同じことの繰り返しで変化がない職場や、細かいルール・報告手順でガチガチに縛られる環境だと窮屈さを感じやすいです。',
-          roles: [
-            'ベンチャー・スタートアップ職',
-            'イベント・現場運営',
-            'フィールド営業',
-            '新規開拓',
-            'フリーランス・複業',
-          ],
-          shareText:
-            '私の適職タイプは【変化を楽しむ柔軟スイッチャー】でした！どんな変化も追い風に変える軽やかな適応力タイプ。',
-        },
-        {
-          id: 'partner',
-          name: '誠実に支える堅実パートナー',
-          tagline: '約束と土台を確実に守り抜き、組織の安心を支える信頼の柱',
-          reason:
-            '決められた手順や期限を丁寧に守り、周囲が安心して挑戦できる土台を安定して支え続ける誠実さがあります。派手さよりも「ミスなく確実にやり切る信頼感」で、どんな組織からも手放せない存在になります。',
-          caution:
-            '役割や責任範囲が曖昧なまま丸投げされる職場や、常に突発的なトラブル対応ばかりに追われる落ち着かない環境では負担が大きくなります。',
-          roles: [
-            '経理・総務・法務',
-            'カスタマーサポート',
-            '秘書・アシスタント',
-            '品質管理',
-            'インフラ・運用保守',
-          ],
-          shareText:
-            '私の適職タイプは【誠実に支える堅実パートナー】でした！約束と土台を守り抜く信頼の柱タイプ。',
-        },
-      ],
-      questions: [
-        {
-          id: 'q1',
-          text: '新しい仕事を任されたとき、最初にすることは？',
-          options: [
-            { label: '全体の流れや段取りを整理する', scores: { architect: 2 } },
-            { label: '面白そうなアイデアを出してみる', scores: { creator: 2 } },
-            { label: '過去の事例やデータを調べる', scores: { strategist: 2 } },
-            { label: '周囲の意向や状況を確認する', scores: { supporter: 1, partner: 1 } },
-            { label: 'まず動いて様子を見ながら調整する', scores: { leader: 1, switcher: 1 } },
-          ],
-        },
-        {
-          id: 'q2',
-          text: '作業中、つい「気になって直したくなる」のは？',
-          options: [
-            { label: '手順のムダや、やり方のバラつき', scores: { architect: 2 } },
-            { label: '表現の古さや、もっと面白くできる余白', scores: { creator: 2 } },
-            { label: '数字のズレや、根拠が曖昧な話', scores: { strategist: 2 } },
-            { label: '細部の粗さや、仕上がりの甘さ', scores: { craftsman: 2 } },
-            { label: '誤字やルール・約束の小さなズレ', scores: { partner: 2 } },
-          ],
-        },
-        {
-          id: 'q3',
-          text: '時間を忘れて没頭しやすい瞬間はどれ？',
-          options: [
-            { label: '複雑な仕組みをスッキリ整理するとき', scores: { architect: 2 } },
-            { label: '専門技術や完成度を磨き込むとき', scores: { craftsman: 2 } },
-            { label: 'データや事実から法則を見抜いたとき', scores: { strategist: 2 } },
-            { label: 'ゼロから企画や表現を形にするとき', scores: { creator: 2 } },
-            { label: '人と話し、納得や安心が生まれるとき', scores: { supporter: 1, leader: 1 } },
-          ],
-        },
-        {
-          id: 'q4',
-          text: 'ゼロから新企画を作るとき、一番ワクワクするのは？',
-          options: [
-            { label: '新しい切り口やコンセプトの発想', scores: { creator: 2 } },
-            { label: '誰がどう動くかの全体設計・仕組み', scores: { architect: 2 } },
-            { label: '人を巻き込み、一気に前へ進めること', scores: { leader: 2 } },
-            { label: '数字や市場から勝つ筋道を描くこと', scores: { strategist: 2 } },
-          ],
-        },
-        {
-          id: 'q5',
-          text: '深く突き詰めるのと、幅広くこなすのはどちらが得意？',
-          options: [
-            { label: '専門領域を深く掘り下げること', scores: { craftsman: 2 } },
-            { label: 'テーマを切り替えながらテンポよく動くこと', scores: { switcher: 2 } },
-            { label: '全体を見渡し、要所を押さえて進めること', scores: { architect: 1, leader: 1 } },
-            { label: '決まった役割をコツコツ積み上げること', scores: { partner: 2 } },
-          ],
-        },
-        {
-          id: 'q6',
-          text: '日々のルーティン作業に対する本音は？',
-          options: [
-            { label: '工夫して効率化・仕組み化したくなる', scores: { architect: 1, strategist: 1 } },
-            { label: '単調だと感じやすく、変化が欲しくなる', scores: { creator: 1, switcher: 1, leader: 1 } },
-            { label: 'リズムが作れて安心し、着実にこなせる', scores: { partner: 2 } },
-            { label: '自分のペースで質を高められるならOK', scores: { craftsman: 2 } },
-          ],
-        },
-        {
-          id: 'q7',
-          text: '判断に迷ったとき、一番信頼する基準は？',
-          options: [
-            { label: 'データ・事実・論理的な筋道', scores: { strategist: 2 } },
-            { label: '相手の気持ちや、場の空気・関係性', scores: { supporter: 2 } },
-            { label: '目標達成へのスピードと勢い', scores: { leader: 1, switcher: 1 } },
-            { label: '「これなら納得できる」自分の基準', scores: { craftsman: 1, creator: 1 } },
-            { label: 'これまでのルールや約束との整合性', scores: { partner: 1, architect: 1 } },
-          ],
-        },
-        {
-          id: 'q8',
-          text: '一番「やりがい・手応え」を感じる対象はどれ？',
-          options: [
-            { label: '仕組み・ルールを整えてスムーズに回すこと', scores: { architect: 1, partner: 1 } },
-            { label: '数字・戦略を読み解き、成果を出すこと', scores: { strategist: 1, leader: 1 } },
-            { label: 'モノ・技術・作品の質を磨き上げること', scores: { craftsman: 1, creator: 1 } },
-            { label: '人・チームを支え、感謝や信頼を得ること', scores: { supporter: 1, switcher: 1 } },
-          ],
-        },
-        {
-          id: 'q9',
-          text: 'トラブルが起きたとき、最初にしやすい動きは？',
-          options: [
-            { label: '根本原因と構造を冷静に切り分ける', scores: { strategist: 2 } },
-            { label: '優先順位をつけ、すぐ現場を動かす', scores: { leader: 2 } },
-            { label: '周囲の様子や気持ちのフォローに回る', scores: { supporter: 2 } },
-            { label: '再発防止の手順やルールを見直す', scores: { architect: 1, partner: 1 } },
-            { label: '別のやり方に柔軟に切り替える', scores: { switcher: 1, creator: 1 } },
-          ],
-        },
-        {
-          id: 'q10',
-          text: '周囲から褒められたり頼られたりしやすい強みは？',
-          options: [
-            { label: '複雑な話を整理し、段取りを作ること', scores: { architect: 3 } },
-            { label: '迷わず決断し、周囲を巻き込んで進めること', scores: { leader: 3 } },
-            { label: '本質を見抜き、的確な答えを出すこと', scores: { strategist: 3 } },
-            { label: '気持ちに寄り添い、場を整えること', scores: { supporter: 3 } },
-            { label: '細部まで丁寧に、高い質でやり切ること', scores: { craftsman: 3 } },
-            { label: '新しいアイデアや切り口を生むこと', scores: { creator: 3 } },
-            { label: '急な変化にも柔軟に対応すること', scores: { switcher: 3 } },
-            { label: '約束や期限を守り、誠実に支えること', scores: { partner: 3 } },
-          ],
-        },
-        {
-          id: 'q11',
-          text: '一番心地よい仕事のスピード感は？',
-          options: [
-            { label: 'テンポよく決断し、走りながら修正', scores: { leader: 1, switcher: 1 } },
-            { label: 'じっくり考え、納得と根拠を固めてから', scores: { strategist: 1, craftsman: 1 } },
-            { label: 'まず素早く形にし、反応を見ながら磨く', scores: { creator: 2 } },
-            { label: '周囲の流れに合わせ、着実に歩調を揃える', scores: { supporter: 1, partner: 1, architect: 1 } },
-          ],
-        },
-        {
-          id: 'q12',
-          text: '普段の学び方・情報収集に近いのは？',
-          options: [
-            { label: '本・記事・データで体系的に学ぶ', scores: { strategist: 1, architect: 1 } },
-            { label: '手を動かし、現場で試しながら体得する', scores: { craftsman: 1, switcher: 1 } },
-            { label: '経験者や周囲から生の声を聞く', scores: { supporter: 1, leader: 1 } },
-            { label: '異分野やトレンドから発想を広げる', scores: { creator: 2 } },
-          ],
-        },
-        {
-          id: 'q13',
-          text: 'チームで一番しっくりくる立ち位置は？',
-          options: [
-            { label: '先頭に立って方向性を示すリーダー', scores: { leader: 2 } },
-            { label: '意見をつなぎ、場を調整するまとめ役', scores: { supporter: 2 } },
-            { label: '全体設計や進行を担う司令塔・裏方', scores: { architect: 2 } },
-            { label: '専門スキルや制作で質を高める要', scores: { craftsman: 1, creator: 1 } },
-            { label: '土台や実務を確実に支える安定の柱', scores: { partner: 1, switcher: 1 } },
-          ],
-        },
-        {
-          id: 'q14',
-          text: '人との関わり方で、一番消耗しにくいのは？',
-          options: [
-            { label: '1対1や少人数でじっくり信頼を築く', scores: { supporter: 2 } },
-            { label: '複数人をまとめ、交渉・合意を作る', scores: { leader: 2 } },
-            { label: '必要な時だけ連携し、基本は集中', scores: { craftsman: 1, strategist: 1, architect: 1 } },
-            { label: '多くの人と出会い、刺激や交流を楽しむ', scores: { switcher: 1, creator: 1 } },
-            { label: '役割や連絡ルールが決まり、落ち着いて連携', scores: { partner: 2 } },
-          ],
-        },
-        {
-          id: 'q15',
-          text: '急な方針転換が起きたとき、どう感じやすい？',
-          options: [
-            { label: '「面白くなってきた！」と前向きに切替', scores: { switcher: 2 } },
-            { label: '「やり方を組み直そう」と冷静に再設計', scores: { architect: 1, strategist: 1 } },
-            { label: '「周りの混乱を落ち着かせないと」とフォロー', scores: { supporter: 1, leader: 1 } },
-            { label: '「これまでの段取りが…」と戸惑い・疲れ', scores: { partner: 1, craftsman: 1 } },
-          ],
-        },
-        {
-          id: 'q16',
-          text: '強いストレスを感じやすい職場はどれ？',
-          options: [
-            { label: '方針がコロコロ変わり、見通しが立たない', scores: { architect: 1, partner: 1 } },
-            { label: '細かい指示ばかりで、自由や工夫がない', scores: { creator: 1, switcher: 1, leader: 1 } },
-            { label: '精神論や感情論が強く、論理がない', scores: { strategist: 2 } },
-            { label: '人間関係がギスギス・ドライすぎる', scores: { supporter: 2 } },
-            { label: '質よりスピード・量だけを押し付けられる', scores: { craftsman: 2 } },
-          ],
-        },
-        {
-          id: 'q17',
-          text: 'フィードバックで一番心が満たされる言葉は？',
-          options: [
-            { label: '「おかげで全体がスムーズに回った」', scores: { architect: 1, leader: 1 } },
-            { label: '「ここまで深く突き詰めたのはすごい」', scores: { strategist: 1, craftsman: 1 } },
-            { label: '「その発想・柔軟な対応に助けられた」', scores: { creator: 1, switcher: 1 } },
-            { label: '「あなたがいて安心した・信頼できる」', scores: { supporter: 1, partner: 1 } },
-          ],
-        },
-        {
-          id: 'q18',
-          text: '今、一番求めている働き方の理想像は？',
-          options: [
-            { label: '仕組みを設計し、再現性ある成果を生む', scores: { architect: 3 } },
-            { label: '裁量を持ってチームや事業を動かす', scores: { leader: 3 } },
-            { label: '本質や数字を見極め、的確な戦略を出す', scores: { strategist: 3 } },
-            { label: '人の想いに寄り添い、感謝や信頼を得る', scores: { supporter: 3 } },
-            { label: '専門技術やクオリティを極め、プロとして立つ', scores: { craftsman: 3 } },
-            { label: 'アイデアや感性を形にし、新しい価値を生む', scores: { creator: 3 } },
-            { label: '変化の速い場で軽やかに経験を広げる', scores: { switcher: 3 } },
-            { label: '安定した環境で誠実に役割を果たし続ける', scores: { partner: 3 } },
-          ],
-        },
-      ],
-    };
-
-    (function initDiagnosis(config) {
-      const introSection = document.getElementById('intro-section');
-      const quizSection = document.getElementById('quiz-section');
-      const resultSection = document.getElementById('result-section');
-
-      const startBtn = document.getElementById('start-btn');
-      const backBtn = document.getElementById('back-btn');
-      const retryBtn = document.getElementById('retry-btn');
-      const copyBtn = document.getElementById('copy-btn');
-      const shareXBtn = document.getElementById('share-x-btn');
-      const copyFeedback = document.getElementById('copy-feedback');
-
-      const progressLabel = document.getElementById('progress-label');
-      const progressPercent = document.getElementById('progress-percent');
-      const progressFill = document.getElementById('progress-fill');
-      const questionText = document.getElementById('question-text');
-      const optionsList = document.getElementById('options-list');
-      const resultsContainer = document.getElementById('results-container');
-
-      const totalQuestions = config.questions.length;
-      const optionKeys = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-      let currentIndex = 0;
-      let answers = new Array(totalQuestions).fill(null);
-      let isTransitioning = false;
-
-      function renderQuestion(index) {
-        const q = config.questions[index];
-        const step = index + 1;
-        const pct = Math.round((step / totalQuestions) * 100);
-
-        progressLabel.textContent = `質問 ${step} / ${totalQuestions}`;
-        progressPercent.textContent = `${pct}%`;
-        progressFill.style.width = `${pct}%`;
-        questionText.textContent = `Q${step}. ${q.text}`;
-
-        optionsList.innerHTML = '';
-        q.options.forEach((opt, optIdx) => {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'option-btn' + (answers[index] === optIdx ? ' selected' : '');
-          btn.innerHTML = `
-            <span class="option-key">${optionKeys[optIdx] || optIdx + 1}</span>
-            <span>${opt.label}</span>
-          `;
-          btn.addEventListener('click', () => handleSelect(optIdx, btn));
-          optionsList.appendChild(btn);
-        });
-
-        backBtn.disabled = index === 0;
-      }
-
-      function handleSelect(optIdx, btnEl) {
-        if (isTransitioning) return;
-        isTransitioning = true;
-
-        answers[currentIndex] = optIdx;
-        Array.from(optionsList.children).forEach((el) => el.classList.remove('selected'));
-        btnEl.classList.add('selected');
-
-        setTimeout(() => {
-          isTransitioning = false;
-          if (currentIndex < totalQuestions - 1) {
-            currentIndex += 1;
-            renderQuestion(currentIndex);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          } else {
-            showResults();
-          }
-        }, 160);
-      }
-
-      function calculateResults() {
-        const totals = {};
-        const maxPossible = {};
-        const lateScores = {};
-
-        config.candidates.forEach((c) => {
-          totals[c.id] = 0;
-          maxPossible[c.id] = 0;
-          lateScores[c.id] = 0;
-        });
-
-        config.questions.forEach((q, qIdx) => {
-          // Calculate theoretical max per candidate for match percentage
-          const qMax = {};
-          q.options.forEach((opt) => {
-            Object.entries(opt.scores).forEach(([cid, val]) => {
-              if (!qMax[cid] || val > qMax[cid]) {
-                qMax[cid] = val;
-              }
-            });
-          });
-          Object.entries(qMax).forEach(([cid, val]) => {
-            maxPossible[cid] += val;
-          });
-
-          const selectedIdx = answers[qIdx];
-          if (selectedIdx === null) return;
-          const selectedOpt = q.options[selectedIdx];
-          Object.entries(selectedOpt.scores).forEach(([cid, val]) => {
-            totals[cid] += val;
-            if (config.scoring.lateBlockQuestions.includes(q.id)) {
-              lateScores[cid] += val;
-            }
-          });
-        });
-
-        const q18Idx = config.questions.findIndex((q) => q.id === 'q18');
-        const q10Idx = config.questions.findIndex((q) => q.id === 'q10');
-        const q18Scores = q18Idx >= 0 && answers[q18Idx] !== null ? config.questions[q18Idx].options[answers[q18Idx]].scores : {};
-        const q10Scores = q10Idx >= 0 && answers[q10Idx] !== null ? config.questions[q10Idx].options[answers[q10Idx]].scores : {};
-
-        const ranked = config.candidates
-          .map((candidate, originalIndex) => {
-            const raw = totals[candidate.id];
-            const denom = maxPossible[candidate.id] || 1;
-            const matchPct = Math.min(99, Math.max(45, Math.round((raw / denom) * 100)));
-            return {
-              ...candidate,
-              score: raw,
-              matchPct,
-              q18Priority: q18Scores[candidate.id] || 0,
-              q10Priority: q10Scores[candidate.id] || 0,
-              latePriority: lateScores[candidate.id] || 0,
-              originalIndex,
-            };
-          })
-          .sort((a, b) => {
-            if (b.score !== a.score) return b.score - a.score;
-            if (b.q18Priority !== a.q18Priority) return b.q18Priority - a.q18Priority;
-            if (b.q10Priority !== a.q10Priority) return b.q10Priority - a.q10Priority;
-            if (b.latePriority !== a.latePriority) return b.latePriority - a.latePriority;
-            return a.originalIndex - b.originalIndex;
-          });
-
-        return ranked.slice(0, config.page.bestCount);
-      }
-
-      function showResults() {
-        const topList = calculateResults();
-        quizSection.classList.add('hidden');
-        resultSection.classList.remove('hidden');
-        copyFeedback.textContent = '';
-
-        resultsContainer.innerHTML = '';
-        topList.forEach((item, idx) => {
-          const rank = idx + 1;
-          const card = document.createElement('article');
-          card.className = `rank-card rank-${rank}`;
-          const rolesHtml = item.roles.map((r) => `<span class="role-tag">${r}</span>`).join('');
-          card.innerHTML = `
-            <div class="rank-badge-row">
-              <span class="rank-badge">第${rank}位</span>
-              <span class="match-score">適合度 ${item.matchPct}%</span>
-            </div>
-            <h3 class="type-title">${item.name}</h3>
-            <p class="type-tagline">${item.tagline}</p>
-            <div class="detail-block">
-              <span class="detail-label">強み・向いている理由</span>
-              <div>${item.reason}</div>
-            </div>
-            <div class="caution-box">
-              <strong>注意点・消耗しやすい職場環境</strong>
-              <div>${item.caution}</div>
-            </div>
-            <div class="detail-block">
-              <span class="detail-label">向いている職種・働き方の例</span>
-              <div class="roles-wrap">${rolesHtml}</div>
-            </div>
-          `;
-          resultsContainer.appendChild(card);
-        });
-
-        const first = topList[0];
-        const shareUrl = window.location.href;
-        const shareBody = `${first.shareText}
-
-#適職診断 #転職 #MyPinto`;
-        shareXBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareBody)}&url=${encodeURIComponent(shareUrl)}`;
-
-        copyBtn.onclick = async () => {
-          const copyText = `【MyPinto 適職・転職診断】
-1位：${topList[0].name}
-2位：${topList[1].name}
-3位：${topList[2].name}
-${first.shareText}
-${shareUrl}`;
-          try {
-            await navigator.clipboard.writeText(copyText);
-            copyFeedback.textContent = '診断結果をクリップボードにコピーしました！';
-          } catch (e) {
-            copyFeedback.textContent = 'コピーに失敗しました。画面をスクリーンショットして保存してください。';
-          }
-        };
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-
-      startBtn.addEventListener('click', () => {
-        introSection.classList.add('hidden');
-        quizSection.classList.remove('hidden');
-        currentIndex = 0;
-        answers = new Array(totalQuestions).fill(null);
-        renderQuestion(0);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      backBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex -= 1;
-          renderQuestion(currentIndex);
-        }
-      });
-
-      retryBtn.addEventListener('click', () => {
-        resultSection.classList.add('hidden');
-        quizSection.classList.remove('hidden');
-        currentIndex = 0;
-        answers = new Array(totalQuestions).fill(null);
-        renderQuestion(0);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    })(jobFitDiagnosisConfig);
-  </script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© MyPinto</div>
+      <div class="footer-links">
+        <a href="https://my-pinto.github.io/" target="_blank" rel="noopener noreferrer">公式サイト</a>
+        <a href="https://note.com/kaja_note365" target="_blank" rel="noopener noreferrer">note（kaja_note365）</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
