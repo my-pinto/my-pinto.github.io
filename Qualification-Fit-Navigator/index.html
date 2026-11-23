@@ -209,9 +209,7 @@ main{overflow:hidden}
 .qualification-detail-body{padding:8px 4px 2px;color:var(--muted);font-size:12px;line-height:1.75;overflow-wrap:anywhere}
 .qualification-detail-body p{margin:6px 0}
 .qualification-detail-body strong{color:var(--text)}
-/* =========================================
-   AIツール診断共通・ピント進捗ナビゲーター
-========================================= */
+/* MyPinto公式ピント・進捗バー連動 */
 
 .progress-area {
   position: relative;
@@ -227,6 +225,7 @@ main{overflow:hidden}
   height: 54px;
   min-height: 0;
   margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,17 +241,6 @@ main{overflow:hidden}
   height: 54px;
   flex: 0 0 58px;
   overflow: visible;
-  filter: drop-shadow(0 7px 12px rgba(58,174,118,.22));
-  animation: pintoBob 3.6s ease-in-out infinite;
-}
-
-.pinto-hint .pinto-art {
-  display: block;
-  width: 34px;
-  height: 34px;
-  flex: none;
-  overflow: visible;
-  animation: pintoBob 3.6s ease-in-out infinite;
 }
 
 .complete-mark .pinto-art {
@@ -260,7 +248,6 @@ main{overflow:hidden}
   width: 68px;
   height: 68px;
   overflow: visible;
-  animation: pintoBob 3.6s ease-in-out infinite;
 }
 
 @media (max-width:700px) {
@@ -269,7 +256,6 @@ main{overflow:hidden}
   }
 
   .pinto-marker.pinto-guide {
-    top: 30px;
     width: 52px;
     height: 48px;
   }
@@ -280,7 +266,6 @@ main{overflow:hidden}
     flex-basis: 52px;
   }
 }
-
 /* =========================================
    MyPinto BEST3 - Premium Metal Medal
 ========================================= */
