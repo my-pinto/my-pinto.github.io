@@ -478,11 +478,29 @@ main{overflow:hidden}
 <section class="quiz-section" id="quizSection" aria-live="polite">
  <div class="quiz-panel">
   <div class="progress-area">
-   <div class="progress-top"><strong id="questionCounter">質問 1 / 15</strong><span id="progressPercent">0% 完了</span></div>
-   <div class="progress-track">
-    <div class="progress-fill" id="progressFill"></div>
-    <div class="pinto-marker pinto-guide" id="pintoMarker">
-   </div>
+    <div class="progress-top">
+      <strong id="questionCounter">質問 1 / 15</strong>
+      <span id="progressPercent">0% 完了</span>
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="pinto-marker pinto-guide" id="pintoMarker"></div>
+  </div>
+
+  <div class="question-wrap" id="questionWrap">
+    <p class="question-kicker">PINTO NAVIGATOR</p>
+    <h2 class="question-title" id="questionTitle"></h2>
+    <div class="answer-list" id="answerList"></div>
+  </div>
+
+  <div class="quiz-nav">
+    <button class="secondary-btn" id="backButton" type="button">戻る</button>
+    <button class="next-btn" id="nextButton" type="button" disabled>次へ</button>
+  </div>
+</div>
   </div>
   <div class="question-wrap" id="questionWrap">
    <p class="question-kicker">PINTO NAVIGATOR</p>
