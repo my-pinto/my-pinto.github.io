@@ -834,7 +834,7 @@ function updatePinto() {
 
   const questionNo = state.index + 1;
 
-  (diagnosisConfig.pinto.milestones || []).forEach(milestone => {
+  diagnosisConfig.pinto.milestones.forEach(milestone => {
     if (
       questionNo >= milestone.start &&
       questionNo <= milestone.end
@@ -851,11 +851,6 @@ function updatePintoPosition(percent) {
 
   if (!guide || !progressArea || !progressBar) return;
 
-  /* AIツール診断と同じく進捗エリアを基準に配置 */
-  if (guide.parentElement !== progressArea) {
-    progressArea.appendChild(guide);
-  }
-
   const barRect = progressBar.getBoundingClientRect();
   const areaRect = progressArea.getBoundingClientRect();
   const guideWidth = guide.offsetWidth || 58;
@@ -870,12 +865,8 @@ function updatePintoPosition(percent) {
     progressArea.clientWidth - guideWidth
   );
 
-  const left = Math.min(
-    maxLeft,
-    Math.max(0, rawLeft)
-  );
-
-  guide.style.left = left + "px";
+  guide.style.left =
+    Math.min(maxLeft, Math.max(0, rawLeft)) + "px";
 }
 
 function setProgress() {
@@ -885,8 +876,7 @@ function setProgress() {
     value => value !== undefined
   ).length;
 
-  const ratio = answered / total;
-  const percent = Math.round(ratio * 100);
+  const percent = Math.round(answered / total * 100);
 
   $("questionCounter").textContent =
     `質問 ${state.index + 1} / ${total}`;
@@ -894,19 +884,10 @@ function setProgress() {
   $("progressPercent").textContent =
     `${percent}% 完了`;
 
-  $("progressFill").style.width =
-    percent + "%";
+  $("progressFill").style.width = percent + "%";
 
   updatePinto();
   updatePintoPosition(percent);
-
-  const milestone = [...diagnosisConfig.pinto.milestones]
-    .reverse()
-    .find(item => ratio >= item.at);
-
-  $("pintoHintText").textContent = milestone
-    ? milestone.text
-    : "あなたのペースで大丈夫。近いと感じる答えを選んでください。";
 }
 function renderQuestion(){
  const q=questions[state.index];
