@@ -620,14 +620,6 @@ fetch("/AI-Tool-Navigator/")
       marker.replaceChildren(pinto);
     }
 
-    const completion = document.getElementById("completeMarkImage");
-
-    if (completion) {
-      const pinto = source.cloneNode(true);
-      pinto.setAttribute("role", "img");
-      pinto.setAttribute("aria-label", "MyPintoの案内キャラクター、ピント");
-      completion.replaceWith(pinto);
-    }
   })
   .catch(error => {
     console.error("MyPinto共通ピント:", error);
