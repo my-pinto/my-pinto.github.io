@@ -417,6 +417,14 @@ const scoringTagsById = {
  "it-certification-ability":["it","analysis","math","practice","specialist"]
 };
 
+/* 結果カード用の短い日本語タグ。採点に使う内部タグや配点は変更しない。 */
+const resultTraitLabels = {
+ it:"IT・デジタル", analysis:"分析", math:"数理", practice:"問題演習",
+ specialist:"専門性", business:"ビジネス", creative:"創作・表現",
+ people:"対人コミュニケーション", language:"言語", hobby:"興味・趣味",
+ practical:"実践", career:"仕事への活用", independent:"自主性", writing:"文章表現"
+};
+
 const candidates = qualificationDatabase
  .filter(record => record.diagnosisReady === true && record.status === "現行")
  .map(record => ({
@@ -428,7 +436,7 @@ const candidates = qualificationDatabase
   url:record.officialUrl,
   aptitudeTags:record.tags,
   tags:scoringTagsById[record.id] || [],
-  traits:[record.learningContent].filter(value=>value && value!=="未確認"),
+  traits:(scoringTagsById[record.id] || []).map(tag=>resultTraitLabels[tag] || tag),
   reason:record.careerUse && record.careerUse!=="未確認" ? record.careerUse : "活用場面は公式情報を確認できていません。",
   eligibility:{details:record.eligibility || "未確認"},
   examMethod:record.examMethod || "未確認",
