@@ -834,18 +834,98 @@ const state = {index:0,answers:[],completed:false};
 const $ = id => document.getElementById(id);
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-function setProgress(){
- const total=questions.length;
- const answered=state.answers.filter(v=>v!==undefined).length;
- const ratio=answered/total;
- $("questionCounter").textContent=`質問 ${state.index+1} / ${total}`;
- $("progressPercent").textContent=`${Math.round(ratio*100)}% 完了`;
- $("progressFill").style.width=`${ratio*100}%`;
- $("pintoMarker").style.left=`${Math.max(0,Math.min(100,ratio*100))}%`;
- const milestone=[...diagnosisConfig.pinto.milestones].reverse().find(m=>ratio>=m.at);
- $("pintoHintText").textContent=milestone?milestone.text:"あなたのペースで大丈夫。近いと感じる答えを選んでください。";
+/* =========================================
+   AIツール診断共通・ピント演出制御
+========================================= */
+
+function updatePinto() {
+  const guide = $("pintoMarker");
+  if (!guide) return;
+
+  guide.classList.remove(
+    "pinto-talking",
+    "pinto-good",
+    "pinto-celebrate",
+    "pinto-q15-glow",
+    "pinto-q20-ring"
+  );
+
+  const questionNo = state.index + 1;
+
+  (diagnosisConfig.pinto.milestones || []).forEach(milestone => {
+    if (
+      questionNo >= milestone.start &&
+      questionNo <= milestone.end
+    ) {
+      guide.classList.add(...milestone.classes);
+    }
+  });
 }
 
+function updatePintoPosition(percent) {
+  const guide = $("pintoMarker");
+  const progressArea = document.querySelector(".progress-area");
+  const progressBar = document.querySelector(".progress-track");
+
+  if (!guide || !progressArea || !progressBar) return;
+
+  /* AIツール診断と同じく進捗エリアを基準に配置 */
+  if (guide.parentElement !== progressArea) {
+    progressArea.appendChild(guide);
+  }
+
+  const barRect = progressBar.getBoundingClientRect();
+  const areaRect = progressArea.getBoundingClientRect();
+  const guideWidth = guide.offsetWidth || 58;
+
+  const rawLeft =
+    barRect.left - areaRect.left +
+    barRect.width * (percent / 100) -
+    guideWidth / 2;
+
+  const maxLeft = Math.max(
+    0,
+    progressArea.clientWidth - guideWidth
+  );
+
+  const left = Math.min(
+    maxLeft,
+    Math.max(0, rawLeft)
+  );
+
+  guide.style.left = left + "px";
+}
+
+function setProgress() {
+  const total = questions.length;
+
+  const answered = state.answers.filter(
+    value => value !== undefined
+  ).length;
+
+  const ratio = answered / total;
+  const percent = Math.round(ratio * 100);
+
+  $("questionCounter").textContent =
+    `質問 ${state.index + 1} / ${total}`;
+
+  $("progressPercent").textContent =
+    `${percent}% 完了`;
+
+  $("progressFill").style.width =
+    percent + "%";
+
+  updatePinto();
+  updatePintoPosition(percent);
+
+  const milestone = [...diagnosisConfig.pinto.milestones]
+    .reverse()
+    .find(item => ratio >= item.at);
+
+  $("pintoHintText").textContent = milestone
+    ? milestone.text
+    : "あなたのペースで大丈夫。近いと感じる答えを選んでください。";
+}
 function renderQuestion(){
  const q=questions[state.index];
  $("questionTitle").textContent=q.question;
