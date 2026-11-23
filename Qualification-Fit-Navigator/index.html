@@ -645,12 +645,31 @@ const diagnosisConfig = {
  id:"qualification",
  domainName:"資格・検定",
  page:{accentColor:"#FF0000",bestCount:3},
- pinto:{milestones:[
-  {at:0.34,text:"いい調子です。あなたの興味が少しずつ見えてきました。"},
-  {at:0.67,text:"あと少しです。自分に近い答えを選んでください。"},
-  {at:1,text:"回答完了です。相性のよい資格をまとめています。"}
- ]}
-};
+ pinto: {
+  milestones: [
+    {
+      at:0.34,
+      text:"いい調子です。あなたの興味が少しずつ見えてきました。",
+      start:8,
+      end:8,
+      classes:["pinto-talking"]
+    },
+    {
+      at:0.67,
+      text:"あと少しです。自分に近い答えを選んでください。",
+      start:12,
+      end:14,
+      classes:["pinto-q15-glow"]
+    },
+    {
+      at:1,
+      text:"回答完了です。相性のよい資格をまとめています。",
+      start:15,
+      end:15,
+      classes:["pinto-celebrate","pinto-q20-ring"]
+    }
+  ]
+}
 
 const questions = [
  {question:"新しいことを学ぶとき、特に興味を持ちやすい分野は？",answers:[
