@@ -644,7 +644,7 @@ function createResultCard(candidate,index){
 
  const head=document.createElement("div");head.className="result-card-head";
  const rankWrap=document.createElement("div");
- const badge=document.createElement("div");badge.className="rank-badge";
+ const badge=document.createElement("div");badge.className="rank-badge medal-badge medal-"+(index+1);
  badge.textContent=["🥇 BEST 1","🥈 BEST 2","🥉 BEST 3"][index];
  const caption=document.createElement("div");caption.className="rank-caption";
  caption.textContent=["最も相性が高い候補","比較したい第2候補","視野を広げる第3候補"][index];
