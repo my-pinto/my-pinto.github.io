@@ -215,11 +215,38 @@ main{overflow:hidden}
 .qualification-detail-body{padding:8px 4px 2px;color:var(--muted);font-size:12px;line-height:1.75;overflow-wrap:anywhere}
 .qualification-detail-body p{margin:6px 0}
 .qualification-detail-body strong{color:var(--text)}
-/* AIツール診断と共通のピント演出 */
+/* =========================================
+   AIツール診断共通・ピント進捗ナビゲーター
+========================================= */
+
+.progress-area {
+  position: relative;
+  padding-bottom: 58px;
+}
+
+.pinto-marker.pinto-guide {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 4;
+  width: 58px;
+  height: 54px;
+  min-height: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  pointer-events: none;
+  transform: none;
+  transition: left .45s cubic-bezier(.2,.75,.25,1);
+}
+
 .pinto-marker .pinto-art {
   display: block;
-  width: 76px;
-  height: 76px;
+  width: 58px;
+  height: 54px;
+  flex: 0 0 58px;
   overflow: visible;
   filter: drop-shadow(0 7px 12px rgba(58,174,118,.22));
   animation: pintoBob 3.6s ease-in-out infinite;
@@ -242,52 +269,24 @@ main{overflow:hidden}
   animation: pintoBob 3.6s ease-in-out infinite;
 }
 
-.pinto-art .pinto-aura {
-  transform-origin: 50% 50%;
-  animation: pintoAura 3.4s ease-in-out infinite;
-}
-
-.pinto-art .pinto-eye {
-  transform-origin: center;
-  animation: pintoBlink 5.2s infinite;
-}
-
-@keyframes pintoBob {
-  0%, 100% {
-    transform: translateY(0) rotate(-2deg);
+@media (max-width:700px) {
+  .progress-area {
+    padding-bottom: 52px;
   }
-  50% {
-    transform: translateY(-8px) rotate(3deg);
-  }
-}
 
-@keyframes pintoAura {
-  0%, 100% {
-    opacity: .48;
-    transform: scale(.94);
+  .pinto-marker.pinto-guide {
+    top: 30px;
+    width: 52px;
+    height: 48px;
   }
-  50% {
-    opacity: .9;
-    transform: scale(1.08);
+
+  .pinto-marker .pinto-art {
+    width: 52px;
+    height: 48px;
+    flex-basis: 52px;
   }
 }
 
-@keyframes pintoBlink {
-  0%, 45%, 49%, 100% {
-    transform: scaleY(1);
-  }
-  47% {
-    transform: scaleY(.12);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pinto-art,
-  .pinto-art .pinto-aura,
-  .pinto-art .pinto-eye {
-    animation: none !important;
-  }
-}
 /* =========================================
    MyPinto BEST3 - Premium Metal Medal
 ========================================= */
