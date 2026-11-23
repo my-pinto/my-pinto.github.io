@@ -549,7 +549,6 @@ function extractPintoRules(css) {
     if (open === -1) break;
 
     const header = css.slice(index, open).trim();
-
     let depth = 1;
     let close = open + 1;
 
@@ -565,10 +564,7 @@ function extractPintoRules(css) {
 
     if (/^@(media|supports|layer)\b/i.test(header)) {
       const nested = extractPintoRules(body);
-
-      if (nested.trim()) {
-        output += `${header}{${nested}}\n`;
-      }
+      if (nested.trim()) output += `${header}{${nested}}\n`;
     } else if (
       header.includes(".pinto-") ||
       /^@keyframes\s+pinto/i.test(header)
@@ -584,20 +580,15 @@ function extractPintoRules(css) {
 
 fetch("/AI-Tool-Navigator/")
   .then(response => {
-    if (!response.ok) {
-      throw new Error("AIツール診断を読み込めません");
-    }
+    if (!response.ok) throw new Error("AIツール診断を読み込めません");
     return response.text();
   })
   .then(html => {
     const doc = new DOMParser().parseFromString(html, "text/html");
     const source = doc.querySelector(".pinto-art");
 
-    if (!source) {
-      throw new Error("公式ピントSVGが見つかりません");
-    }
+    if (!source) throw new Error("公式ピントSVGが見つかりません");
 
-    /* AIツール診断のピント関連CSSを抽出 */
     const sharedCss = Array.from(doc.querySelectorAll("style"))
       .map(style => extractPintoRules(style.textContent))
       .filter(Boolean)
@@ -615,29 +606,28 @@ fetch("/AI-Tool-Navigator/")
     sharedStyle.textContent = sharedCss;
     document.head.appendChild(sharedStyle);
 
-    /* 公式SVGを各表示場所へ反映 */
-    [
-      "pintoMarkerImage",
-      "pintoHintImage",
-      "completeMarkImage"
-    ].forEach(id => {
-      const oldElement = document.getElementById(id);
-      if (!oldElement) return;
+    const marker = document.getElementById("pintoMarker");
 
+    if (marker) {
       const pinto = source.cloneNode(true);
-      pinto.setAttribute("id", id);
-      pinto.setAttribute(
-        "aria-label",
-        "MyPintoの案内キャラクター、ピント"
-      );
       pinto.setAttribute("role", "img");
+      pinto.setAttribute("aria-label", "MyPintoの案内キャラクター、ピント");
+      marker.replaceChildren(pinto);
+    }
 
-      oldElement.replaceWith(pinto);
-    });
+    const completion = document.getElementById("completeMarkImage");
+
+    if (completion) {
+      const pinto = source.cloneNode(true);
+      pinto.setAttribute("role", "img");
+      pinto.setAttribute("aria-label", "MyPintoの案内キャラクター、ピント");
+      completion.replaceWith(pinto);
+    }
   })
   .catch(error => {
     console.error("MyPinto共通ピント:", error);
   });
+ 
 const diagnosisConfig = {
  id:"qualification",
  domainName:"資格・検定",
