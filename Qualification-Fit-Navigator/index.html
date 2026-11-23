@@ -219,38 +219,156 @@ main{overflow:hidden}
     transform: scale(1.08) rotate(-3deg);
   }
 }
-/* BEST3 金・銀・銅メダル */
-.rank-badge.medal-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  min-width: 112px;
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  border: 1px solid rgba(255,255,255,.75);
-  box-shadow: 0 3px 9px rgba(0,0,0,.12), inset 0 1px 2px rgba(255,255,255,.8);
+
+/* =========================================
+   MyPinto BEST3 - Premium Metal Medal
+========================================= */
+
+.result-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 23px;
+  border: 2px solid rgba(255,255,255,.95);
+  transform: translateZ(0);
+  box-shadow:
+    0 22px 38px rgba(25,35,50,.22),
+    0 8px 14px rgba(25,35,50,.12),
+    inset 0 2px 3px rgba(255,255,255,.98),
+    inset 0 -5px 9px rgba(0,0,0,.16);
 }
 
-.rank-badge.medal-1 {
-  color: #704600;
-  background: linear-gradient(135deg, #fff4b0, #e8b832 48%, #fff0a0);
-  border-color: #d6a52b;
+/* 鏡面の反射光 */
+.result-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    118deg,
+    transparent 0%,
+    rgba(255,255,255,.72) 17%,
+    rgba(255,255,255,.08) 27%,
+    transparent 38%,
+    transparent 62%,
+    rgba(255,255,255,.30) 75%,
+    transparent 88%
+  );
+  opacity: .9;
 }
 
-.rank-badge.medal-2 {
-  color: #4e5965;
-  background: linear-gradient(135deg, #ffffff, #bfc8d2 48%, #f5f7fa);
-  border-color: #aeb8c3;
+/* 内側の金属フレーム */
+.result-card::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 17px;
+  box-shadow:
+    inset 0 1px 3px rgba(255,255,255,.85),
+    inset 0 -2px 4px rgba(0,0,0,.12);
 }
 
-.rank-badge.medal-3 {
-  color: #754322;
-  background: linear-gradient(135deg, #ffe0c0, #bd7948 48%, #f5c49c);
-  border-color: #b87548;
+.result-card > * {
+  position: relative;
+  z-index: 2;
 }
+
+/* BEST1 GOLD */
+.result-card.rank-1 {
+  background: linear-gradient(
+    110deg,
+    #9b6a08 0%,
+    #f9df83 10%,
+    #fff9d9 19%,
+    #d9a927 30%,
+    #fff2ad 43%,
+    #b9810c 55%,
+    #ffe58b 69%,
+    #fffbe5 81%,
+    #b17a0b 100%
+  );
+  border-color: #ffe9a0;
+  box-shadow:
+    0 25px 42px rgba(151,104,8,.32),
+    0 9px 15px rgba(110,72,0,.20),
+    inset 0 3px 5px rgba(255,255,255,.98),
+    inset 0 -7px 12px rgba(111,69,0,.38);
+}
+
+/* BEST2 SILVER */
+.result-card.rank-2 {
+  background: linear-gradient(
+    110deg,
+    #65717e 0%,
+    #f1f4f7 11%,
+    #ffffff 20%,
+    #aab5c1 32%,
+    #f8fbff 45%,
+    #8794a2 57%,
+    #e9eef3 70%,
+    #ffffff 83%,
+    #788593 100%
+  );
+  border-color: #f8fbff;
+  box-shadow:
+    0 25px 42px rgba(75,91,108,.28),
+    0 9px 15px rgba(50,65,80,.18),
+    inset 0 3px 5px rgba(255,255,255,.98),
+    inset 0 -7px 12px rgba(55,68,82,.35);
+}
+
+/* BEST3 BRONZE */
+.result-card.rank-3 {
+  background: linear-gradient(
+    110deg,
+    #85451f 0%,
+    #f2c49c 11%,
+    #fff0df 20%,
+    #bd7748 32%,
+    #ffe0bd 45%,
+    #95502d 57%,
+    #e9b18a 70%,
+    #fff0df 83%,
+    #884522 100%
+  );
+  border-color: #ffe2c5;
+  box-shadow:
+    0 25px 42px rgba(125,66,35,.30),
+    0 9px 15px rgba(90,45,20,.18),
+    inset 0 3px 5px rgba(255,255,255,.95),
+    inset 0 -7px 12px rgba(90,42,17,.36);
+}
+
+/* 浮き上がる立体感 */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .result-card {
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+
+  .result-card:hover {
+    transform: translateY(-7px) scale(1.012);
+  }
+
+  .result-card.rank-1:hover {
+    box-shadow:
+      0 32px 52px rgba(151,104,8,.38),
+      0 12px 20px rgba(110,72,0,.22),
+      inset 0 3px 5px rgba(255,255,255,.98),
+      inset 0 -7px 12px rgba(111,69,0,.38);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-card {
+    transition: none;
+  }
+}
+
 </style>
 </head>
 <body>
