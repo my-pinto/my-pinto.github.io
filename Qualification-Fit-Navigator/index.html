@@ -508,34 +508,29 @@ const OFFICIAL_LOGO = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmN
 document.getElementById("brandLogo").src = OFFICIAL_LOGO;
 document.getElementById("footerLogo").src = OFFICIAL_LOGO;
 /* シンボル部分のみを切り出して表示。元のロゴ画像の描画は変更しない。 */
-const pintoCharacterSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-<defs>
-<radialGradient id="p" cx="32%" cy="25%" r="78%">
-<stop offset="0" stop-color="#d8ff9a"/>
-<stop offset=".38" stop-color="#7cff27"/>
-<stop offset=".78" stop-color="#24cf00"/>
-<stop offset="1" stop-color="#119500"/>
-</radialGradient>
-</defs>
-<ellipse cx="60" cy="108" rx="29" ry="6" fill="#173d08" opacity=".12"/>
-<path d="M29 72 Q12 78 18 91 Q23 99 34 88 M91 72 Q108 78 102 91 Q97 99 86 88" fill="none" stroke="#28b900" stroke-width="8" stroke-linecap="round"/>
-<circle cx="60" cy="58" r="43" fill="url(#p)" stroke="#159c00" stroke-width="2"/>
-<path d="M34 40 Q44 26 60 31" fill="none" stroke="#fff" stroke-width="5" opacity=".45" stroke-linecap="round"/>
-<ellipse cx="46" cy="57" rx="4.5" ry="7" fill="#173b13"/>
-<ellipse cx="74" cy="57" rx="4.5" ry="7" fill="#173b13"/>
-<circle cx="47.5" cy="54.5" r="1.5" fill="#fff"/>
-<circle cx="75.5" cy="54.5" r="1.5" fill="#fff"/>
-<path d="M48 72 Q60 84 73 71" fill="none" stroke="#145d08" stroke-width="3.5" stroke-linecap="round"/>
-<ellipse cx="34" cy="68" rx="7" ry="4" fill="#ff9a9a" opacity=".5"/>
-<ellipse cx="86" cy="68" rx="7" ry="4" fill="#ff9a9a" opacity=".5"/>
-<path d="M43 96 Q60 103 77 96" fill="none" stroke="#159c00" stroke-width="5" stroke-linecap="round"/>
-</svg>`;
-const pintoCharacterImage = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(pintoCharacterSvg)}`;
-["pintoMarkerImage","pintoHintImage","completeMarkImage"].forEach(id=>{
- const el=document.getElementById(id);
- if(el) el.src=pintoCharacterImage;
-});
+/* AIツール診断と共通の公式ピントを読み込む */
+fetch("/AI-Tool-Navigator/")
+  .then(response => {
+    if (!response.ok) throw new Error("ピント画像を読み込めませんでした");
+    return response.text();
+  })
+  .then(html => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const source = doc.querySelector(".pinto-art");
+    if (!source) throw new Error("公式ピントが見つかりません");
 
+    ["pintoMarkerImage", "pintoHintImage", "completeMarkImage"].forEach(id => {
+      const oldElement = document.getElementById(id);
+      if (!oldElement) return;
+
+      const pinto = source.cloneNode(true);
+      pinto.setAttribute("id", id);
+      pinto.setAttribute("aria-label", "MyPintoの案内キャラクター、ピント");
+      pinto.setAttribute("role", "img");
+      oldElement.replaceWith(pinto);
+    });
+  })
+  .catch(error => console.error("MyPintoキャラクター:", error));
 const diagnosisConfig = {
  id:"qualification",
  domainName:"資格・検定",
