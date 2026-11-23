@@ -539,29 +539,108 @@ const OFFICIAL_LOGO = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmN
 document.getElementById("brandLogo").src = OFFICIAL_LOGO;
 document.getElementById("footerLogo").src = OFFICIAL_LOGO;
 
-/* AIツール診断と共通の公式ピントを読み込む */
+/* =========================================
+   AIツール診断の公式ピント・演出CSSを共通化
+========================================= */
+
+function extractPintoRules(css) {
+  let output = "";
+  let index = 0;
+
+  while (index < css.length) {
+    const open = css.indexOf("{", index);
+    if (open === -1) break;
+
+    const header = css.slice(index, open).trim();
+
+    let depth = 1;
+    let close = open + 1;
+
+    while (close < css.length && depth > 0) {
+      if (css[close] === "{") depth++;
+      if (css[close] === "}") depth--;
+      close++;
+    }
+
+    if (depth !== 0) break;
+
+    const body = css.slice(open + 1, close - 1);
+
+    if (/^@(media|supports|layer)\b/i.test(header)) {
+      const nested = extractPintoRules(body);
+
+      if (nested.trim()) {
+        output += `${header}{${nested}}\n`;
+      }
+    } else if (
+      header.includes(".pinto-") ||
+      /^@keyframes\s+pinto/i.test(header)
+    ) {
+      output += `${header}{${body}}\n`;
+    }
+
+    index = close;
+  }
+
+  return output;
+}
+
 fetch("/AI-Tool-Navigator/")
   .then(response => {
-    if (!response.ok) throw new Error("ピント画像を読み込めませんでした");
+    if (!response.ok) {
+      throw new Error("AIツール診断を読み込めません");
+    }
     return response.text();
   })
   .then(html => {
     const doc = new DOMParser().parseFromString(html, "text/html");
     const source = doc.querySelector(".pinto-art");
-    if (!source) throw new Error("公式ピントが見つかりません");
 
-    ["pintoMarkerImage", "pintoHintImage", "completeMarkImage"].forEach(id => {
+    if (!source) {
+      throw new Error("公式ピントSVGが見つかりません");
+    }
+
+    /* AIツール診断のピント関連CSSを抽出 */
+    const sharedCss = Array.from(doc.querySelectorAll("style"))
+      .map(style => extractPintoRules(style.textContent))
+      .filter(Boolean)
+      .join("\n");
+
+    if (!sharedCss.trim()) {
+      throw new Error("ピント演出CSSを取得できません");
+    }
+
+    const oldStyle = document.getElementById("sharedPintoStyles");
+    if (oldStyle) oldStyle.remove();
+
+    const sharedStyle = document.createElement("style");
+    sharedStyle.id = "sharedPintoStyles";
+    sharedStyle.textContent = sharedCss;
+    document.head.appendChild(sharedStyle);
+
+    /* 公式SVGを各表示場所へ反映 */
+    [
+      "pintoMarkerImage",
+      "pintoHintImage",
+      "completeMarkImage"
+    ].forEach(id => {
       const oldElement = document.getElementById(id);
       if (!oldElement) return;
 
       const pinto = source.cloneNode(true);
       pinto.setAttribute("id", id);
-      pinto.setAttribute("aria-label", "MyPintoの案内キャラクター、ピント");
+      pinto.setAttribute(
+        "aria-label",
+        "MyPintoの案内キャラクター、ピント"
+      );
       pinto.setAttribute("role", "img");
+
       oldElement.replaceWith(pinto);
     });
   })
-  .catch(error => console.error("MyPintoキャラクター:", error));
+  .catch(error => {
+    console.error("MyPinto共通ピント:", error);
+  });
 const diagnosisConfig = {
  id:"qualification",
  domainName:"資格・検定",
