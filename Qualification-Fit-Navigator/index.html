@@ -180,6 +180,45 @@ main{overflow:hidden}
 .qualification-detail-body{padding:8px 4px 2px;color:var(--muted);font-size:12px;line-height:1.75;overflow-wrap:anywhere}
 .qualification-detail-body p{margin:6px 0}
 .qualification-detail-body strong{color:var(--text)}
+/* MyPintoキャラクター演出 */
+#pintoMarkerImage,
+#pintoHintImage {
+  animation: pintoFloat 2.2s ease-in-out infinite;
+  filter: drop-shadow(0 3px 7px rgba(55, 190, 0, .28));
+}
+
+#completeMarkImage {
+  animation: pintoCelebrate 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(80, 255, 25, .5));
+}
+
+.pinto-marker {
+  filter: drop-shadow(0 0 8px rgba(80, 255, 25, .2));
+}
+
+@keyframes pintoFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) rotate(3deg) scale(1.06);
+  }
+}
+
+@keyframes pintoCelebrate {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.12) rotate(-7deg);
+  }
+  50% {
+    transform: scale(1.18) rotate(7deg);
+  }
+  75% {
+    transform: scale(1.08) rotate(-3deg);
+  }
+}
 </style>
 </head>
 <body>
