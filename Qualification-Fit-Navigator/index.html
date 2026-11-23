@@ -93,11 +93,29 @@ main{overflow:hidden}
 .next-btn:not(:disabled):hover,.secondary-btn:not(:disabled):hover{transform:translateY(-1px)}
 .result-panel{width:min(900px,100%);margin:auto}
 .result-intro{text-align:center;margin-bottom:25px}
-.complete-mark{width:82px;height:82px;margin:0 auto 13px;position:relative;border-radius:50%;background:radial-gradient(circle,#fff 42%,#fff4f4 68%,#ffe1e1 100%);display:grid;place-items:center;animation:completePop .6s cubic-bezier(.16,.8,.25,1.2) both}
-.complete-mark img{width:100%;height:100%;object-fit:cover;object-position:left center;border-radius:50%;filter:drop-shadow(0 0 9px rgba(255,0,0,.15))}
-.complete-mark:after{content:"";position:absolute;inset:-7px;border:1px solid rgba(255,0,0,.16);border-radius:50%;animation:completeRing 1.7s ease-out infinite}
-@keyframes completePop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
-@keyframes completeRing{0%{transform:scale(.92);opacity:.8}100%{transform:scale(1.2);opacity:0}}
+.completion-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:228px;
+  height:228px;
+  margin:0 auto 13px;
+  border:none;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+
+.completion-focus{
+  display:block;
+  width:76px;
+  height:76px;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+  filter:
+    drop-shadow(0 0 5px rgba(90,255,25,.25))
+    drop-shadow(0 0 10px rgba(90,255,25,.15));
+}
 .result-intro h2{margin:0;color:#111;font-size:clamp(25px,4vw,34px);letter-spacing:-.035em}
 .result-intro p{margin:7px 0 0;color:#777;font-size:13px}
 .result-subtitle{margin:24px auto 0;padding-top:19px;border-top:1px solid var(--line);font-size:15px;font-weight:700;color:#222}
