@@ -74,10 +74,6 @@ main{overflow:hidden}
 .progress-top strong{font-size:14px;color:#111}
 .progress-track{position:relative;height:9px;border-radius:20px;background:#eee;overflow:visible}
 .progress-fill{height:100%;width:0;border-radius:20px;background:linear-gradient(90deg,#FF7777,#FF0000);transition:width .45s cubic-bezier(.2,.75,.25,1)}
-.pinto-marker{position:absolute;top:50%;left:0;width:44px;height:44px;transform:translate(-10%,-50%);z-index:2;pointer-events:none;transition:left .45s cubic-bezier(.2,.75,.25,1)}
-.pinto-marker img{width:100%;height:100%;object-fit:cover;object-position:left center;border-radius:50%;filter:drop-shadow(0 2px 7px rgba(255,0,0,.16));animation:orbFloat 2.8s ease-in-out infinite}
-@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.035)}}
-@keyframes orbGlow{0%,100%{opacity:.5}50%{opacity:1}}
 .question-wrap{animation:questionIn .28s ease both}
 @keyframes questionIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .question-kicker{margin:0 0 7px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.13em}
@@ -95,8 +91,6 @@ main{overflow:hidden}
 .next-btn{border:1px solid #111;background:#111;color:#fff;min-width:130px}
 .secondary-btn:disabled,.next-btn:disabled{opacity:.32;cursor:not-allowed}
 .next-btn:not(:disabled):hover,.secondary-btn:not(:disabled):hover{transform:translateY(-1px)}
-.pinto-hint{display:flex;align-items:center;gap:10px;margin:22px 0 0;padding:12px 14px;border-radius:11px;background:#fafafa;color:#777;font-size:12px}
-.pinto-hint img{width:34px;height:34px;object-fit:cover;object-position:left center;border-radius:50%;flex:none}
 .result-panel{width:min(900px,100%);margin:auto}
 .result-intro{text-align:center;margin-bottom:25px}
 .complete-mark{width:82px;height:82px;margin:0 auto 13px;position:relative;border-radius:50%;background:radial-gradient(circle,#fff 42%,#fff4f4 68%,#ffe1e1 100%);display:grid;place-items:center;animation:completePop .6s cubic-bezier(.16,.8,.25,1.2) both}
