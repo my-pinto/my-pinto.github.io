@@ -1400,14 +1400,31 @@ function renderQuestion(){
   const label=document.createElement("span");label.textContent=answer.label;
   button.append(dot,label);
   button.addEventListener("click",()=>{
-   const answeredQuestion=state.index;
-   state.answers[answeredQuestion]=answerIndex;
-   renderQuestion();
+   if(state.isTransitioning)return;
+
+   state.isTransitioning=true;
+   clearAnswerSelection();
+
+   button.classList.add("is-pressed");
+   state.answers[state.index]=answerIndex;
+
    window.setTimeout(()=>{
-    if(state.index!==answeredQuestion||state.answers[answeredQuestion]!==answerIndex||state.completed)return;
-    if(state.index<questions.length-1){state.index++;renderQuestion();}
-    else{state.completed=true;showResults();}
-   },220);
+    clearAnswerSelection();
+    $("questionWrap").classList.add("leaving");
+
+    window.setTimeout(()=>{
+     state.index++;
+
+     if(state.index<questions.length){
+      renderQuestion();
+      state.isTransitioning=false;
+     }else{
+      state.completed=true;
+      state.isTransitioning=false;
+      showResults();
+     }
+    },160);
+   },260);
   });
   $("answerList").append(button);
  });
