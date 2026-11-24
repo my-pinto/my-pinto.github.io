@@ -1401,7 +1401,7 @@ function renderQuestion(){
   const button=document.createElement("button");
   button.type="button";
   button.className="answer-btn";
-  button.setAttribute("aria-pressed",state.answers[state.index]===answerIndex?"true":"false");
+  button.setAttribute("aria-pressed","false");
   button.textContent=answer.label;
   button.addEventListener("click",()=>{
    if(state.isTransitioning)return;
