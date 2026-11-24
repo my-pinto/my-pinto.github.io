@@ -1453,7 +1453,7 @@ function renderQuestion(){
 }
 
 function startDiagnosis(){
- state.index=0;state.answers=[];state.completed=false;
+ state.index=0;state.answers=[];state.completed=false;state.isTransitioning=false;
  $("nextButton").hidden=true;
  $("hero").classList.add("hidden");
  $("intro").classList.add("hidden");
