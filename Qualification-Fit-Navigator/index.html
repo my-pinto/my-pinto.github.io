@@ -729,7 +729,81 @@ header {
     transition: none;
   }
 }
+/* 資格選び SEOコンテンツ */
+.seo-content {
+  padding: 12px 24px 76px;
+  background: #FFFFFF;
+}
 
+.seo-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 34px 38px;
+  border: 1px solid #E5E9EA;
+  border-radius: 18px;
+  background: #FFFFFF;
+}
+
+.seo-inner h2 {
+  margin: 0 0 18px;
+  color: #111111;
+  font-size: clamp(21px, 3vw, 27px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -.025em;
+}
+
+.seo-inner h3 {
+  margin: 26px 0 12px;
+  color: #202426;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.seo-inner p,
+.seo-inner li {
+  color: #626B70;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.seo-inner p {
+  margin: 0 0 13px;
+}
+
+.seo-inner ul {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.seo-inner li {
+  padding: 3px 0;
+}
+
+.seo-inner .seo-note {
+  margin: 20px 0 0;
+  padding: 13px 15px;
+  border-radius: 9px;
+  background: #F7F9F9;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .seo-content {
+    padding: 0 17px 52px;
+  }
+
+  .seo-inner {
+    padding: 25px 20px;
+    border-radius: 14px;
+  }
+
+  .seo-inner p,
+  .seo-inner li {
+    font-size: 13px;
+  }
+}
 </style>
 </head>
 <body>
