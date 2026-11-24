@@ -278,7 +278,14 @@ header {
  background:#fff;
  transform:none;
 }
+.answer-btn:focus{
+ outline:none;
+}
 
+.answer-btn:focus-visible{
+ outline:3px solid rgba(255,0,0,.25);
+ outline-offset:2px;
+}
 .answer-btn.is-pressed{
  border-color:var(--accent);
  background:var(--accent-soft);
