@@ -1391,6 +1391,16 @@ function setProgress() {
   updatePinto();
   updatePintoPosition(percent);
 }
+ function clearAnswerSelection(){
+ $("answerList").querySelectorAll(".answer-btn").forEach(button=>{
+  button.classList.remove("is-pressed");
+  button.blur();
+ });
+
+ if(document.activeElement&&document.activeElement.blur){
+  document.activeElement.blur();
+ }
+}
 function renderQuestion(){
  $("questionWrap").classList.remove("leaving");
  const q=questions[state.index];
