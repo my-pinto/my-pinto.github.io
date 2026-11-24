@@ -280,8 +280,11 @@ header {
 }
 .answer-btn:focus,
 .answer-btn:focus-visible{
- outline:none;
- box-shadow:none;
+ outline:none !important;
+ box-shadow:none !important;
+ border-color:#e2e2e2 !important;
+ -webkit-appearance:none;
+ appearance:none;
 }
 .answer-btn.is-pressed{
  border-color:var(--accent);
