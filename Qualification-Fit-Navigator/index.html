@@ -19,20 +19,11 @@
 <meta name="twitter:description" content="自分に合う資格・検定を無料診断。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"MyPinto 資格適性診断","url":"https://my-pinto.github.io/Qualification-Fit-Navigator/","applicationCategory":"EducationalApplication","operatingSystem":"Any","inLanguage":"ja"}
 </script>
 <style>
-
-@font-face{
-  font-family:"LINE Seed JP";
-  src:url("./LINESeedJP-Bold.ttf") format("truetype");
-  font-style:normal;
-  font-weight:700;
-  font-display:swap;
-}
-
 :root{
  --accent:#FF0000;--accent-soft:#FFF1F1;--accent-pale:#FFF8F8;
  --ink:#111;--text:#272727;--muted:#707070;--line:#E8E8E8;
@@ -43,39 +34,253 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:18px}
-body{margin:0;background:#fff;color:var(--text);font-family:"LINE Seed JP","Noto Sans JP",system-ui,-apple-system,sans-serif;line-height:1.75;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+body {
+  font-family:
+    "LINE Seed JP",
+    "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Yu Gothic UI",
+    "Yu Gothic",
+    Meiryo,
+    sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.75;
+  letter-spacing: .015em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 button,a{font:inherit}
 button{-webkit-tap-highlight-color:transparent}
 a{color:inherit}
 button:focus-visible,a:focus-visible{outline:3px solid #222;outline-offset:3px}
-.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.header-inner{width:min(1120px,calc(100% - 40px));min-height:72px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;text-decoration:none;width:174px;max-width:42vw}
-.brand img{display:block;width:100%;height:auto}
-.header-category{font-size:13px;font-weight:700;letter-spacing:.08em;color:#333}
-main{overflow:hidden}
-.hero{position:relative;text-align:center;padding:76px 20px 68px;background:radial-gradient(ellipse at 50% 0%,rgba(255,0,0,.045),transparent 52%),linear-gradient(180deg,#fff 0%,#fff 100%);border-bottom:1px solid #f0f0f0}
-.hero-inner{width:min(820px,100%);margin:auto}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.15em;margin-bottom:15px}
-.eyebrow:before,.eyebrow:after{content:"";width:22px;height:1px;background:currentColor;opacity:.55}
-.hero h1{margin:0;color:var(--ink);font-size:clamp(30px,5.2vw,48px);font-weight:700;letter-spacing:-.045em;line-height:1.38}
-.hero h1 span{position:relative;white-space:nowrap}
-.hero-copy{max-width:620px;margin:18px auto 0;color:#555;font-size:15px}
-.hero-meta{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:23px 0 26px}
-.meta-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border:1px solid #e9e9e9;border-radius:999px;background:#fff;color:#555;font-size:12px}
-.meta-pill b{color:#111}
-.primary-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;min-width:245px;padding:13px 28px;border:0;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(255,0,0,.16);transition:transform .2s,box-shadow .2s,filter .2s}
-.primary-btn:hover{transform:translateY(-2px);box-shadow:0 11px 25px rgba(255,0,0,.2);filter:brightness(.97)}
-.primary-btn svg{width:18px;height:18px}
-.hero-note{margin:12px 0 0;color:#888;font-size:11px}
-.intro{width:min(980px,calc(100% - 36px));margin:0 auto;padding:50px 0 56px}
-.section-title{text-align:center;margin:0 0 9px;font-size:23px;letter-spacing:-.025em;color:#111}
-.section-copy{text-align:center;color:#777;font-size:13px;margin:0 auto 27px;max-width:600px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.step{padding:22px 18px;border:1px solid var(--line);border-radius:15px;background:#fff;text-align:center}
-.step-no{display:grid;place-items:center;width:30px;height:30px;margin:0 auto 9px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:700}
-.step h3{margin:0 0 5px;font-size:15px;color:#111}
-.step p{margin:0;color:#777;font-size:12px}
+
+/* MyPinto共通ヘッダー */
+header {
+  position: relative;
+  z-index: 5;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  max-width: 1120px;
+  min-height: 72px;
+  margin: auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.logo {
+  color: #111;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -.055em;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.header-category {
+  color: #333;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+/* メインビジュアル */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  padding: 88px 22px 91px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,0,0,.07), transparent 48%),
+    linear-gradient(180deg, #FFFFFF 0%, #FFFCFC 100%);
+  border-bottom: 1px solid #F2EEEE;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 330px;
+  height: 330px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -45%);
+  border: 1px solid rgba(255,0,0,.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 28px rgba(255,0,0,.025),
+    0 0 0 58px rgba(255,0,0,.018);
+  pointer-events: none;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  color: #111;
+  font-size: clamp(32px, 5.4vw, 55px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.35;
+}
+
+.hero h1 .hero-line {
+  display: inline-block;
+  position: relative;
+  color: #111;
+  z-index: 0;
+}
+
+.hero h1 .hero-line-emphasis::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 9px;
+  background: rgba(255,0,0,.16);
+  border-radius: 3px;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 0 auto 31px;
+  color: #505050;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* 診断スタートボタン */
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  min-width: 245px;
+  padding: 14px 34px;
+  border: 1px solid #D90000;
+  border-radius: 8px;
+  background: #FF0000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .025em;
+  cursor: pointer;
+  box-shadow: 0 5px 0 rgba(180,0,0,.13);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(220,0,0,.18);
+  filter: saturate(.92);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 0 rgba(180,0,0,.13);
+}
+
+.primary-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sub-text {
+  margin-top: 17px;
+  color: #737373;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+/* 3ステップ */
+.container {
+  max-width: 1080px;
+  margin: auto;
+  padding: 72px 24px;
+}
+
+.section-title {
+  color: #111;
+  text-align: center;
+  font-size: clamp(24px, 3.3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.45;
+  margin: 0 0 13px;
+}
+
+.section-description {
+  max-width: 700px;
+  margin: 0 auto 39px;
+  color: #777;
+  text-align: center;
+  font-size: 15px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.step-card {
+  position: relative;
+  min-height: 178px;
+  padding: 27px 25px 25px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(20,35,38,.045);
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent);
+}
+
+.step-number {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.step-card h3 {
+  margin: 0 0 7px;
+  color: #111;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.step-card p {
+  margin: 0;
+  color: #777;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
 .quiz-section,.result-section{display:none;background:linear-gradient(180deg,#fff 0%,#fafafa 100%);padding:42px 18px 70px}
 .quiz-panel{position:relative;width:min(790px,100%);margin:auto;padding:clamp(22px,4vw,40px);border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow)}
 .progress-area{margin-bottom:29px}
@@ -83,240 +288,109 @@ main{overflow:hidden}
 .progress-top strong{font-size:14px;color:#111}
 .progress-track{position:relative;height:9px;border-radius:20px;background:#eee;overflow:visible}
 .progress-fill{height:100%;width:0;border-radius:20px;background:linear-gradient(90deg,#FF7777,#FF0000);transition:width .45s cubic-bezier(.2,.75,.25,1)}
-
-.progress-area{
-  position:relative;
-  margin-bottom:29px;
-  padding-bottom:58px;
-}
-.pinto-marker.pinto-guide{
-  position:absolute;
-  top:30px;
-  left:0;
-  z-index:4;
-  width:58px;
-  height:54px;
-  min-height:0;
-  margin:0;
-  padding:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:0;
-  pointer-events:none;
-  transform:none;
-  transition:left .45s cubic-bezier(.2,.75,.25,1);
-}
-.pinto-marker .pinto-art{
-  display:block;
-  width:58px;
-  height:54px;
-  flex:0 0 58px;
-  overflow:visible;
-}
-@media(max-width:700px){
-  .progress-area{padding-bottom:52px}
-  .pinto-marker.pinto-guide{width:52px;height:48px}
-  .pinto-marker .pinto-art{width:52px;height:48px;flex-basis:52px}
-}
 .question-wrap{animation:questionIn .28s ease both}
 @keyframes questionIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .question-kicker{margin:0 0 7px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.13em}
 .question-title{margin:0 0 21px;color:#111;font-size:clamp(20px,3.6vw,26px);font-weight:700;line-height:1.55;letter-spacing:-.025em}
-
 .answer-list{display:grid;grid-template-columns:1fr;gap:10px}
-.answer-btn{
-  position:relative;
-  width:100%;
-  min-height:52px;
-  padding:13px 17px 13px 20px;
-  border:1px solid #DCE3E4;
-  border-radius:9px;
-  background:#FFFFFF;
-  color:#273033;
-  text-align:left;
-  font-size:15px;
-  font-weight:600;
-  line-height:1.55;
-  cursor:pointer;
-  appearance:none;
-  touch-action:manipulation;
-  transition:border-color .18s ease,background .18s ease,transform .18s ease,box-shadow .18s ease;
-}
-.answer-btn::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:10px;
-  bottom:10px;
-  width:3px;
-  border-radius:0 4px 4px 0;
-  background:transparent;
-  transition:background .18s ease;
-}
-@media(hover:hover) and (pointer:fine){
-  .answer-btn:hover{
-    border-color:#ff9999;
-    background:#fffafa;
-    transform:translateX(2px);
-  }
-}
-.answer-btn:focus{outline:none}
-.answer-btn:focus-visible{outline:3px solid rgba(255,0,0,.28);outline-offset:2px}
-.answer-btn[aria-pressed="true"]{
-  border-color:var(--accent);
-  background:var(--accent-soft);
-  box-shadow:0 0 0 2px rgba(255,0,0,.08);
-}
-.answer-btn[aria-pressed="true"]::before{background:var(--accent)}
-.answer-btn.is-pressed{
-  animation:answerPop .25s ease;
-  pointer-events:none;
-}
-@keyframes answerPop{
-  0%{transform:scale(1)}
-  45%{transform:scale(1.012)}
-  100%{transform:scale(1)}
-}
-.quiz-nav{
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  gap:12px;
-  min-height:48px;
-  margin-top:22px;
-}
-.secondary-btn{
-  min-height:44px;
-  padding:9px 20px;
-  border:1px solid #ddd;
-  border-radius:999px;
-  background:#fff;
-  color:#333;
-  font-size:13px;
-  font-weight:700;
-  cursor:pointer;
-  transition:opacity .15s,transform .15s;
-}
-.secondary-btn:disabled{opacity:.32;cursor:not-allowed}
-.secondary-btn:not(:disabled):hover{transform:translateY(-1px)}
-.quiz-nav .secondary-btn{
-  min-height:48px;
-  padding:11px 19px;
-  border:1px solid #D9E1E2;
-  border-radius:8px;
-  background:#FFFFFF;
-  color:#394346;
-  font-size:14px;
-}
+.answer-btn{position:relative;display:flex;align-items:center;gap:13px;width:100%;min-height:54px;padding:13px 16px;border:1px solid #e2e2e2;border-radius:11px;background:#fff;color:#282828;text-align:left;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .18s,background .18s,transform .18s,box-shadow .18s}
+.answer-btn:hover{border-color:#ff9999;background:#fffafa;transform:translateY(-1px)}
+.answer-dot{flex:none;width:20px;height:20px;border:1.5px solid #c9c9c9;border-radius:50%;display:grid;place-items:center}
+.answer-btn[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 1px rgba(255,0,0,.06)}
+.answer-btn[aria-pressed="true"] .answer-dot{border-color:var(--accent);background:var(--accent)}
+.answer-btn[aria-pressed="true"] .answer-dot:after{content:"";width:7px;height:7px;border-radius:50%;background:#fff}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:24px}
+.secondary-btn,.next-btn{min-height:44px;padding:9px 20px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .15s,transform .15s}
+.secondary-btn{border:1px solid #ddd;background:#fff;color:#333}
+.next-btn{border:1px solid #111;background:#111;color:#fff;min-width:130px}
+.secondary-btn:disabled,.next-btn:disabled{opacity:.32;cursor:not-allowed}
+.next-btn:not(:disabled):hover,.secondary-btn:not(:disabled):hover{transform:translateY(-1px)}
 .result-panel{width:min(900px,100%);margin:auto}
 .result-intro{text-align:center;margin-bottom:25px}
-.complete-mark{width:82px;height:82px;margin:0 auto 13px;position:relative;border-radius:50%;background:radial-gradient(circle,#fff 42%,#fff4f4 68%,#ffe1e1 100%);display:grid;place-items:center;animation:completePop .6s cubic-bezier(.16,.8,.25,1.2) both}
-.complete-mark img{width:100%;height:100%;object-fit:contain;object-position:center;border-radius:0;padding:10px;filter:drop-shadow(0 0 9px rgba(90,255,25,.22))}
-.complete-mark:after{content:"";position:absolute;inset:-7px;border:1px solid rgba(255,0,0,.16);border-radius:50%;animation:completeRing 1.7s ease-out infinite}
-@keyframes completePop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
-@keyframes completeRing{0%{transform:scale(.92);opacity:.8}100%{transform:scale(1.2);opacity:0}}
+.completion-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:228px;
+  height:228px;
+  margin:0 auto 13px;
+  border:none;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+
+.completion-focus{
+  display:block;
+  width:228px;
+  height:228px;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+  filter:
+    drop-shadow(0 0 5px rgba(90,255,25,.25))
+    drop-shadow(0 0 10px rgba(90,255,25,.15));
+}
 .result-intro h2{margin:0;color:#111;font-size:clamp(25px,4vw,34px);letter-spacing:-.035em}
 .result-intro p{margin:7px 0 0;color:#777;font-size:13px}
 .result-subtitle{margin:24px auto 0;padding-top:19px;border-top:1px solid var(--line);font-size:15px;font-weight:700;color:#222}
 .result-list{display:grid;gap:16px}
-
-.result-card{
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  padding:23px 24px 22px;
-  border:2px solid rgba(255,255,255,.95);
-  border-radius:23px;
-  background:#fff;
-  transform:translateZ(0);
-  box-shadow:
-    0 22px 38px rgba(25,35,50,.22),
-    0 8px 14px rgba(25,35,50,.12),
-    inset 0 2px 3px rgba(255,255,255,.98),
-    inset 0 -5px 9px rgba(0,0,0,.16);
-  animation:cardIn .45s ease both;
-}
+.result-card{position:relative;overflow:hidden;padding:23px 24px 22px;border:1px solid var(--line);border-radius:17px;background:#fff;box-shadow:0 8px 26px rgba(0,0,0,.04);animation:cardIn .45s ease both}
 @keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.result-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
-  border-radius:inherit;
-  background:linear-gradient(118deg,transparent 0%,rgba(255,255,255,.72) 17%,rgba(255,255,255,.08) 27%,transparent 38%,transparent 62%,rgba(255,255,255,.30) 75%,transparent 88%);
-  opacity:.9;
-}
-.result-card::after{
-  content:"";
-  position:absolute;
-  inset:6px;
-  z-index:1;
-  pointer-events:none;
-  border:1px solid rgba(255,255,255,.72);
-  border-radius:17px;
-  box-shadow:inset 0 1px 3px rgba(255,255,255,.85),inset 0 -2px 4px rgba(0,0,0,.12);
-}
-.result-card>*{position:relative;z-index:2}
-.result-card.rank-1{
-  background:linear-gradient(110deg,#9b6a08 0%,#f9df83 10%,#fff9d9 19%,#d9a927 30%,#fff2ad 43%,#b9810c 55%,#ffe58b 69%,#fffbe5 81%,#b17a0b 100%);
-  border-color:#ffe9a0;
-  box-shadow:0 25px 42px rgba(151,104,8,.32),0 9px 15px rgba(110,72,0,.20),inset 0 3px 5px rgba(255,255,255,.98),inset 0 -7px 12px rgba(111,69,0,.38);
-}
-.result-card.rank-2{
-  background:linear-gradient(110deg,#65717e 0%,#f1f4f7 11%,#fff 20%,#aab5c1 32%,#f8fbff 45%,#8794a2 57%,#e9eef3 70%,#fff 83%,#788593 100%);
-  border-color:#f8fbff;
-  box-shadow:0 25px 42px rgba(75,91,108,.28),0 9px 15px rgba(50,65,80,.18),inset 0 3px 5px rgba(255,255,255,.98),inset 0 -7px 12px rgba(55,68,82,.35);
-}
-.result-card.rank-3{
-  background:linear-gradient(110deg,#85451f 0%,#f2c49c 11%,#fff0df 20%,#bd7748 32%,#ffe0bd 45%,#95502d 57%,#e9b18a 70%,#fff0df 83%,#884522 100%);
-  border-color:#ffe2c5;
-  box-shadow:0 25px 42px rgba(125,66,35,.30),0 9px 15px rgba(90,45,20,.18),inset 0 3px 5px rgba(255,255,255,.95),inset 0 -7px 12px rgba(90,42,17,.36);
-}
+.result-card.rank-1{border:1.5px solid rgba(212,175,55,.65);background:linear-gradient(135deg,#fff 0%,#fffdf7 100%)}
+.result-card.rank-2{border-color:rgba(174,183,194,.8);background:linear-gradient(135deg,#fff 0%,#fafbfd 100%)}
+.result-card.rank-3{border-color:rgba(184,121,74,.55);background:linear-gradient(135deg,#fff 0%,#fdf9f6 100%)}
 .result-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
-.rank{
-  display:inline-flex;
-  align-items:center;
-  min-height:34px;
-  margin-bottom:13px;
-  padding:6px 15px;
-  border:1px solid rgba(255,255,255,.8);
-  border-radius:5px;
-  background:#F0F2F2;
-  color:#30383B;
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:.035em;
-  text-shadow:0 1px 2px rgba(0,0,0,.12);
+
+.rank {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  margin-bottom: 13px;
+  padding: 6px 15px;
+  border-radius: 5px;
+  background: #F0F2F2;
+  color: #30383B;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .035em;
 }
-.rank-1 .rank{background:linear-gradient(135deg,#9b6a08,#f9df83 45%,#b9810c);color:#fff;font-size:15px}
-.rank-2 .rank{background:linear-gradient(135deg,#65717e,#f1f4f7 45%,#8794a2);color:#fff}
-.rank-3 .rank{background:linear-gradient(135deg,#85451f,#f2c49c 45%,#95502d);color:#fff}
-.rank-caption{margin-bottom:5px;font-size:13px;font-weight:800}
-.rank-1 .rank-caption{color:#765500}
-.rank-2 .rank-caption{color:#4f5b67}
-.rank-3 .rank-caption{color:#704027}
+
+.rank-1 .rank {
+  background: var(--gold);
+  color: #FFFFFF;
+  font-size: 15px;
+}
+
+.rank-2 .rank {
+  background: var(--silver);
+  color: #FFFFFF;
+}
+
+.rank-3 .rank {
+  background: var(--bronze);
+  color: #FFFFFF;
+}
+
+.rank-caption {
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.rank-1 .rank-caption { color: var(--gold-dark); }
+.rank-2 .rank-caption { color: var(--silver-dark); }
+.rank-3 .rank-caption { color: var(--bronze-dark); }
+
 .match-score{text-align:right;white-space:nowrap}
 .match-score strong{display:block;color:#111;font-size:21px;line-height:1.2}
-.match-score small{color:#444;font-size:10px}
+.match-score small{color:#888;font-size:10px}
 .result-card h3{margin:13px 0 3px;color:#111;font-size:21px;line-height:1.45}
-.result-meta{color:#333;font-size:11px}
-.score-track{height:6px;margin:13px 0 14px;border-radius:10px;background:rgba(255,255,255,.72);overflow:hidden}
+.result-meta{color:#777;font-size:11px}
+.score-track{height:6px;margin:13px 0 14px;border-radius:10px;background:#eee;overflow:hidden}
 .score-fill{height:100%;border-radius:10px;background:var(--accent)}
 .rank-1 .score-fill{background:linear-gradient(90deg,#E7CF78,#B78B20)}
 .rank-2 .score-fill{background:linear-gradient(90deg,#D7DCE2,#8E9AA8)}
 .rank-3 .score-fill{background:linear-gradient(90deg,#D5A47E,#A96A3B)}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){
-  .result-card{transition:transform .35s ease,box-shadow .35s ease}
-  .result-card:hover{transform:translateY(-5px)}
-}
-@media(max-width:650px){
-  .result-card{padding:18px 16px}
-  .result-card h3{font-size:18px}
-  .match-score strong{font-size:18px}
-  .result-card-head{gap:8px}
-}
 .result-reason{margin:0;color:#444;font-size:13px}
 .trait-list{display:flex;flex-wrap:wrap;gap:6px;margin:13px 0}
 .trait{padding:4px 9px;border-radius:999px;background:#f4f4f4;color:#666;font-size:10px}
@@ -333,31 +407,151 @@ main{overflow:hidden}
 .footer-links a{color:#777;text-decoration:none}
 .footer-links a:hover{text-decoration:underline}
 .hidden{display:none!important}
-@media(max-width:650px){
- .header-inner{min-height:62px;width:calc(100% - 28px)}
- .brand{width:145px}
- .header-category{font-size:11px}
- .hero{padding:53px 18px 48px}
- .hero-copy{font-size:13px}
- .intro{padding:37px 0 42px}
- .steps{grid-template-columns:1fr;gap:9px}
- .step{display:flex;align-items:center;gap:12px;text-align:left;padding:14px}
- .step-no{margin:0;flex:none}
- .step h3{font-size:13px}
- .step p{font-size:11px}
- .quiz-section,.result-section{padding:24px 12px 48px}
- .quiz-panel{padding:20px 16px;border-radius:16px}
- .progress-area{margin-bottom:25px}
- .question-title{font-size:20px}
- .answer-btn{min-height:52px;padding:12px 16px 12px 20px;font-size:14px}
- .pinto-marker{width:38px;height:38px}
- .result-card{padding:18px 16px}
- .result-card h3{font-size:18px}
- .match-score strong{font-size:18px}
- .result-card-head{gap:8px}
- .result-actions{flex-direction:column;align-items:stretch}
- .result-actions button,.result-actions a{width:100%}
+
+/* スマートフォン表示 */
+@media(max-width:700px){
+
+  /* ヘッダー */
+  .header-inner {
+    min-height: 64px;
+    padding: 12px 18px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .header-category {
+    font-size: 11px;
+  }
+
+  /* メインビジュアル */
+  .hero {
+    padding: 62px 18px 67px;
+  }
+
+  .hero::before {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 8vw, 39px);
+    line-height: 1.4;
+  }
+
+  .hero h1 .hero-line {
+    display: inline-block;
+  }
+
+  .hero h1 .hero-line-emphasis::after {
+    height: 7px;
+    bottom: 1px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 26px;
+  }
+
+  /* 診断ボタン */
+  .primary-btn {
+    min-height: 53px;
+    min-width: min(245px, 100%);
+    padding: 13px 25px;
+    font-size: 15px;
+  }
+
+  .sub-text {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+
+  /* 3ステップ */
+  .container {
+    padding: 53px 17px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-description {
+    margin-bottom: 28px;
+    font-size: 13px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .step-card {
+    min-height: 0;
+    padding: 21px 20px;
+  }
+
+  .step-card h3 {
+    font-size: 15px;
+  }
+
+  .step-card p {
+    font-size: 12px;
+  }
+
+  /* 診断・結果画面 */
+  .quiz-section,
+  .result-section {
+    padding: 24px 12px 48px;
+  }
+
+  .quiz-panel {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .progress-area {
+    margin-bottom: 25px;
+  }
+
+  .question-title {
+    font-size: 20px;
+  }
+
+  .answer-btn {
+    min-height: 52px;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .result-card {
+    padding: 18px 16px;
+  }
+
+  .result-card h3 {
+    font-size: 18px;
+  }
+
+  .match-score strong {
+    font-size: 18px;
+  }
+
+  .result-card-head {
+    gap: 8px;
+  }
+
+  .result-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .result-actions button,
+  .result-actions a {
+    width: 100%;
+  }
 }
+
 @media(prefers-reduced-motion:reduce){
  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
@@ -367,169 +561,300 @@ main{overflow:hidden}
 .qualification-detail-body{padding:8px 4px 2px;color:var(--muted);font-size:12px;line-height:1.75;overflow-wrap:anywhere}
 .qualification-detail-body p{margin:6px 0}
 .qualification-detail-body strong{color:var(--text)}
+/* MyPinto公式ピント・進捗バー連動 */
 
-/* MyPinto シネマティック開始・結果演出 */
-.cinematic-overlay{
-  position:fixed;
-  inset:0;
-  z-index:10000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  background:radial-gradient(circle at center,#fff 0%,#effff7 28%,#baf6df 60%,#e8fbff 100%);
-  opacity:0;
-  pointer-events:none;
+.progress-area {
+  position: relative;
+  padding-bottom: 58px;
 }
-.cinematic-overlay.active{display:flex;opacity:1;pointer-events:auto}
-.cinematic-overlay::before,.cinematic-overlay::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:min(120vw,120vh);
-  aspect-ratio:1;
-  border:1px solid rgba(83,202,153,.48);
-  border-radius:50%;
-  transform:translate(-50%,-50%) scale(.08);
-  box-shadow:0 0 35px rgba(111,239,190,.35),inset 0 0 45px rgba(255,255,255,.7);
+
+.pinto-marker.pinto-guide {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 4;
+  width: 58px;
+  height: 54px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  pointer-events: none;
+  transform: none;
+  transition: left .45s cubic-bezier(.2,.75,.25,1);
 }
-.cinematic-overlay.active.intro::before{animation:focusRing 4.8s cubic-bezier(.18,.72,.18,1) both}
-.cinematic-overlay.active.intro::after{animation:focusRing 4.8s cubic-bezier(.12,.7,.2,1) .18s both}
-.cinematic-overlay.active.reveal::before{animation:burstRing 3s cubic-bezier(.12,.72,.18,1) both}
-.cinematic-overlay.active.reveal::after{animation:burstRing 3s cubic-bezier(.12,.72,.18,1) .12s both}
-.cinematic-copy{
-  position:relative;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-  padding:20px;
-  color:#244a37;
-  font-size:clamp(20px,4vw,34px);
-  font-weight:800;
-  letter-spacing:.08em;
-  text-align:center;
-  text-shadow:0 2px 18px rgba(255,255,255,.9);
-  opacity:0;
+
+.pinto-marker .pinto-art {
+  display: block;
+  width: 58px;
+  height: 54px;
+  flex: 0 0 58px;
+  overflow: visible;
 }
-.cinematic-overlay.active .cinematic-copy{animation:cinematicText 1.8s ease .45s both}
-.cinematic-flash{position:absolute;inset:0;background:#fff;opacity:0}
-.cinematic-overlay.reveal .cinematic-flash{animation:fullFlash 3s ease-out both}
-.cinematic-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.cine-particle{
-  position:absolute;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:#fff;
-  box-shadow:0 0 12px 3px rgba(111,231,185,.75);
-  opacity:0;
+
+@media (max-width:700px) {
+  .progress-area {
+    padding-bottom: 52px;
+  }
+
+  .pinto-marker.pinto-guide {
+    width: 52px;
+    height: 48px;
+  }
+
+  .pinto-marker .pinto-art {
+    width: 52px;
+    height: 48px;
+    flex-basis: 52px;
+  }
 }
-.cinematic-overlay.active .cine-particle{animation:cinematicParticle 2.8s ease-out var(--delay,0s) both}
-.particle-1{left:8%;top:22%;--tx:35px;--ty:-55px;--delay:.05s}
-.particle-2{left:19%;top:72%;--tx:28px;--ty:-42px;--delay:.18s}
-.particle-3{left:32%;top:16%;--tx:-22px;--ty:46px;--delay:.3s}
-.particle-4{left:48%;top:83%;--tx:12px;--ty:-52px;--delay:.42s}
-.particle-5{left:62%;top:20%;--tx:-28px;--ty:45px;--delay:.54s}
-.particle-6{left:78%;top:65%;--tx:-35px;--ty:-38px;--delay:.66s}
-.particle-7{left:91%;top:31%;--tx:-24px;--ty:54px;--delay:.78s}
-.particle-8{left:4%;top:88%;--tx:42px;--ty:-48px;--delay:.9s}
-.particle-9{left:27%;top:43%;--tx:25px;--ty:-42px;--delay:1.02s}
-.particle-10{left:73%;top:90%;--tx:-28px;--ty:-55px;--delay:1.14s}
-.particle-11{left:87%;top:12%;--tx:-34px;--ty:42px;--delay:1.26s}
-.particle-12{left:55%;top:55%;--tx:18px;--ty:-48px;--delay:1.38s}
-@keyframes focusRing{
-  0%{transform:translate(-50%,-50%) scale(.08);opacity:0;filter:blur(18px)}
-  20%{opacity:.95;filter:blur(0)}
-  68%{transform:translate(-50%,-50%) scale(1.22);opacity:.72}
-  100%{transform:translate(-50%,-50%) scale(2.4);opacity:0}
+/* =========================================
+   MyPinto BEST3 - Premium Metal Medal
+========================================= */
+
+.result-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 23px;
+  border: 2px solid rgba(255,255,255,.95);
+  transform: translateZ(0);
+  box-shadow:
+    0 22px 38px rgba(25,35,50,.22),
+    0 8px 14px rgba(25,35,50,.12),
+    inset 0 2px 3px rgba(255,255,255,.98),
+    inset 0 -5px 9px rgba(0,0,0,.16);
 }
-@keyframes burstRing{
-  0%{transform:translate(-50%,-50%) scale(.05);opacity:0;filter:blur(10px)}
-  18%{opacity:1;filter:blur(0)}
-  58%{transform:translate(-50%,-50%) scale(1.55);opacity:.9}
-  100%{transform:translate(-50%,-50%) scale(3.1);opacity:0}
+
+/* 鏡面の反射光 */
+.result-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    118deg,
+    transparent 0%,
+    rgba(255,255,255,.72) 17%,
+    rgba(255,255,255,.08) 27%,
+    transparent 38%,
+    transparent 62%,
+    rgba(255,255,255,.30) 75%,
+    transparent 88%
+  );
+  opacity: .9;
 }
-@keyframes cinematicText{
-  0%{opacity:0;transform:translateY(12px);filter:blur(8px)}
-  25%,75%{opacity:1;transform:translateY(0);filter:blur(0)}
-  100%{opacity:0;transform:translateY(-8px);filter:blur(5px)}
+
+/* 内側の金属フレーム */
+.result-card::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 17px;
+  box-shadow:
+    inset 0 1px 3px rgba(255,255,255,.85),
+    inset 0 -2px 4px rgba(0,0,0,.12);
 }
-@keyframes fullFlash{0%,100%{opacity:0}17%{opacity:.98}38%{opacity:.18}55%{opacity:.75}78%{opacity:.08}}
-@keyframes cinematicParticle{
-  0%{opacity:0;transform:translate(0,0) scale(.2)}
-  24%{opacity:1}
-  100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(1.35)}
+
+.result-card > * {
+  position: relative;
+  z-index: 2;
 }
-@media(prefers-reduced-motion:reduce){
-  .cinematic-overlay::before,.cinematic-overlay::after,.cinematic-copy,.cinematic-flash,.cine-particle{animation:none!important}
-  .cinematic-overlay.active .cinematic-copy{opacity:1}
+
+/* BEST1 GOLD */
+.result-card.rank-1 {
+  background: linear-gradient(
+    110deg,
+    #9b6a08 0%,
+    #f9df83 10%,
+    #fff9d9 19%,
+    #d9a927 30%,
+    #fff2ad 43%,
+    #b9810c 55%,
+    #ffe58b 69%,
+    #fffbe5 81%,
+    #b17a0b 100%
+  );
+  border-color: #ffe9a0;
+  box-shadow:
+    0 25px 42px rgba(151,104,8,.32),
+    0 9px 15px rgba(110,72,0,.20),
+    inset 0 3px 5px rgba(255,255,255,.98),
+    inset 0 -7px 12px rgba(111,69,0,.38);
+}
+
+/* BEST2 SILVER */
+.result-card.rank-2 {
+  background: linear-gradient(
+    110deg,
+    #65717e 0%,
+    #f1f4f7 11%,
+    #ffffff 20%,
+    #aab5c1 32%,
+    #f8fbff 45%,
+    #8794a2 57%,
+    #e9eef3 70%,
+    #ffffff 83%,
+    #788593 100%
+  );
+  border-color: #f8fbff;
+  box-shadow:
+    0 25px 42px rgba(75,91,108,.28),
+    0 9px 15px rgba(50,65,80,.18),
+    inset 0 3px 5px rgba(255,255,255,.98),
+    inset 0 -7px 12px rgba(55,68,82,.35);
+}
+
+/* BEST3 BRONZE */
+.result-card.rank-3 {
+  background: linear-gradient(
+    110deg,
+    #85451f 0%,
+    #f2c49c 11%,
+    #fff0df 20%,
+    #bd7748 32%,
+    #ffe0bd 45%,
+    #95502d 57%,
+    #e9b18a 70%,
+    #fff0df 83%,
+    #884522 100%
+  );
+  border-color: #ffe2c5;
+  box-shadow:
+    0 25px 42px rgba(125,66,35,.30),
+    0 9px 15px rgba(90,45,20,.18),
+    inset 0 3px 5px rgba(255,255,255,.95),
+    inset 0 -7px 12px rgba(90,42,17,.36);
+}
+
+/* 浮き上がる立体感 */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .result-card {
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+
+  .result-card:hover {
+    transform: translateY(-7px) scale(1.012);
+  }
+
+  .result-card.rank-1:hover {
+    box-shadow:
+      0 32px 52px rgba(151,104,8,.38),
+      0 12px 20px rgba(110,72,0,.22),
+      inset 0 3px 5px rgba(255,255,255,.98),
+      inset 0 -7px 12px rgba(111,69,0,.38);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-card {
+    transition: none;
+  }
 }
 
 </style>
 </head>
 <body>
-<header class="site-header">
- <div class="header-inner">
-  <a class="brand" href="https://my-pinto.github.io/" aria-label="MyPintoトップページ"><img id="brandLogo" src="../MyPinto-official-logo.jpeg" alt="MyPinto" width="174" height="65"></a>
-  <span class="header-category">資格適性診断</span>
- </div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="https://my-pinto.github.io/" aria-label="MyPintoトップページ">MyPinto</a>
+    <span class="header-category">資格適性診断</span>
+  </div>
 </header>
 
 <main>
 <section class="hero" id="hero">
- <div class="hero-inner">
-  <div class="eyebrow">MY PINTO · QUALIFICATION FINDER</div>
-  <h1>あなたに合う資格を<br><span>見つけよう。</span></h1>
-  <p class="hero-copy">興味や得意なこと、学び方、これから実現したいことから、相性のよい資格・検定を見つける無料診断です。</p>
-  <div class="hero-meta">
-   <span class="meta-pill"><b>無料</b>で診断</span>
-   <span class="meta-pill"><b>15問</b>でチェック</span>
-   <span class="meta-pill"><b>BEST3</b>を提案</span>
-  </div>
+  <h1>
+    <span class="hero-line">あなたに合う資格を</span>
+    <span class="hero-line hero-line-emphasis">15問で無料診断</span>
+  </h1>
+
+  <p>
+    興味・得意なこと・学び方・将来の希望に合わせて、あなたに合う資格・検定BEST3を診断。おすすめ理由や公式情報を比較して、自分に合った資格選びの参考にできます。
+  </p>
+
   <button class="primary-btn" id="startButton" type="button">
-   無料診断をはじめる
-   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    無料で診断をはじめる
   </button>
-  <p class="hero-note">正解・不正解はありません。今の自分に近いものを選んでください。</p>
- </div>
+
+  <div class="sub-text">診断時間 約3分｜無料｜登録不要</div>
 </section>
 
-<section class="intro" id="intro">
- <h2 class="section-title">診断の進め方</h2>
- <p class="section-copy">質問への回答から、興味・学習スタイル・目的に合う資格を分析します。資格データベース100件を収録し、現在は公式確認済みの診断利用可能10件を採点対象にしています。</p>
- <div class="steps">
-  <article class="step"><span class="step-no">1</span><div><h3>質問に回答</h3><p>興味や得意なこと、希望する学び方を選びます。</p></div></article>
-  <article class="step"><span class="step-no">2</span><div><h3>回答を分析</h3><p>資格ごとの学習特性・活用分野と照合します。</p></div></article>
-  <article class="step"><span class="step-no">3</span><div><h3>BEST3を確認</h3><p>おすすめ理由と公式情報を比較できます。</p></div></article>
- </div>
+<section class="container" id="intro">
+  <h2 class="section-title">3ステップであなたに合う資格が見つかる</h2>
+
+  <p class="section-description">
+    難しい知識は必要ありません。質問に答えるだけで、興味や得意なこと、学び方に合う資格・検定を探せます。
+  </p>
+
+  <div class="steps">
+    <article class="step-card">
+      <div class="step-number">1</div>
+      <h3>質問に答える</h3>
+      <p>興味や得意なこと、学び方など15問の質問に答えます。</p>
+    </article>
+
+    <article class="step-card">
+      <div class="step-number">2</div>
+      <h3>回答を分析</h3>
+      <p>興味・学習スタイル・目的と、各資格の特徴を照合します。</p>
+    </article>
+
+    <article class="step-card">
+      <div class="step-number">3</div>
+      <h3>BEST3を確認</h3>
+      <p>おすすめ理由や公式情報を比較して、候補を検討できます。</p>
+    </article>
+  </div>
 </section>
 
 <section class="quiz-section" id="quizSection" aria-live="polite">
- <div class="quiz-panel">
-  <div class="progress-area">
-   <div class="progress-top"><strong id="questionCounter">質問 1 / 15</strong><span id="progressPercent">0% 完了</span></div>
-   <div class="progress-track">
-    <div class="progress-fill" id="progressFill"></div>
-    <div class="pinto-marker pinto-guide" id="pintoMarker"></div>
-   </div>
+  <div class="quiz-panel">
+    <div class="progress-area">
+      <div class="progress-top">
+        <strong id="questionCounter">質問 1 / 15</strong>
+        <span id="progressPercent">0% 完了</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="pinto-marker pinto-guide" id="pintoMarker"></div>
+    </div>
+
+    <div class="question-wrap" id="questionWrap">
+      <p class="question-kicker">PINTO NAVIGATOR</p>
+      <h2 class="question-title" id="questionTitle"></h2>
+      <div class="answer-list" id="answerList"></div>
+    </div>
+
+    <div class="quiz-nav">
+      <button class="secondary-btn" id="backButton" type="button">戻る</button>
+      <button class="next-btn" id="nextButton" type="button" disabled>次へ</button>
+    </div>
   </div>
-  <div class="question-wrap" id="questionWrap">
-   <p class="question-kicker">PINTO NAVIGATOR</p>
-   <h2 class="question-title" id="questionTitle"></h2>
-   <div class="answer-list" id="answerList"></div>
-  </div>
-  <div class="quiz-nav">
-   <button class="secondary-btn" id="backButton" type="button">戻る</button>
-  </div>
- </div>
 </section>
 
 <section class="result-section" id="resultSection" aria-live="polite">
  <div class="result-panel">
   <div class="result-intro">
-   <div class="complete-mark"><img src="../MyPinto_Official_Symbol_White_1024.png" alt="" width="82" height="82"></div>
+   <div class="completion-icon" aria-hidden="true">
+  <img
+    src="../AI-Tool-Navigator/mypinto-symbol.png"
+    class="completion-focus"
+    alt=""
+  >
+</div>
    <div class="eyebrow">YOUR QUALIFICATION MATCH</div>
    <h2>診断完了！</h2>
    <p>回答傾向と資格の特性を照合しました。</p>
@@ -549,7 +874,7 @@ main{overflow:hidden}
 </main>
 
 <footer class="site-footer">
- <div class="footer-logo"><img id="footerLogo" src="../MyPinto-official-logo.jpeg" alt="MyPinto" width="132" height="50" loading="lazy"></div>
+ <div class="footer-logo"><img id="footerLogo" alt="MyPinto"></div>
  <div>自分に合う答えと新しい可能性を見つける</div>
  <div class="footer-links">
   <a href="https://my-pinto.github.io/">トップページ</a>
@@ -560,29 +885,17 @@ main{overflow:hidden}
  <div>© MyPinto</div>
 </footer>
 
-
-<div id="start-sequence" class="cinematic-overlay intro" aria-hidden="true">
-  <div class="cinematic-flash"></div>
-  <div class="cinematic-particles" aria-hidden="true"><span class="cine-particle particle-1"></span><span class="cine-particle particle-2"></span><span class="cine-particle particle-3"></span><span class="cine-particle particle-4"></span><span class="cine-particle particle-5"></span><span class="cine-particle particle-6"></span><span class="cine-particle particle-7"></span><span class="cine-particle particle-8"></span><span class="cine-particle particle-9"></span><span class="cine-particle particle-10"></span><span class="cine-particle particle-11"></span><span class="cine-particle particle-12"></span></div>
-  <div class="cinematic-copy">
-    <span class="cinematic-line">ピントをあわせて、</span>
-    <span class="cinematic-line">新しい可能性へ</span>
-  </div>
-</div>
-<div id="result-reveal" class="cinematic-overlay reveal" aria-hidden="true">
-  <div class="cinematic-flash"></div>
-  <div class="cinematic-particles" aria-hidden="true"><span class="cine-particle particle-1"></span><span class="cine-particle particle-2"></span><span class="cine-particle particle-3"></span><span class="cine-particle particle-4"></span><span class="cine-particle particle-5"></span><span class="cine-particle particle-6"></span><span class="cine-particle particle-7"></span><span class="cine-particle particle-8"></span><span class="cine-particle particle-9"></span><span class="cine-particle particle-10"></span><span class="cine-particle particle-11"></span><span class="cine-particle particle-12"></span></div>
-  <div class="cinematic-copy">
-    <span class="cinematic-line">あなたに合う資格が、</span>
-    <span class="cinematic-line">見えてくる。</span>
-  </div>
-</div>
-
 <script>
 "use strict";
 
+/* 正式採用済みMyPintoロゴマスターをそのまま内包。別画像ファイルは不要。 */
+const OFFICIAL_LOGO = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9Ijc2OCIgdmlld0JveD0iMCAwIDIwNDggNzY4IiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+CiAgPHRpdGxlIGlkPSJ0aXRsZSI+TXlQaW50byBvZmZpY2lhbCBsb2dvIG1hc3RlcjwvdGl0bGU+CiAgPGRlc2MgaWQ9ImRlc2MiPkEgZ2xvc3N5IGxpbWUtZ3JlZW4gc3BoZXJlIHdpdGggYSBzb2Z0IGdyZWVuIGdsb3csIGJlc2lkZSB0aGUgYmxhY2sgTXlQaW50byB3b3JkbWFyay48L2Rlc2M+CiAgPGRlZnM+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9Im9yYiIgY3g9IjMyJSIgY3k9IjI0JSIgcj0iNzglIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZGRkZGIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4xMiIgc3RvcC1jb2xvcj0iI0Y3RkZFOSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMzIiIHN0b3AtY29sb3I9IiNBOUZGMzciLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjY4IiBzdG9wLWNvbG9yPSIjNjJFRjAwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC44OCIgc3RvcC1jb2xvcj0iIzM5QzkwMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyNUE5MDAiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9Im9yYlNoYWRlIiBjeD0iNTAlIiBjeT0iNTAlIiByPSI1MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTgiIHN0b3AtY29sb3I9IiMwQTc1MDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuODgiIHN0b3AtY29sb3I9IiMxNDdEMDAiIHN0b3Atb3BhY2l0eT0iLjEyIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzA3NTUwMCIgc3RvcC1vcGFjaXR5PSIuMzUiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImhpZ2hsaWdodCIgY3g9IjQwJSIgY3k9IjM1JSIgcj0iNjUlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZGRkZGIiBzdG9wLW9wYWNpdHk9Ii45OCIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii4zNCIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIuNzAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkZGRkZGIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImhhbG8iPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNCOUZGNjIiIHN0b3Atb3BhY2l0eT0iLjM4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjUyIiBzdG9wLWNvbG9yPSIjQTdGNzVBIiBzdG9wLW9wYWNpdHk9Ii4yMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNCOUZGNjIiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9InNvZnRCbHVyIiB4PSItODAlIiB5PSItODAlIiB3aWR0aD0iMjYwJSIgaGVpZ2h0PSIyNjAlIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMzQiLz4KICAgIDwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0ic21hbGxCbHVyIiB4PSItODAlIiB5PSItODAlIiB3aWR0aD0iMjYwJSIgaGVpZ2h0PSIyNjAlIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMTAiLz4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KCiAgPHJlY3Qgd2lkdGg9IjIwNDgiIGhlaWdodD0iNzY4IiBmaWxsPSIjRkZGRkZGIi8+CiAgPCEtLSBTb2Z0IGdyZWVuIGF1cmEgYXJvdW5kIHRoZSBzeW1ib2wgLS0+CiAgPGVsbGlwc2UgY3g9IjQ0NSIgY3k9IjM4MSIgcng9IjMwMCIgcnk9IjMwMCIgZmlsbD0idXJsKCNoYWxvKSIgZmlsdGVyPSJ1cmwoI3NvZnRCbHVyKSIvPgogIDwhLS0gUmVzdHJhaW5lZCBmb3VyLXdheSBsaWdodCwgcmV0YWluZWQgZnJvbSB0aGUgYXBwcm92ZWQgZGlyZWN0aW9uIC0tPgogIDxnIG9wYWNpdHk9Ii4yOCIgZmlsdGVyPSJ1cmwoI3NtYWxsQmx1cikiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik00NDUgMTA4IFY2NTQiIHN0cm9rZS13aWR0aD0iNSIvPgogICAgPHBhdGggZD0iTTE3MiAzODEgSDcxOCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPC9nPgogIDxnIG9wYWNpdHk9Ii4xOCIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgogICAgPHBhdGggZD0iTTQ0NSAxNTAgVjYxMiIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8cGF0aCBkPSJNMjE0IDM4MSBINjc2IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8L2c+CgogIDwhLS0gR2xvc3N5IGxpbWUgc3BoZXJlIC0tPgogIDxjaXJjbGUgY3g9IjQ0NSIgY3k9IjM4MSIgcj0iMTIyIiBmaWxsPSJ1cmwoI29yYikiLz4KICA8Y2lyY2xlIGN4PSI0NDUiIGN5PSIzODEiIHI9IjEyMiIgZmlsbD0idXJsKCNvcmJTaGFkZSkiLz4KICA8ZWxsaXBzZSBjeD0iNDA3IiBjeT0iMzMyIiByeD0iNDIiIHJ5PSIzNCIgZmlsbD0idXJsKCNoaWdobGlnaHQpIiB0cmFuc2Zvcm09InJvdGF0ZSgtMzUgNDA3IDMzMikiLz4KICA8ZWxsaXBzZSBjeD0iNDA1IiBjeT0iMzI2IiByeD0iMTgiIHJ5PSIxMyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iLjcyIiBmaWx0ZXI9InVybCgjc21hbGxCbHVyKSIvPgogIDxwYXRoIGQ9Ik0zNjEgNDU1IEMzOTEgNDkzIDQ3NyA1MTkgNTI3IDQ2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQjdGRjY4IiBzdHJva2Utd2lkdGg9IjciIG9wYWNpdHk9Ii4xOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CgogIDwhLS0gRWRpdGFibGUgd29yZG1hcms6IGluc3RhbGwgTElORSBTZWVkIEpQIHRvIHJlbmRlciB0aGUgc3BlY2lmaWVkIGZhY2UgZXhhY3RseSAtLT4KICA8dGV4dCB4PSI3NDgiIHk9IjQ4MCIKICAgICAgICBmb250LWZhbWlseT0iJ0xJTkUgU2VlZCBKUCcsICdMSU5FIFNlZWQgSlAgQm9sZCcsIHNhbnMtc2VyaWYiCiAgICAgICAgZm9udC1zaXplPSIyNzAiCiAgICAgICAgZm9udC13ZWlnaHQ9IjcwMCIKICAgICAgICBsZXR0ZXItc3BhY2luZz0iLTgiCiAgICAgICAgZmlsbD0iIzA1MDUwNSI+TXlQaW50bzwvdGV4dD4KPC9zdmc+Cg==";
+document.getElementById("footerLogo").src = OFFICIAL_LOGO;
 
-/* AIツール診断と同じ公式ピントSVG・演出CSSを読み込み、共通デザインを維持する。 */
+/* =========================================
+   AIツール診断の公式ピント・演出CSSを共通化
+========================================= */
+
 function extractPintoRules(css) {
   let output = "";
   let index = 0;
@@ -608,7 +921,10 @@ function extractPintoRules(css) {
     if (/^@(media|supports|layer)\b/i.test(header)) {
       const nested = extractPintoRules(body);
       if (nested.trim()) output += `${header}{${nested}}\n`;
-    } else if (header.includes(".pinto-") || /^@keyframes\s+pinto/i.test(header)) {
+    } else if (
+      header.includes(".pinto-") ||
+      /^@keyframes\s+pinto/i.test(header)
+    ) {
       output += `${header}{${body}}\n`;
     }
 
@@ -623,17 +939,20 @@ fetch("/AI-Tool-Navigator/")
     if (!response.ok) throw new Error("AIツール診断を読み込めません");
     return response.text();
   })
-  .then(sourceHtml => {
-    const doc = new DOMParser().parseFromString(sourceHtml, "text/html");
-    const sourcePinto = doc.querySelector(".pinto-art");
-    if (!sourcePinto) throw new Error("公式ピントSVGが見つかりません");
+  .then(html => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const source = doc.querySelector(".pinto-art");
+
+    if (!source) throw new Error("公式ピントSVGが見つかりません");
 
     const sharedCss = Array.from(doc.querySelectorAll("style"))
       .map(style => extractPintoRules(style.textContent))
       .filter(Boolean)
       .join("\n");
 
-    if (!sharedCss.trim()) throw new Error("ピント演出CSSを取得できません");
+    if (!sharedCss.trim()) {
+      throw new Error("ピント演出CSSを取得できません");
+    }
 
     const oldStyle = document.getElementById("sharedPintoStyles");
     if (oldStyle) oldStyle.remove();
@@ -644,24 +963,42 @@ fetch("/AI-Tool-Navigator/")
     document.head.appendChild(sharedStyle);
 
     const marker = document.getElementById("pintoMarker");
+
     if (marker) {
-      const pinto = sourcePinto.cloneNode(true);
+      const pinto = source.cloneNode(true);
       pinto.setAttribute("role", "img");
       pinto.setAttribute("aria-label", "MyPintoの案内キャラクター、ピント");
       marker.replaceChildren(pinto);
-      if (typeof updatePinto === "function") updatePinto();
-      if (typeof setProgress === "function") setProgress();
     }
+
   })
   .catch(error => {
     console.error("MyPinto共通ピント:", error);
   });
-
+ 
 const diagnosisConfig = {
  id:"qualification",
  domainName:"資格・検定",
  page:{accentColor:"#FF0000",bestCount:3},
- pinto:{milestones:[{at:0.34,classes:["pinto-good"]},{at:1,classes:["pinto-celebrate"]}]},
+ pinto: {
+  milestones: [
+    {
+      start: 8,
+      end: 8,
+      classes: ["pinto-talking"]
+    },
+    {
+      start: 12,
+      end: 14,
+      classes: ["pinto-q15-glow"]
+    },
+    {
+      start: 15,
+      end: 15,
+      classes: ["pinto-celebrate", "pinto-q20-ring"]
+    }
+  ]
+}
 };
 
 const questions = [
@@ -823,28 +1160,15 @@ const databaseStats = {
 };
 
 
-const state = {index:0,answers:[],completed:false,transitioning:false};
+const state = {index:0,answers:[],completed:false};
 const $ = id => document.getElementById(id);
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* =========================================
+   AIツール診断共通・ピント演出制御
+========================================= */
 
-function runCinematicSequence(id, duration){
-  const overlay = $(id);
-  if (!overlay) return Promise.resolve();
-
-  overlay.classList.add("active");
-  overlay.setAttribute("aria-hidden", "false");
-
-  return new Promise(resolve => {
-    window.setTimeout(() => {
-      overlay.classList.remove("active");
-      overlay.setAttribute("aria-hidden", "true");
-      resolve();
-    }, reducedMotion ? 180 : duration);
-  });
-}
-
-function updatePinto(){
+function updatePinto() {
   const guide = $("pintoMarker");
   if (!guide) return;
 
@@ -856,125 +1180,105 @@ function updatePinto(){
     "pinto-q20-ring"
   );
 
-  const answered = state.answers.filter(value => value !== undefined).length;
-  const ratio = questions.length ? answered / questions.length : 0;
-  const milestone = [...(diagnosisConfig.pinto.milestones || [])]
-    .sort((a,b) => a.at - b.at)
-    .reverse()
-    .find(item => ratio >= item.at);
+  const questionNo = state.index + 1;
 
-  if (milestone) guide.classList.add(...milestone.classes);
+  diagnosisConfig.pinto.milestones.forEach(milestone => {
+    if (
+      questionNo >= milestone.start &&
+      questionNo <= milestone.end
+    ) {
+      guide.classList.add(...milestone.classes);
+    }
+  });
 }
 
-function updatePintoPosition(percent){
+function updatePintoPosition(percent) {
   const guide = $("pintoMarker");
   const progressArea = document.querySelector(".progress-area");
   const progressBar = document.querySelector(".progress-track");
+
   if (!guide || !progressArea || !progressBar) return;
 
   const barRect = progressBar.getBoundingClientRect();
   const areaRect = progressArea.getBoundingClientRect();
   const guideWidth = guide.offsetWidth || 58;
-  const rawLeft = barRect.left - areaRect.left + barRect.width * (percent / 100) - guideWidth / 2;
-  const maxLeft = Math.max(0, progressArea.clientWidth - guideWidth);
 
-  guide.style.left = Math.min(maxLeft, Math.max(0, rawLeft)) + "px";
+  const rawLeft =
+    barRect.left - areaRect.left +
+    barRect.width * (percent / 100) -
+    guideWidth / 2;
+
+  const maxLeft = Math.max(
+    0,
+    progressArea.clientWidth - guideWidth
+  );
+
+  guide.style.left =
+    Math.min(maxLeft, Math.max(0, rawLeft)) + "px";
 }
 
-function setProgress(){
+function setProgress() {
   const total = questions.length;
-  const answered = state.answers.filter(value => value !== undefined).length;
-  const percent = total ? Math.round(answered / total * 100) : 0;
 
-  $("questionCounter").textContent = `質問 ${state.index + 1} / ${total}`;
-  $("progressPercent").textContent = `${percent}% 完了`;
+  const answered = state.answers.filter(
+    value => value !== undefined
+  ).length;
+
+  const percent = Math.round(answered / total * 100);
+
+  $("questionCounter").textContent =
+    `質問 ${state.index + 1} / ${total}`;
+
+  $("progressPercent").textContent =
+    `${percent}% 完了`;
+
   $("progressFill").style.width = percent + "%";
 
   updatePinto();
   updatePintoPosition(percent);
 }
-
 function renderQuestion(){
-  const question = questions[state.index];
-  $("questionTitle").textContent = question.question;
-  $("answerList").replaceChildren();
-
-  question.answers.forEach((answer, answerIndex) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "answer-btn";
-    button.textContent = answer.label;
-    button.setAttribute(
-      "aria-pressed",
-      state.answers[state.index] === answerIndex ? "true" : "false"
-    );
-
-    button.addEventListener("click", () => {
-      if (state.transitioning || state.completed) return;
-
-      state.transitioning = true;
-      $("answerList").querySelectorAll(".answer-btn").forEach(option => {
-        option.setAttribute("aria-pressed", "false");
-        option.classList.remove("is-pressed");
-      });
-      state.answers[state.index] = answerIndex;
-      button.classList.add("is-pressed");
-      button.setAttribute("aria-pressed", "true");
-      setProgress();
-      $("backButton").disabled = true;
-
-      window.setTimeout(async () => {
-        if (state.index < questions.length - 1) {
-          state.index += 1;
-          state.transitioning = false;
-          renderQuestion();
-          return;
-        }
-
-        state.completed = true;
-        setProgress();
-        await runCinematicSequence("result-reveal", 3000);
-        showResults();
-        state.transitioning = false;
-      }, 260);
-    });
-
-    $("answerList").append(button);
+ const q=questions[state.index];
+ $("questionTitle").textContent=q.question;
+ $("answerList").replaceChildren();
+ q.answers.forEach((answer,answerIndex)=>{
+  const button=document.createElement("button");
+  button.type="button";
+  button.className="answer-btn";
+  button.setAttribute("aria-pressed",state.answers[state.index]===answerIndex?"true":"false");
+  const dot=document.createElement("span");dot.className="answer-dot";dot.setAttribute("aria-hidden","true");
+  const label=document.createElement("span");label.textContent=answer.label;
+  button.append(dot,label);
+  button.addEventListener("click",()=>{
+   const answeredQuestion=state.index;
+   state.answers[answeredQuestion]=answerIndex;
+   renderQuestion();
+   window.setTimeout(()=>{
+    if(state.index!==answeredQuestion||state.answers[answeredQuestion]!==answerIndex||state.completed)return;
+    if(state.index<questions.length-1){state.index++;renderQuestion();}
+    else{state.completed=true;showResults();}
+   },220);
   });
-
-  $("backButton").disabled = state.index === 0 || state.transitioning;
-  setProgress();
-
-  $("questionWrap").style.animation = "none";
-  void $("questionWrap").offsetWidth;
-  $("questionWrap").style.animation = "";
+  $("answerList").append(button);
+ });
+ $("backButton").disabled=state.index===0;
+ $("nextButton").disabled=state.answers[state.index]===undefined;
+ $("nextButton").textContent=state.index===questions.length-1?"結果を見る":"次へ";
+ setProgress();
+ $("questionWrap").style.animation="none";
+ void $("questionWrap").offsetWidth;
+ $("questionWrap").style.animation="";
 }
 
-async function startDiagnosis(){
-  if (state.transitioning) return;
-
-  state.index = 0;
-  state.answers = [];
-  state.completed = false;
-  state.transitioning = true;
-
-  $("hero").classList.add("hidden");
-  $("intro").classList.add("hidden");
-  $("resultSection").style.display = "none";
-  $("quizSection").style.display = "block";
-  $("questionTitle").textContent = "";
-  $("answerList").replaceChildren();
-  $("backButton").disabled = true;
-
-  setProgress();
-  $("quizSection").scrollIntoView({
-    behavior: reducedMotion ? "auto" : "smooth",
-    block: "start"
-  });
-
-  await runCinematicSequence("start-sequence", 4800);
-  renderQuestion();
-  state.transitioning = false;
+function startDiagnosis(){
+ state.index=0;state.answers=[];state.completed=false;
+ $("nextButton").hidden=true;
+ $("hero").classList.add("hidden");
+ $("intro").classList.add("hidden");
+ $("resultSection").style.display="none";
+ $("quizSection").style.display="block";
+ renderQuestion();
+ $("quizSection").scrollIntoView({behavior:reducedMotion?"auto":"smooth",block:"start"});
 }
 
 function answerProfile(){
@@ -1049,56 +1353,32 @@ function createResultCard(candidate,index){
  return card;
 }
 
-
 function showResults(){
-  $("quizSection").style.display = "none";
-  $("resultSection").style.display = "block";
-
-  const list = $("resultList");
-  list.replaceChildren();
-  calculateResults().forEach((candidate, index) => {
-    list.append(createResultCard(candidate, index));
-  });
-
-  $("resultSection").scrollIntoView({
-    behavior: reducedMotion ? "auto" : "smooth",
-    block: "start"
-  });
+ $("quizSection").style.display="none";
+ $("resultSection").style.display="block";
+ const list=$("resultList");list.replaceChildren();
+ calculateResults().forEach((candidate,index)=>list.append(createResultCard(candidate,index)));
+ $("resultSection").scrollIntoView({behavior:reducedMotion?"auto":"smooth",block:"start"});
 }
 
 function resetDiagnosis(){
-  state.index = 0;
-  state.answers = [];
-  state.completed = false;
-  state.transitioning = false;
-
-  $("resultSection").style.display = "none";
-  $("quizSection").style.display = "none";
-  $("hero").classList.remove("hidden");
-  $("intro").classList.remove("hidden");
-  $("hero").scrollIntoView({
-    behavior: reducedMotion ? "auto" : "smooth",
-    block: "start"
-  });
+ $("resultSection").style.display="none";
+ $("quizSection").style.display="none";
+ $("hero").classList.remove("hidden");
+ $("intro").classList.remove("hidden");
+ $("hero").scrollIntoView({behavior:reducedMotion?"auto":"smooth",block:"start"});
 }
 
-
-$("startButton").addEventListener("click", startDiagnosis);
-
-$("backButton").addEventListener("click", () => {
-  if (state.transitioning || state.index === 0) return;
-  state.index -= 1;
-  state.answers.length = state.index + 1;
-  renderQuestion();
+$("startButton").addEventListener("click",startDiagnosis);
+$("backButton").addEventListener("click",()=>{
+ if(state.index>0){state.index--;state.answers.length=state.index+1;renderQuestion();}
 });
-
-$("retryButton").addEventListener("click", startDiagnosis);
-
-window.addEventListener("resize", () => {
-  const answered = state.answers.filter(value => value !== undefined).length;
-  const percent = questions.length ? Math.round(answered / questions.length * 100) : 0;
-  updatePintoPosition(percent);
+$("nextButton").addEventListener("click",()=>{
+ if(state.answers[state.index]===undefined)return;
+ if(state.index<questions.length-1){state.index++;renderQuestion();}
+ else showResults();
 });
+$("retryButton").addEventListener("click",startDiagnosis);
 
 /* 初期設定の検証：質問・選択肢・候補・公式URLが欠ける場合は診断を開始しない。 */
 (function validateConfig(){
