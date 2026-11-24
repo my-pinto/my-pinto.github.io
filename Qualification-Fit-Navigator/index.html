@@ -1388,6 +1388,7 @@ function setProgress() {
   updatePintoPosition(percent);
 }
 function renderQuestion(){
+ $("questionWrap").classList.remove("leaving");
  const q=questions[state.index];
  $("questionTitle").textContent=q.question;
  $("answerList").replaceChildren();
