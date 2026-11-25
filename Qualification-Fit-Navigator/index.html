@@ -271,9 +271,33 @@ header {
 @keyframes questionIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .question-kicker{margin:0 0 7px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.13em}
 .question-title{margin:0 0 21px;color:#111;font-size:clamp(20px,3.6vw,26px);font-weight:700;line-height:1.55;letter-spacing:-.025em}
-.answer-list{display:grid;grid-template-columns:1fr;gap:10px}
-.answer-btn{position:relative;display:flex;align-items:center;gap:13px;width:100%;min-height:54px;padding:13px 16px;border:1px solid #e2e2e2;border-radius:11px;background:#fff;color:#282828;text-align:left;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .18s,background .18s,transform .18s,box-shadow .18s}
-.answer-btn:hover{
+.answer-list{
+ display:grid;
+ grid-template-columns:1fr;
+ gap:8px;
+}
+
+.answer-btn{
+ position:relative;
+ display:flex;
+ align-items:center;
+ width:100%;
+ padding:10px 14px;
+ border:2px solid #E2E9DF;
+ border-radius:10px;
+ background:#fff;
+ color:#303830;
+ text-align:left;
+ font-size:15px;
+ font-weight:500;
+ line-height:1.45;
+ cursor:pointer;
+ transition:border-color .18s,background .18s,transform .18s;
+ -webkit-tap-highlight-color:transparent;
+ -webkit-appearance:none;
+ appearance:none;
+ touch-action:manipulation;
+}
  border-color:var(--line);
  background:#fff;
  transform:none;
