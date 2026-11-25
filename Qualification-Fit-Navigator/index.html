@@ -1463,6 +1463,7 @@ function renderQuestion(){
   $("answerList").append(button);
  });
  $("backButton").disabled=state.index===0;
+$("backButton").style.display=state.index===0?"none":"";
  $("nextButton").disabled=state.answers[state.index]===undefined;
  $("nextButton").textContent=state.index===questions.length-1?"結果を見る":"次へ";
  setProgress();
