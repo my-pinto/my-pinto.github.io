@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -17,5 +18,8 @@
   </url>
   <url>
     <loc>https://my-pinto.github.io/Semiconductor-Industry-Career-Navigator/</loc>
+  </url>
+  <url>
+    <loc>https://my-pinto.github.io/Qualification-Fit-Navigator/</loc>
   </url>
 </urlset>
