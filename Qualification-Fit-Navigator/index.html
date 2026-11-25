@@ -1481,10 +1481,7 @@ function startDiagnosis(){
  $("resultSection").style.display="none";
  $("quizSection").style.display="block";
  renderQuestion();
- document.querySelector(".progress-area").scrollIntoView({
- behavior:reducedMotion?"auto":"smooth",
- block:"start"
-});
+ $("quizSection").scrollIntoView({behavior:reducedMotion?"auto":"smooth",block:"start"});
 }
 
 function answerProfile(){
