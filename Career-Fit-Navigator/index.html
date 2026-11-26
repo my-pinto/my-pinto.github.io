@@ -234,10 +234,64 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
 @keyframes questionIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .question{min-height:68px;margin:0 0 18px;color:#111;font-size:clamp(20px,3vw,25px);font-weight:700;line-height:1.55;letter-spacing:-.015em}
 .answers{display:grid;gap:9px}
-.answer-button{display:flex;align-items:center;width:100%;min-height:49px;padding:10px 16px;border:1px solid #dce2e7;border-radius:9px;background:#fff;color:#273033;text-align:left;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .16s ease,background .16s ease,transform .16s ease}
-.answer-button:hover{border-color:#858dc4;background:#f8f8ff}
-.answer-button.is-selected{border-color:var(--accent);background:#f0f1ff;color:#00005e;pointer-events:none;transform:scale(.995)}
-.answer-button:focus:not(:focus-visible){outline:none;box-shadow:none}
+.answer-button{
+  position:relative;
+  display:flex;
+  align-items:center;
+  width:100%;
+  min-height:49px;
+  padding:10px 16px;
+  border:1px solid #dce2e7;
+  border-radius:9px;
+  background:#fff;
+  color:#273033;
+  text-align:left;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  appearance:none;
+  touch-action:manipulation;
+  transition:border-color .18s ease,background .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.answer-button::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:9px;
+  bottom:9px;
+  width:3px;
+  border-radius:0 4px 4px 0;
+  background:transparent;
+  transition:background .18s ease;
+}
+.answer-button:hover{
+  border-color:#858dc4;
+  background:#f8f8ff;
+}
+.answer-button.is-selected{
+  border-color:var(--accent);
+  background:#f0f1ff;
+  color:#00005e;
+  box-shadow:0 0 0 2px rgba(0,0,128,.10);
+  animation:answerPop .25s ease;
+  pointer-events:none;
+}
+.answer-button.is-selected::before{
+  background:var(--accent);
+}
+.answer-button:focus{
+  outline:none;
+}
+.answer-button:focus-visible{
+  outline:2px solid #5965bd;
+  outline-offset:2px;
+}
+@keyframes answerPop{
+  0%{transform:scale(1)}
+  45%{transform:scale(1.012)}
+  100%{transform:scale(1)}
+}
+.nav-hint{display:none}
 .nav{display:flex;justify-content:space-between;align-items:center;min-height:42px;margin-top:17px}
 .back-button{padding:8px 14px;border:1px solid #d9e1e2;border-radius:8px;background:#fff;color:#394346;font-size:13px;font-weight:700;cursor:pointer}
 .back-button[hidden]{display:none}
