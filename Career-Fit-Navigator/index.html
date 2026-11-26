@@ -80,7 +80,7 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
  text-align:left;
 }
 .sub-text{margin-top:15px;color:#737d81;font-size:13px;font-weight:600;letter-spacing:.035em}
-.button{display:inline-flex;align-items:center;justify-content:center;min-height:55px;padding:13px 32px;border:1px solid var(--accent-dark);border-radius:8px;background:var(--accent);color:#fff;font-size:15px;font-weight:800;letter-spacing:.02em;text-decoration:none;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,90,.12);transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:55px;padding:13px 32px;border:1px solid var(--accent-dark);border-radius:8px;background:var(--accent);color:#fff;font-size:15px;font-weight:600;letter-spacing:.02em;text-decoration:none;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,90,.12);transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
 .button:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,90,.14)}
 .button:active{transform:translateY(0);box-shadow:0 2px 0 rgba(0,0,90,.12)}
 .button:focus-visible,.answer-button:focus-visible,.back-button:focus-visible,.value-option:focus-visible,a:focus-visible{outline:2px solid #5965bd;outline-offset:3px}
@@ -122,10 +122,16 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
  top:0;
  left:0;
  right:0;
- height:4px;
- background:#00FFFF;
+ height:3px;
+ background:linear-gradient(
+  90deg,
+  #000080,
+  rgba(255,255,255,0.95),
+  #000080
+ );
+ background-size:200% 100%;
 }
-  .step-number{
+ .step-number{
  display:flex;
  align-items:center;
  justify-content:center;
@@ -133,8 +139,8 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
  height:39px;
  margin-bottom:14px;
  border-radius:50%;
- background:#00FFFF;
- color:#101819;
+ background:#000080;
+ color:#fff;
  font-size:17px;
  font-weight:900;
 }
