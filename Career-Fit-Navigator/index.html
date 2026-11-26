@@ -264,20 +264,30 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
   background:transparent;
   transition:background .18s ease;
 }
-.answer-button:hover{
+@media (hover:hover) and (pointer:fine){
+ .answer-button:hover{
   border-color:#858dc4;
-  background:#f8f8ff;
+  background:#f3f4ff;
+ }
+}
+.answer-button:active{
+  border-color:#00005e;
+  background:#00005e;
+  color:#fff;
+  transform:scale(.975);
+  box-shadow:inset 0 2px 5px rgba(0,0,0,.2);
 }
 .answer-button.is-selected{
-  border-color:var(--accent);
-  background:#f0f1ff;
-  color:#00005e;
-  box-shadow:0 0 0 2px rgba(0,0,128,.10);
+  border:2px solid #00005e;
+  background:#000080;
+  color:#fff;
+  box-shadow:0 3px 10px rgba(0,0,128,.25);
   animation:answerPop .25s ease;
   pointer-events:none;
 }
 .answer-button.is-selected::before{
-  background:var(--accent);
+  background:#9be5bd;
+  width:4px;
 }
 .answer-button:focus{
   outline:none;
@@ -288,7 +298,8 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
 }
 @keyframes answerPop{
   0%{transform:scale(1)}
-  45%{transform:scale(1.012)}
+  35%{transform:scale(.975)}
+  70%{transform:scale(1.015)}
   100%{transform:scale(1)}
 }
 .nav-hint{display:none}
