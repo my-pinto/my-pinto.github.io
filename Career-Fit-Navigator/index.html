@@ -1262,7 +1262,7 @@ function startDiagnosis(){
  $("diagnosis").style.display="block";
  $("backButton").onclick=goBack;$("backButton").textContent="← 前の質問に戻る";
  trackEvent("diagnosis_start");
- $("diagnosis").scrollIntoView({behavior:reducedMotion?"auto":"smooth",block:"start"});
+ $("diagnosis").scrollIntoView({behavior:"auto",block:"start"});
  showQuestion();
 }
 function buildProfile(){
