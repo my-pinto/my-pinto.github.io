@@ -337,8 +337,32 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
     drop-shadow(0 0 10px rgba(90,255,25,.15));
 }
 .result-head h2{color:#111;font-size:clamp(28px,4.5vw,39px);font-weight:800;line-height:1.4}
-.result-head p{margin-top:7px;color:var(--muted);font-size:14px}
-.result-subtitle{margin-top:13px;color:#111;font-size:20px;font-weight:800;line-height:1.45}
+.result-head p{
+  margin-top:7px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.65;
+}
+.result-head p span{
+  display:block;
+  white-space:nowrap;
+}
+.result-subtitle{
+  display:inline-block;
+  margin-top:16px;
+  padding:8px 18px;
+  border:1px solid #A7EDED;
+  border-radius:5px;
+  background:#E8FAFA;
+  color:#1A5557;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.6;
+}
+.result-subtitle span{
+  display:block;
+  white-space:nowrap;
+}
 .result-card{
   position:relative;
   isolation:isolate;
