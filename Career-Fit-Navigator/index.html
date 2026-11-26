@@ -1192,7 +1192,8 @@ function showQuestion(){
    isTransitioning=true;
    b.classList.add("is-selected");
    b.setAttribute("aria-pressed","true");
-   answers[currentQuestion]=value;
+   b.blur();
+  answers[currentQuestion]=value;
    trackEvent("question_answer",{question_number:currentQuestion+1});
 
    window.setTimeout(()=>{
