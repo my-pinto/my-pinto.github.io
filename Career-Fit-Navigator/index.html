@@ -196,6 +196,35 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
 .pinto-guide.pinto-q20-ring .pinto-art{filter:drop-shadow(0 0 8px rgba(180,150,255,.65)) drop-shadow(0 0 18px rgba(100,220,255,.5))}
 .pinto-guide.pinto-q20-ring .pinto-aura{stroke:url(#pintoHoloGradient);stroke-width:2.5;opacity:.75}
 .pinto-guide.pinto-q20-ring .pinto-q20-orbit{opacity:1;stroke-dasharray:25 8 5 8;filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 9px rgba(130,210,255,.95));transform-box:view-box;transform-origin:50% 51%;animation:pintoQ20StarOrbit 1.35s linear infinite}
+/* AIツール診断マスター準拠：ホログラム円の演出 */
+.pinto-guide.pinto-q15-glow .pinto-holo-bubble{
+  stroke-width:3.2;
+  stroke-opacity:1;
+  fill-opacity:.94;
+}
+
+.pinto-guide.pinto-q20-ring .pinto-q20-orbit{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  animation:none!important;
+}
+
+.pinto-guide.pinto-q20-ring .pinto-holo-bubble{
+  opacity:1!important;
+  fill:url(#pintoHoloFill);
+  fill-opacity:.85;
+  stroke:url(#pintoHoloGradient);
+  stroke-width:2.5;
+  stroke-opacity:.82;
+  filter:
+    drop-shadow(0 0 5px rgba(255,190,240,.45))
+    drop-shadow(0 0 12px rgba(120,210,255,.38))
+    drop-shadow(0 0 19px rgba(205,160,255,.25));
+  transform-box:view-box;
+  transform-origin:50% 51%;
+  animation:pintoHoloBubble 3.6s ease-in-out infinite;
+}
 @keyframes pintoBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(3deg)}}
 @keyframes pintoAura{0%,100%{opacity:.48;transform:scale(.94)}50%{opacity:.9;transform:scale(1.08)}}
 @keyframes pintoBlink{0%,45%,49%,100%{transform:scaleY(1)}47%{transform:scaleY(.12)}}
