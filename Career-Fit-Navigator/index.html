@@ -163,8 +163,27 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
 .progress-meta{display:flex;justify-content:space-between;align-items:center;color:#394044;font-size:13px;font-weight:800}
 .progress-track{position:absolute;left:38px;right:38px;top:61px;height:8px;border-radius:20px;background:#e9eaf1;overflow:hidden}
 .progress-fill{height:100%;width:0;background:linear-gradient(90deg,#343d9c,#000080);border-radius:20px;transition:width .35s ease}
-.pinto-guide{position:absolute;z-index:2;top:18px;left:0;width:76px;height:76px;display:flex;align-items:center;justify-content:center;transition:left .35s cubic-bezier(.2,.7,.2,1);pointer-events:none}
-.pinto-art{width:76px;height:76px;overflow:visible;filter:drop-shadow(0 7px 12px rgba(58,174,118,.22));animation:pintoBob 3.6s ease-in-out infinite}
+.pinto-guide{
+  position:absolute;
+  z-index:2;
+  top:30px;
+  left:0;
+  width:58px;
+  height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:left .35s cubic-bezier(.2,.7,.2,1);
+  pointer-events:none;
+}
+.pinto-art{
+  width:58px;
+  height:54px;
+  flex:0 0 58px;
+  overflow:visible;
+  filter:drop-shadow(0 7px 12px rgba(58,174,118,.22));
+  animation:pintoBob 3.6s ease-in-out infinite;
+}
 .pinto-art .pinto-aura{transform-origin:50% 50%;animation:pintoAura 3.4s ease-in-out infinite}
 .pinto-art .pinto-eye{transform-origin:center;animation:pintoBlink 5.2s infinite}
 .pinto-art .pinto-holo-bubble{transform-box:view-box;transform-origin:50% 51%}
