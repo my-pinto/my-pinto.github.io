@@ -145,10 +145,20 @@ function choose(value,button){
  setTimeout(()=>{if(state.index<QUESTIONS.length-1){state.index++;renderQuestion()}else{showResults()}},140);
 }
 function scoreProfile(profile){
- const scores={R:0,I:0,A:0,S:0,E:0,C:0};
- QUESTIONS.forEach((q,i)=>scores[q.type]+=(state.answers[i]??3)-3);
- const keys=profile.split(" ");
- return keys.reduce((sum,k)=>sum+scores[k],0);
+  const scores={R:0,I:0,A:0,S:0,E:0,C:0};
+
+  QUESTIONS.forEach((q,i)=>{
+    scores[q.type]+=(state.answers[i]??3)-3;
+  });
+
+  const keys=profile.split(" ");
+  if(!keys.length)return 0;
+
+  const total=keys.reduce((sum,key)=>{
+    return sum+(scores[key]??0);
+  },0);
+
+  return total/keys.length;
 }
 function reasonFor(job){
  const scores={R:0,I:0,A:0,S:0,E:0,C:0};
