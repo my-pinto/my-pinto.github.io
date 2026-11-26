@@ -1168,26 +1168,41 @@ function showQuestion(){
  $("answerList").replaceChildren();
  setProgress((currentQuestion/QUESTIONS.length)*100,"質問 "+(currentQuestion+1)+" / "+QUESTIONS.length);
  $("backButton").hidden=currentQuestion===0;
- $("navHint").textContent="選択すると次へ進みます";
+
  OPTIONS.forEach(([label,value])=>{
   const b=document.createElement("button");
-  b.type="button";b.className="answer-button";b.textContent=label;
+  b.type="button";
+  b.className="answer-button";
+  b.textContent=label;
+  b.setAttribute("aria-pressed","false");
+
   b.addEventListener("click",()=>{
    if(isTransitioning)return;
    isTransitioning=true;
    b.classList.add("is-selected");
+   b.setAttribute("aria-pressed","true");
    answers[currentQuestion]=value;
    trackEvent("question_answer",{question_number:currentQuestion+1});
+
    window.setTimeout(()=>{
     currentQuestion++;
     isTransitioning=false;
     if(currentQuestion<QUESTIONS.length)showQuestion();
     else showValuesStep();
-   },reducedMotion?0:180);
+   },reducedMotion?0:260);
   });
+
   $("answerList").appendChild(b);
  });
+
  $("questionText").focus({preventScroll:true});
+
+ window.setTimeout(()=>{
+  const panel=document.querySelector("#diagnosis .panel");
+  if(!panel)return;
+  const delta=panel.getBoundingClientRect().top-16;
+  if(Math.abs(delta)>1)window.scrollBy({top:delta,behavior:"auto"});
+ },100);
 }
 function showValuesStep(){
  setProgress(100,"最終ステップ");
