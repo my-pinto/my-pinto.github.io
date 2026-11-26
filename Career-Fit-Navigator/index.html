@@ -85,12 +85,58 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
 .button:active{transform:translateY(0);box-shadow:0 2px 0 rgba(0,0,90,.12)}
 .button:focus-visible,.answer-button:focus-visible,.back-button:focus-visible,.value-option:focus-visible,a:focus-visible{outline:2px solid #5965bd;outline-offset:3px}
 .container{max-width:1040px;margin:0 auto;padding:56px 22px}
-.section-title{text-align:center;color:#111;font-size:27px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
-.section-desc{text-align:center;max-width:720px;margin:0 auto 30px;color:var(--muted);font-size:14px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.step{padding:22px 21px;border:1px solid var(--line);border-radius:11px;background:#fff}
-.step b{display:block;margin-bottom:7px;color:#111;font-size:15px}
-.step p{font-size:13px;color:#5e696d;line-height:1.8}
+.section-title{
+ text-align:center;
+ color:#111;
+ font-size:27px;
+ font-weight:600;
+ letter-spacing:-.02em;
+ margin-bottom:10px;
+}
+.section-desc{
+ text-align:left;
+ max-width:720px;
+ margin:0 auto 30px;
+ color:var(--muted);
+ font-size:14px;
+ line-height:1.9;
+}
+.steps{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:16px;
+}
+.step{
+ position:relative;
+ min-height:178px;
+ padding:27px 21px 22px;
+ overflow:hidden;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:#fff;
+ box-shadow:0 8px 24px rgba(20,35,38,.045);
+}
+.step::before{
+ content:"";
+ position:absolute;
+ top:0;
+ left:0;
+ right:0;
+ height:4px;
+ background:#00FFFF;
+}
+.step b{
+ display:block;
+ margin-bottom:7px;
+ color:#111;
+ font-size:15px;
+ font-weight:700;
+}
+.step p{
+ font-size:13px;
+ color:#5e696d;
+ line-height:1.8;
+}
 .data-note{max-width:850px;margin:25px auto 0;padding:15px 18px;border:1px solid #e6e8f2;border-radius:9px;background:#fafaff;color:#5b626d;font-size:12px;line-height:1.8}
 #diagnosis,#result{display:none;background:linear-gradient(180deg,#fff 0%,#f8f9ff 100%)}
 .panel{max-width:790px;margin:auto;padding:27px 32px 30px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 12px 38px rgba(20,25,50,.07)}
