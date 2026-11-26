@@ -169,8 +169,18 @@ header{position:relative;z-index:5;background:rgba(255,255,255,.97);border-botto
 .actions{text-align:center;margin-top:25px}
 footer{border-top:1px solid var(--line);background:#fff}
 .footer-inner{max-width:1040px;margin:auto;padding:25px 22px 28px;color:#687174;font-size:12px}
-.footer-brand{margin-bottom:5px;color:#111;font-size:19px;font-weight:800;letter-spacing:-.04em}
-.footer-description{color:#737d81;font-size:12px}
+.footer-brand{
+ margin-bottom:8px;
+ color:#111;
+ font-size:19px;
+ font-weight:600;
+ letter-spacing:-.04em;
+}
+.footer-description{
+ color:#737d81;
+ font-size:12px;
+ line-height:1.9;
+}
 .footer-links{display:flex;flex-direction:column;gap:5px;margin-top:13px;padding-top:12px;border-top:1px solid var(--line)}
 .footer-links a{width:fit-content;color:#4e595d;text-decoration:none}
 .footer-links a:hover{text-decoration:underline}
@@ -185,6 +195,47 @@ footer{border-top:1px solid var(--line);background:#fff}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
  .pinto-guide.pinto-q15-glow .pinto-holo-bubble,.pinto-guide.pinto-q20-ring .pinto-q20-orbit{animation:none!important}
+}
+.seo-content{
+ border-top:1px solid #edf0f5;
+ background:#fff;
+}
+.seo-inner{
+ max-width:1040px;
+ margin:0 auto;
+ padding:54px 22px 58px;
+ color:#586267;
+}
+.seo-inner h2{
+ margin:0 0 17px;
+ color:#20282c;
+ font-size:clamp(21px,3vw,27px);
+ font-weight:600;
+ line-height:1.5;
+}
+.seo-inner h3{
+ margin:25px 0 8px;
+ color:#303a3e;
+ font-size:16px;
+ font-weight:600;
+}
+.seo-inner p{
+ margin:0 0 13px;
+ font-size:13px;
+ line-height:1.95;
+}
+.seo-inner a{
+ color:#3f686b;
+ text-underline-offset:3px;
+}
+.footer-copy{
+ margin-top:16px;
+ color:#899195;
+ font-size:11px;
+}
+@media(max-width:700px){
+ .seo-inner{padding:40px 17px 44px}
+ .seo-inner p{font-size:12px}
 }
 </style>
 </head>
