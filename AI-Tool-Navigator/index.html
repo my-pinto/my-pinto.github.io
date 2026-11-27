@@ -4857,7 +4857,7 @@ function getRelevantAffiliateItems(profile){
     const category=item.ad.category||item.ad.id;
     const count=categoryCounts.get(category)||0;
 
-    if(count>=2)return;
+    if(count>=3)return;
 
     selected.push(item);
     categoryCounts.set(category,count+1);
