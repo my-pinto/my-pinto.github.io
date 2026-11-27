@@ -4845,15 +4845,21 @@ function getRelevantAffiliateItems(profile){
     return a.sourceIndex-b.sourceIndex;
   });
 
-  const selected=[];
-  const usedCategories=new Set();
+    const selected=[];
+  const categoryCounts=new Map();
+
   candidates.forEach(item=>{
     if(selected.length>=config.maxItems)return;
+
     const category=item.ad.category||item.ad.id;
-    if(usedCategories.has(category))return;
+    const count=categoryCounts.get(category)||0;
+
+    if(count>=2)return;
+
     selected.push(item);
-    usedCategories.add(category);
+    categoryCounts.set(category,count+1);
   });
+
   return selected;
 }
 
